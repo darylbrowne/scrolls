@@ -20514,6 +20514,7 @@ And your heart just showing off how it dances.
 								isBack = scroll === 1 ? 'back' : '';
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book" || my.strHash() === "labels") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll)-my.startAt) + "</sup>";
+								console.log(location.pathname);
 								toURL = location.pathname === '/scrolls/index.html' ? 'https://darylbrowne.github.io/scrolls/' : 'https://darylbrowne.github.io/scrolls/index.html';
 								pages.push('<a href="' + toURL + '" class="' + isBack + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');

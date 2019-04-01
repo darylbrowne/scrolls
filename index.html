@@ -1,8 +1,3 @@
-<?php ob_start("ob_gzhandler");?>
-<?php
-header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-header("Expires: Sat, 17 Jul 1997 05:00:00 GMT");
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20519,7 +20514,7 @@ And your heart just showing off how it dances.
 								isBack = scroll === 1 ? 'back' : '';
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book" || my.strHash() === "labels") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll)-my.startAt) + "</sup>";
-								toURL = location.pathname === 'scrolls/index.html' ? 'https://darylbrowne.github.io/scrolls/' : 'https://darylbrowne.github.io/scrolls/index.html';
+								toURL = location.pathname === '/scrolls/index.html' ? 'https://darylbrowne.github.io/scrolls/' : 'https://darylbrowne.github.io/scrolls/index.html';
 								pages.push('<a href="' + toURL + '" class="' + isBack + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}

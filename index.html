@@ -195,7 +195,7 @@
 				font-family: 'IM Fell English', Oronteus Finaeus, serif;
 				font-size: 4vw;
 				overflow: hidden;
-				background: #fff url("https://lh3.googleusercontent.com/DdVSM-sJGcx0SFG98LCeilY_LFpDBC1GyJ4ylle9LxnHEGRw_sqdLqL7D-odWPujcKG64qfp6_qBSjaBqDQQPJao37e-X_f52NqkEsYZeLjPXeSAqc3ViRLX2d8mRQZlS59mzTkQ1A=w2400") center top no-repeat;
+				background: #111 url("https://lh3.googleusercontent.com/DdVSM-sJGcx0SFG98LCeilY_LFpDBC1GyJ4ylle9LxnHEGRw_sqdLqL7D-odWPujcKG64qfp6_qBSjaBqDQQPJao37e-X_f52NqkEsYZeLjPXeSAqc3ViRLX2d8mRQZlS59mzTkQ1A=w2400") center top no-repeat;
 				background-size: cover;
 		    }
 		    body, p
@@ -20514,8 +20514,7 @@ And your heart just showing off how it dances.
 								isBack = scroll === 1 ? 'back' : '';
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book" || my.strHash() === "labels") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll)-my.startAt) + "</sup>";
-								console.log(location.pathname);
-								toURL = location.pathname === '/scrolls/index.html' ? 'https://darylbrowne.github.io/scrolls/' : 'https://darylbrowne.github.io/scrolls/index.html';
+								toURL = location.pathname === '/index.html' ? '/' : '/index.html';
 								pages.push('<a href="' + toURL + '" class="' + isBack + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}

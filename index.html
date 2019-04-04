@@ -20538,7 +20538,10 @@ It's not just who (it's how well) you know.
 							words = words ? words.replace(/[\n\r]/g, ln).replace(/\'/g, '&rsquo;') : '';
 							wisdom = (re).test(words) ? words.split(p) : words.split(br);
 							wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;
-							fate = Math.floor(Math.random() * wisdom.length-5) + 5;
+							
+							while (!fate || fate < 5) {
+								fate = Math.floor(Math.random() * (wisdom.length-5)) + 5;
+							}
 							
 							if (!window.location.hash) {
 								cover = wisdom[fate];

@@ -12,7 +12,6 @@
 	<meta name="generator" content="Sublime Text">
 	<meta name="keywords" content="Daryl Browne">
    	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
 	<meta name="DC.Title" content="Journey of 1,000 Breaths">
 	<meta name="DC.Creator" content="Daryl Browne">
 	<meta name="DC.Subject" content="Journey of 1,000 Breaths by Daryl Browne">
@@ -22,17 +21,18 @@
 	<meta name="DC.Format" content="99 kB">
 	<meta name="DC.Language" content="en">
 	<meta property="og:title" content="Journey of 1,000 Breaths" />
-	<meta property="og:description" content="Little reminders to be here now" />
+	<meta property="og:description" content="Little reminders to be here now" /><!--
 	<meta property="og:image" content="http://darylbrowne.com/images/be-icon.png" />
 	<meta property="jars" content="https://www.amazon.com/Ball-Collection-Elite-Wide-Mount/dp/B000YGE0ZG/ref=sr_1_10?ie=UTF8&qid=1520157069&sr=8-10&keywords=wide+mouth+pint+mason+jars" />
 	<meta property="paper" content="https://www.mulberrypaperandmore.com/account.aspx#OrderHistory" order="227381" />
 	<meta property="beads" content="http://www.craftparts.com/20mm-round-wood-beads-hole-p-1003.html?cat_id=210" />
 	<meta property="ink" content="https://www.amazon.com/Epson-T252XL-BCS-Capacity-Standard-Cartridges/dp/B00OS3IMSM/ref=sr_1_2?ie=UTF8&qid=1520157480&sr=8-2&keywords=wf-3620+ink" />	
+	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
 	<link rel="DC.Identifier" href="http://darylbrowne.com">
 	<link rel="DC.Rights" href="http://creativecommons.org/licenses/by-nc-nd/4.0/legalcode">
 	<link rel="shortcut icon" href="http://darylbrowne.com/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" href="images/be-icon.png" />
-	<link rel="apple-touch-icon-precomposed" href="images/be-icon.png" />
+	<link rel="apple-touch-icon-precomposed" href="images/be-icon.png" />-->
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Homemade+Apple" rel="stylesheet" type="text/css">
 	<style id="all">
 		@media all {
@@ -20512,12 +20512,60 @@ The quality of each relationship you grow
 Is like the heartiness of the seeds you sow:
 
 It's not just who (it's how well) you know.
+
+
+
+What gives you strength, and what takes?
+
+Yes - a few of your are answers are fakes -
+
+Happiness doesn't lean on what it makes.
+
+
+
+Now, rather than being on display,
+
+Be who you were going to be anyway
+
+By letting one less &ldquo;necessity&rdquo; stay.
+
+
+
+Don't do it - it's not worth the trouble
+
+If it only makes your workload double.
+
+The wisest improvements are all subtle.
+
+
+
+Coincidences can help you as they always have,
+
+Dropping unexpected situations into your lap
+
+When you're not too attached to one set path.
+
+
+
+Some of your interests only last for so long,
+
+Because they need a group to mean much at all.
+
+Some interests are for life - that was seasonal.
+
+
+
+Everything you give away gives you a feeling -
+
+Whether it's obligation, enjoyment or healing.
+
+Which of your reasons lifts your inner ceiling?
 </pre>
 </body> 
 <script type="text/javascript">
 	var $ = (function () {
+			var startAt = 5;
 			var my = {
-				startAt: 5,
 				strHash: (function () { return (location.hash).substring(1)}),
 				shuffle : (function shuffle(array) {
 						    for (let i = array.length - 1; i > 0; i--) {
@@ -20539,8 +20587,8 @@ It's not just who (it's how well) you know.
 							wisdom = (re).test(words) ? words.split(p) : words.split(br);
 							wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;
 							
-							while (!fate || fate < 5) {
-								fate = Math.floor(Math.random() * (wisdom.length-5)) + 5;
+							while (!fate || fate < startAt) {
+								fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
 							}
 							
 							if (!window.location.hash) {
@@ -20548,7 +20596,8 @@ It's not just who (it's how well) you know.
 								window.location.hash = '#' + fate;
 							} else {
 								hash = location.hash ? Number((location.hash).substring(1)) : null;
-								cover = (hash && 0 < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
+								cover = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
+								if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
 							}
 
 							wisdom.unshift(cover);
@@ -20562,11 +20611,10 @@ It's not just who (it's how well) you know.
 							thisSide = my.journey;
 
 							for (scroll = 0; scroll < thisSide.length; scroll++) {
-								isBack = scroll === 1 ? 'back' : '';
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book" || my.strHash() === "labels") ? my.strHash() : isType;
-								suffix = "<sup>" + (parseInt(scroll)-my.startAt) + "</sup>";
+								suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
 								toURL = location.pathname === '/index.html' ? '/' : '/index.html';
-								pages.push('<a href="' + toURL + '" class="' + isBack + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
+								pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}
 							}
@@ -20575,15 +20623,15 @@ It's not just who (it's how well) you know.
 								document.getElementById("screen").remove();
 								switch (isType) {
 									case 'all' :
-										pages = pages.slice(my.startAt+1).reverse();
+		 								pages = pages.slice(startAt).reverse()
 										scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 										break;
 									case 'book' :
 										//var book = book.map(function(x){return x.replace(/<br \/><br \/>/gi, '<br />');});
 										var perchapter = 100;
 										var totalpages = pages.length / perchapter;
-										var custom = my.shuffle(book.slice(my.startAt));
-										var preface = (book.slice(1,my.startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
+										var custom = my.shuffle(book.slice(startAt));
+										var preface = (book.slice(1,startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
 										for (i = 1; i < totalpages+1; i++) {
 											chapterTitle = '<br /><br /><br /><br /><br /><br />'; 
 											custom.splice((perchapter*i)+(i-1),0,chapterTitle);
@@ -20593,7 +20641,7 @@ It's not just who (it's how well) you know.
 									case 'art' :
 										var pp = 5;
 										var perpage = 16;
-										var custom = hasDates ? pages : my.shuffle(pages.slice(my.startAt)).slice(0,perpage*pp);
+										var custom = hasDates ? pages : my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
 										var labels = Array(16).fill(pages[1]);
 										/*for (i = 1; i < pp+1; i++) {
 										  custom.splice((perpage*i)+(i-1),0,labels.join(""));

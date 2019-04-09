@@ -20621,7 +20621,8 @@ Patience, sow seeds of lifelong satisfaction.
 							for (scroll = 0; scroll < thisSide.length; scroll++) {
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book" || my.strHash() === "labels") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
-								toURL = location.pathname === '/index.html' ? '/' : 'https://darylbrowne.com';
+								//toURL = location.pathname === '/' ? 'https://darylbrowne.com' : '/';
+								toURL = 'https://darylbrowne.com';
 								pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}

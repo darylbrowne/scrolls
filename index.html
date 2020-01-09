@@ -24464,7 +24464,7 @@ Or somewhere right in between?
 </body> 
 <script type="text/javascript">
 	var $ = (function () {
-			var startAt = 2;
+			var startAt = 1;
 			var my = {
 				strHash: (function () { return (location.hash).substring(1)}),
 				shuffle : (function (array) {
@@ -24509,12 +24509,13 @@ Or somewhere right in between?
 							
 							hash = location.hash ? Number(my.strHash()) : null;
 							thisSide = my.journey;
+							
+							console.log(hash);
 
 							for (scroll = 0; scroll < thisSide.length; scroll++) {
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
-								toURL = location.hash === '#1' ? 'https://darylbrowne.com' : 'https://darylbrowne.com#1';
-								console.log(window.location.hash);
+								toURL = hash === 1 ? 'https://darylbrowne.com' : 'https://darylbrowne.com#1';
 								pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}

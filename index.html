@@ -24515,7 +24515,7 @@ Or somewhere right in between?
 							for (scroll = 0; scroll < thisSide.length; scroll++) {
 								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book") ? my.strHash() : isType;
 								suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
-								toURL = hash === 1 ? 'https://darylbrowne.com' : 'https://darylbrowne.com#1';
+								toURL = hash === 1 ? 'https://darylbrowne.com' : 'https://darylbrowne.com/index.html#1';
 								pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 								if (isType === '') {break;}

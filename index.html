@@ -384,17 +384,73 @@ Preface
 
 I believe everything happens for a reason.
 
-I believe everywhere we go, we're needed.
+I believe everywhere we go, we're needesd.
 
 I believe everyone we meet will teach us.
 
 
 
-600 million years ago, it heard seas swell.
+Still giving at 600,000,000 years old,
 
-So talk to the Salt Cave - it listens well -
+As it speaks through unburied scrolls:
 
-And might even have something to tell...
+Talk to the Salt & hear what it holds.
+
+
+
+She has something on which to reflect,
+
+That might make the mysteries connect:
+
+Grandmother Stone wants to speak next.
+
+
+
+He has asked Time and Space to allow,
+
+And each has honored him with a bow:
+
+Grandfather Stone wishes to speak now.
+
+
+
+Here to say what hasn't yet been heard,
+
+Though unmoved, her spirit is stirred:
+
+Mother Stone wishes to have a word. 
+
+
+
+Of all the things that they're aware,
+
+They have this one thing to declare:
+
+The Sister Stones are eager to share.
+
+
+
+Standing by the start of the way,
+
+So that nothing leads you astray,
+
+Father Stone has something to say.
+
+
+
+Strengthening places that may be weak,
+
+They guard boundaries and create peace.
+
+The Brother Stones would like to speak.
+
+
+
+Whether this seems like a blessing,
+
+Or something with a deeper lesson,
+
+The Old Sage Stone has a message.
 
 
 
@@ -3654,11 +3710,11 @@ Work on yourself; see past this decoy.
 
 
 
-It is uncooked opinion that alienates
+Though their words can easily rile,
 
-By exclaiming before it contemplates,
+Set your opinions aside for while.
 
-Letting true conversation go to waste.
+This time listen and simply smile.
 
 
 
@@ -17734,11 +17790,11 @@ But to the voice guiding your mission.
 
 
 
-That was a bumpy and dangerous road.
+Now taking a moment to let your layers peel,
 
-You'd incur damage before you'd know.
+Something known yet new has been revealed:
 
-Will you drive it again? Surely, no.
+It all revolves around how you choose to feel.
 
 
 
@@ -24463,101 +24519,101 @@ Or somewhere right in between?
 </pre>
 </body> 
 <script type="text/javascript">
-	var $ = (function () {
-			var startAt = 1;
-			var my = {
-				strHash: (function () { return (location.hash).substring(1)}),
-				shuffle : (function (array) {
-						    for (let i = array.length - 1; i > 0; i--) {
-						        let j = Math.floor(Math.random() * (i + 1));
-						        [array[i], array[j]] = [array[j], array[i]];
-						    }
-						    return array;
-						}),
-				journey : (function () {
-							var cover, fate, hash,
-								wisdom, words,
-								ln = '<br />',
-								br = ln + ln,
-								p = br + br,
-								re = new RegExp(p,'g');
+	var startAt = 10;
+	var stones = [];
+	var wisdom, words,
+		ln = '<br />',
+		br = ln + ln,
+		p = br + br,
+		re = new RegExp(p,'g');
 
-							words = (document.getElementsByTagName('pre')[0].innerHTML);
-							words = words ? words.replace(/[\n\r]/g, ln).replace(/\'/g, '&rsquo;') : '';
-							wisdom = (re).test(words) ? words.split(p) : words.split(br);
-							wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;
-							
-							while (!fate || fate < startAt) {
-								fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
-							}
-							
-							if (!window.location.hash) {
-								cover = wisdom[fate];
-								window.location.hash = '#' + fate;
-							} else {
-								hash = location.hash ? Number((location.hash).substring(1)) : null;
-								cover = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
-								if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
-							}
+	words = (document.getElementsByTagName('pre')[0].innerHTML);
+	words = words ? words.replace(/[\n\r]/g, ln).replace(/\'/g, '&rsquo;') : '';
+	wisdom = (re).test(words) ? words.split(p) : words.split(br);
+	wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;	
 
-							wisdom.unshift(cover);
-							return wisdom;
-						}()),
-				jar : (function () {
-							var book = [], toURL = '', hash, hasDates, isType = '', isBack = '',
-								pages = [], suffix = '', scroll, scrolls = '', thisSide = '';
-							
-							hash = location.hash ? Number(my.strHash()) : null;
-							thisSide = my.journey;
-							
-							console.log(hash);
+	var my = {
+		strHash: (function () { return (location.hash).substring(1)}),
+		shuffle : (function (array) {
+				    for (let i = array.length - 1; i > 0; i--) {
+				        let j = Math.floor(Math.random() * (i + 1));
+				        [array[i], array[j]] = [array[j], array[i]];
+				    }
+				    return array;
+				}),
+		stone : (function (){
+					stones = stones.length > 0 ? stones : [2,3,4,5,6,7,8];
+					var next = my.shuffle(stones);
+					return next.pop();
+		}),
+		journey : (function () {
+					var fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
+					//var stone = Math.ceil(Math.random() * (startAt - 3)) + 1;
+					var hash = Number((location.hash).substring(1));
+					if (hash < startAt && hash > 1) {
+						hash = fate;
+					} else if (hash === 1 || hash > (startAt - 1)) {
+						hash = my.stone();
+					} else {
+						hash = 1;
+					}
+					window.location.hash = '#' + hash;
+					wisdom[0] = wisdom[hash];
 
-							for (scroll = 0; scroll < thisSide.length; scroll++) {
-								isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book") ? my.strHash() : isType;
-								suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
-								//toURL = hash === 1 ? 'https://darylbrowne.com' : 'index.html#1';
-								toURL = 'https://darylbrowne.com';
-								pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
-								book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
-								if (isType === '') {break;}
-							}
+					return wisdom;
+				}),
+		jar : (function () {
+					var book = [], toURL = '', hash, hasDates, isType = '', isBack = '',
+						pages = [], suffix = '', scroll, scrolls = '', thisSide = '';
+					
+					hash = location.hash ? Number(my.strHash()) : null;
+					thisSide = my.journey();
+					//thisSide = wisdom;
+					
+					for (scroll = 0; scroll < thisSide.length; scroll++) {
+						isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book") ? my.strHash() : isType;
+						suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
+						pages.push('<a onclick="my.jar()"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
+						book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
+						if (isType === '') {break;}
+					}
 
-							if (isType) {
-								document.getElementById("screen").remove();
-								switch (isType) {
-									case 'all' :
-		 								pages = pages.slice(startAt).reverse()
-										scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
-										break;
-									case 'book' :
-										//var book = book.map(function(x){return x.replace(/<br \/><br \/>/gi, '<br />');});
-										var perchapter = 100;
-										var totalpages = pages.length / perchapter;
-										var custom = my.shuffle(book.slice(startAt));
-										var preface = (book.slice(1,startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
-										for (i = 1; i < totalpages+1; i++) {
-											chapterTitle = '<br /><br /><br /><br /><br /><br />'; 
-											custom.splice((perchapter*i)+(i-1),0,chapterTitle);
-										}
-										scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + "</section>";
-										break;
-									default :
-										var pp = 5;
-										var perpage = 16;
-										var custom = hasDates ? pages : my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
-										scrolls = "<section class='scrolls " + isType + "'>" + custom.join("") + "</section>";
+					if (isType) {
+						document.getElementById("screen").remove();
+						switch (isType) {
+							case 'all' :
+									pages = pages.slice(startAt).reverse()
+								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
+								break;
+							case 'book' :
+								//var book = book.map(function(x){return x.replace(/<br \/><br \/>/gi, '<br />');});
+								var perchapter = 100;
+								var totalpages = pages.length / perchapter;
+								var custom = my.shuffle(book.slice(startAt));
+								var preface = (book.slice(1,startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
+								for (i = 1; i < totalpages+1; i++) {
+									chapterTitle = '<br /><br /><br /><br /><br /><br />'; 
+									custom.splice((perchapter*i)+(i-1),0,chapterTitle);
 								}
+								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + "</section>";
+								break;
+							default :
+								var pp = 5;
+								var perpage = 16;
+								var custom = hasDates ? pages : my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
+								scrolls = "<section class='scrolls " + isType + "'>" + custom.join("") + "</section>";
+						}
 
-							} else {
-								scrolls = "<section class='scrolls cover fadeIn'>" + pages[0] + "</section>";		
-							}
+					} else {
+						scrolls = "<section class='scrolls cover fadeIn'>" + pages[0] + "</section>";		
+					}
 
-							document.body.innerHTML = scrolls;
-							setTimeout(function () {window.scrollTo(0,1);},1);
-						})
-			};
+					document.body.innerHTML = scrolls;
+					setTimeout(function () {window.scrollTo(0,1);},1);
+				})
+	};
 
-		my.jar();
-	}());
+	my.jar();
+
 </script>
 </html>

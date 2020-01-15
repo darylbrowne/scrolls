@@ -331,7 +331,7 @@
 </head>
 <body>
 <pre>
-Talk to the Salt Cave: Words of Wisdom from a 600 Million Year-Old Room
+Talk to the Salt: Words of Wisdom from a 600 Million Year-Old Friend
 
 ---
 
@@ -390,6 +390,14 @@ I believe everything happens for a reason.
 I believe everywhere we go, we're needesd.
 
 I believe everyone we meet will teach us.
+
+---
+
+After years of travel and deep thought,
+
+My journey took me to a mountain of salt,
+
+Where I've written exactly what I ought.
 
 
 
@@ -18753,9 +18761,9 @@ Get out there where creators are playing.
 
 
 
-They are now far yet still feel very dear,
+They're far now, yet still feel very dear,
 
-But you need to focus yourself right here
+Which is a reminder to focus right here
 
 So you can both be heard as well as hear.
 
@@ -24522,8 +24530,9 @@ Or somewhere right in between?
 </pre>
 </body> 
 <script type="text/javascript">
-	var startAt = 10;
+	var startAt = 9;
 	var stones = [];
+	var modes = ['~', 'all', 'art', 'book'];
 	var wisdom, words,
 		ln = '<br />',
 		br = ln + ln,
@@ -24536,7 +24545,7 @@ Or somewhere right in between?
 	wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;	
 
 	var my = {
-		strHash: (function () { return (location.hash).substring(1)}),
+		strHash: (function () { return (location.hash).substring(1) || null;}),
 		shuffle : (function (array) {
 				    for (let i = array.length - 1; i > 0; i--) {
 				        let j = Math.floor(Math.random() * (i + 1));
@@ -24552,15 +24561,17 @@ Or somewhere right in between?
 		journey : (function () {
 					var fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
 					//var stone = Math.ceil(Math.random() * (startAt - 3)) + 1;
-					var hash = Number((location.hash).substring(1));
+					var hash = Number((location.hash).substring(1)) || location.hash;
+
 					if (hash < startAt && hash > 1) {
 						hash = fate;
 					} else if (hash === 1 || hash > (startAt - 1)) {
 						hash = my.stone();
 					} else {
-						hash = 1;
+						hash = location.hash || 1;
 					}
-					window.location.hash = '#' + hash;
+
+					window.location.hash = hash;
 					wisdom[0] = wisdom[hash];
 
 					return wisdom;
@@ -24569,23 +24580,29 @@ Or somewhere right in between?
 					var book = [], toURL = '', hash, hasDates, isType = '', isBack = '',
 						pages = [], suffix = '', scroll, scrolls = '', thisSide = '';
 					
-					hash = location.hash ? Number(my.strHash()) : null;
-					thisSide = my.journey();
-					//thisSide = wisdom;
-					
+					hash = Number(my.strHash()) || my.strHash();
+
+					if (isNaN(hash)) {
+						isType = hash;
+						thisSide = wisdom;
+					} else {
+						thisSide = my.journey();
+					}
+
 					for (scroll = 0; scroll < thisSide.length; scroll++) {
-						isType = (my.strHash() === "art" || my.strHash() === "all" || my.strHash() === "book") ? my.strHash() : isType;
 						suffix = "<sup>" + (parseInt(scroll) - 1) + "</sup>";
 						pages.push('<a onclick="my.jar()"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
 						book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 						if (isType === '') {break;}
 					}
 
-					if (isType) {
+					if (modes.includes(isType)) {
+						console.log('modes.includes(isType) = ' + modes.includes(isType));
 						document.getElementById("screen").remove();
 						switch (isType) {
+							case 'art' :
 							case 'all' :
-									pages = pages.slice(startAt).reverse()
+								pages = pages.slice(startAt).reverse()
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
 							case 'book' :
@@ -24605,10 +24622,12 @@ Or somewhere right in between?
 								var perpage = 16;
 								var custom = hasDates ? pages : my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
 								scrolls = "<section class='scrolls " + isType + "'>" + custom.join("") + "</section>";
+								break;
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover fadeIn'>" + pages[0] + "</section>";		
+						one = Math.min(Math.abs(Number(isType.substring(1))),pages.length-1) || 0;
+						scrolls = "<section class='scrolls cover fadeIn'>" + pages[one] + "</section>";		
 					}
 
 					document.body.innerHTML = scrolls;

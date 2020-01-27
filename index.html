@@ -36,7 +36,7 @@
 		}
 		@media all {
 
-			@page {size : landscape;}
+			@page {size : portrait;}
 
 			html, body, section, pre, article, section.scrolls article div, p, span, a
 			{
@@ -72,7 +72,7 @@
 				letter-spacing: 5px;
 			}
 			.scrolls.sign strong {
-				letter-spacing: 10px;
+				letter-spacing: 20px;
 			}
 			article
 			{
@@ -104,16 +104,19 @@
 			}
 			section.scrolls.sign article p
 			{	
-				font-size: 55px;
+				font-size: 40px;
 				/*font-family: "Ballerino ITC Std";*/
 				line-height: 40px;
 				text-align: center;
-				padding: 2em 0 0em;
+				padding: 3em 0;
 			}
 			section.scrolls.sign article
 			{
 				width: 100%;
-				height: 200px;
+				height: 450px;
+				margin: 250px auto;
+				display: inline-block;
+				vertical-align: middle;
 			}
 
 			sup 
@@ -337,31 +340,7 @@
 </head>
 <body>
 <pre>
-Talk to the Salt: Words of Wisdom from a 600 Million Year-Old Friend
-
----
-
-Let this remind you - You are the treasure,
-
-With a way of being that's beyond measure.
-
-Who you are puts what's in here together.
-
----
-
-Thank you for being as conscious as you are,
-
-For shining with the light of a guiding star.
-
-You continue to be the greatest gift by far.
-
----
-
-Appreciated more than you could ever know,
-
-Because you help everyone around you grow,
-
-You are the gift - your life is a loving glow.
+Reminders That You Are the Gift
 
 ---
 
@@ -373,9 +352,9 @@ You meet with what your thoughts attract.
 
 ---
 
-If you lose this book, you're not in peril:
+If you lose this book, there is also another way:
 
-Just say, "Hey Google, Talk to the Salt Cave."
+Just say, "Hey Google, Talk to Daryl about today."
 
 ---
 
@@ -389,85 +368,83 @@ About a photo. he said, "How about...not?"
 
 ---
 
-Preface
+Embarassing to admit, but alas, we must.
+
+It's not that we don't know how to dust:
+
+The cave salt leaves nothing untouched.
+
+
 
 I believe everything happens for a reason.
 
-I believe everywhere we go, we're needesd.
+I believe everywhere we go, we're needed.
 
 I believe everyone we meet will teach us.
 
----
-
-After years of travel and deep thought,
-
-My journey took me to a mountain of salt,
-
-Where I've written exactly what I ought.
 
 
+Let this remind you - You are the treasure,
 
-Glowing yet grounding ancient stone,
+With a way of being that's beyond measure.
 
-Still giving at 600,000,000 years old:
-
-Talk to the Salt & hear what it holds.
+Who you are puts what's in here together.
 
 
 
-She has something on which to reflect,
+Thank you for being as conscious as you are,
 
-That might make the mysteries connect:
+For shining with the light of a guiding star.
 
-Grandmother Stone wants to talk next...
-
-
-
-He has asked Time and Space to allow,
-
-And each has honored him with a bow:
-
-Grandfather Stone rises to speak now...
+You continue to be the greatest gift by far.
 
 
 
-Here to say what hasn't yet been heard,
+Appreciated more than you could ever know,
 
-Though unmoved, her spirit is stirred:
+Because you help everyone around you grow,
 
-Mother Stone wishes to have a word...
-
-
-
-Of all the things that they're aware,
-
-They have this one thing to declare:
-
-The Sister Stones will now share...
+You are the gift - your life is a loving glow.
 
 
 
-Standing by the start of the way,
+Dearest beloved, this can no longer wait
 
-So that nothing leads you astray,
+Or just be left up to the timing of fate:
 
-Father Stone has a word to say...
-
-
-
-Strengthening places that may be weak,
-
-They guard boundaries and keep peace:
-
-The Brother Stones now ask to speak...
+You are the gift - the process of great.
 
 
 
-Whether this seems like a blessing,
+You are the gift, so welcome this thought
 
-Or something with a deeper lesson,
+Because it could, would, should and ought
 
-The Old Sage Stone has a message...
+To be something that occurs to you a lot.
+
+
+
+Your glow just continues to increase,
+
+Yet even without this radiant reach -
+
+You are the gift - already, complete.
+
+
+
+Whether or not you needed a little lift,
+
+Or something to name your latest shift,
+
+Let this remind you: You are the gift.
+
+
+
+When you're in your own space,
+
+What you begin to feel is grace
+
+Within this moment's embrace.
 
 
 
@@ -24574,7 +24551,7 @@ Or somewhere right in between?
 		}
 
 	];
-	const modes = ['~', 'all', 'art', 'book'];
+	const modes = ['~', 'all', 'art', 'book', 'sign'];
 	const startAt = 9;
 
 	var stones = [];
@@ -24646,7 +24623,9 @@ Or somewhere right in between?
 					if (modes.includes(isType)) {
 						document.getElementById("screen").remove();
 						switch (isType) {
-							case 'art' :
+							case 'sign' :
+								scrolls = "<section class='scrolls sign'>" + pages[1] + pages[1] + "</section>";
+								break;	
 							case 'all' :
 								pages = pages.slice(startAt).reverse()
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";

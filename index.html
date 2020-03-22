@@ -37,26 +37,26 @@
 
 		@-webkit-keyframes message {
 		  0%,100% { opacity: 0; }
-		  25%, 95% { opacity: 0; }
-		  50% { opacity: 1; }
+		  10% { opacity: 1; }
+		  75% { opacity: 0; }
 		}
 
 		@keyframes message {
 		  0%,100% { opacity: 0; }
-		  25%, 95% { opacity: 0; }
-		  50% { opacity: 1; }
+		  10% { opacity: 1; }
+		  75% { opacity: 0; }
 		}
 
 		@-webkit-keyframes interlude {
 		  0%,100% { opacity: 0; }
 		  5% { opacity: 1; }
-		  30%,95%% { opacity: 0; }
+		  30%,95%% { opacity: .5; }
 		}
 
 		@keyframes interlude {
 		  0%,100% { opacity: 0; }
 		  5% { opacity: 1; }
-		  30%,95%% { opacity: 0; }
+		  30%,95%% { opacity: .5; }
 		}
 
 		@media all {
@@ -274,7 +274,7 @@
 			}
 			section.cover
 			{
-				background: #111;
+				background: none;
 				flex: 1; /* same as flex: 1 1 auto; */
 			    display: flex;
 			    flex-direction: column;			    
@@ -420,11 +420,11 @@ Here or at home, you can always just say...
 
 
 
-Your visit is, more or less,
+Glowing yet grounding ancient stone,
 
-a Journey of 1,000 Breaths:
+Still giving at 600,000,000 years old:
 
-Inhale. Exhale. Pause? Yes.
+Talk to the Salt Cave for all it holds.
 
 
 
@@ -1256,7 +1256,7 @@ How deep inside your precious home
 
 Do you let someone you don't know?
 
-Doesn't that mean you should tell them no?
+It might be time to ask them to go.
 
 
 
@@ -3888,7 +3888,7 @@ You're going to be relearning as you go,
 
 Because of the gradual way life unrolls:
 
-You do and do and then deeply know.
+You do, and do, and then deeply know.
 
 
 
@@ -6932,11 +6932,11 @@ From ruining your well-deserved delight.
 
 
 
-Keep your wants few and your needs pure
+Despite distractions' attempts to lure,
 
-To be free from endless hunger for more
+Whether you seek or find, do be sure
 
-See if of this fact they are even sure;
+To keep your desires few - and pure.
 
 
 
@@ -15460,9 +15460,9 @@ Decide before things get too intertwined.
 
 
 
-All you need is one little suspicion
+That is why you're in this position:
 
-To get your heart to use its vision,
+To get your heart to share a vision,
 
 And your mind to make a decision.
 
@@ -25275,7 +25275,7 @@ As you let what is to be, simply unroll.
 	const modes = ['~', 'all', 'art', 'book', 'labels', 'event', 'sign'];
 	const startAt = 18;
 
-	var cursor = 1;
+	var local = false;
 	var stones = [];
 	var wisdom, words,
 		ln = '<br />',
@@ -25302,41 +25302,40 @@ As you let what is to be, simply unroll.
 					var next = my.shuffle(stones);
 					return next.pop();
 		}),
-		journey : (function () {
-					var fate;
-					//var stone = Math.ceil(Math.random() * (startAt - 3)) + 1;
+		journey : (function (inner) {
+					var fate, destiny;
 					var hash = Number((location.hash).substring(1)) || location.hash;
               
+					function isOutside(n, a, b) {return (n - a) * (n - b) <= 0 ? false : true;}              
+
 					while (!fate || fate < startAt) {
 						fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
 					}
 
-					fate = 1;
-					var stone = my.stone();
-					document.body.style.setProperty('--stone', 'url("' + stone['url'] + '")');						
-
-					if (!window.location.hash) {
-						cover = wisdom[fate];
-						window.location.hash = '#' + fate;
+					if (!hash) {
+						cover = wisdom[1];
+						window.location.hash = '#1';
+						setInterval(my.journey, 30000, true);
+					} else if (inner && isOutside(hash,2,(cave.length + 1))) {
+						var stone = my.stone();
+						destiny = stone['stone'];
+						document.body.style.setProperty('--stone', 'url("' + stone['url'] + '")');						
+						cover = wisdom[destiny];
+						window.location.hash = '#' + destiny;
 					} else {
 						hash = location.hash ? Number((location.hash).substring(1)) : null;
 						cover = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
 						if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
 					}
 					
-					wisdom.unshift(cover);
-					return wisdom;
+					if (inner) {
+						document.getElementsByTagName('p')[0].innerHTML = cover;
+					} else {
+						wisdom.unshift(cover);
+						return wisdom;
+					}
 
 				}),
-		refresh : (function () {
-						var wisdom = my.journey();
-						var fate;
-						while (!fate || fate < startAt) {
-							fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
-						}
-						window.location.hash = '#' + fate;
-						document.getElementsByTagName('p')[0].innerHTML = wisdom[fate];
-					}),		
 		jar : (function () {
 					var book = [], toURL = '', hash, hasDates, isType = '', isBack = '',
 						pages = [], suffix = '', scroll, scrolls = '', thisSide = '';
@@ -25397,12 +25396,11 @@ As you let what is to be, simply unroll.
 
 					} else {
 						one = Math.min(Math.abs(Number(isType.substring(1))),pages.length-1) || 0;
-						scrolls = "<div class='interlude'></div><section class='scrolls cover fadeIn'>" + pages[one] + "</section>";
+						scrolls = "<div class='interlude'></div><section class='scrolls cover'>" + pages[one] + "</section>";
 					}
 
 					document.body.innerHTML = scrolls;
 					setTimeout(function () {window.scrollTo(0,1);},1);
-					setInterval(my.refresh, 30000);
             })
       };
     my.jar();

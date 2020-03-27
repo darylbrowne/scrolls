@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Talk to the Salt Cave</title>
+	<title>Journey of 1,000 Breaths</title>
     <meta charset="ASCII">
     <meta http-equiv="content-type" content="text/html; charset=ASCII">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-	<meta name="application-name" content="Talk to the Salt Cave">
+	<meta name="application-name" content="Journey of 1,000 Breaths">
 	<meta name="author" content="Daryl Browne">
    	<meta name="description" content="A collection of words of wisdom written by Daryl Browne">
 	<meta name="generator" content="Sublime Text">
 	<meta name="keywords" content="Daryl Browne">
    	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-	<meta name="DC.Title" content="Talk to the Salt Cave">
+	<meta name="DC.Title" content="Journey of 1,000 Breaths">
 	<meta name="DC.Creator" content="Daryl Browne">
-	<meta name="DC.Subject" content="Talk to the Salt Cave by Daryl Browne">
-	<meta name="DC.Description" content="Talk to the Salt Cave is a collection of mindful messages by Daryl Browne">
+	<meta name="DC.Subject" content="Journey of 1,000 Breaths by Daryl Browne">
+	<meta name="DC.Description" content="Journey of 1,000 Breaths is a collection of mindful messages by Daryl Browne">
 	<meta name="DC.Date" content="2019-3-12">
 	<meta name="DC.Type" content="Text">
 	<meta name="DC.Format" content="99 kB">
 	<meta name="DC.Language" content="en">
-	<meta property="og:title" content="Talk to the Salt Cave" />
-	<meta property="og:description" content="Talk to the Salt Cave is a collection of mindful messages by Daryl Browne" /><!--
+	<meta property="og:title" content="Journey of 1,000 Breaths" />
+	<meta property="og:description" content="Journey of 1,000 Breaths is a collection of mindful messages by Daryl Browne" /><!--
 	<meta property="og:image" content="http://darylbrowne.com/images/be-icon.png" />
 	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
 	<link rel="DC.Identifier" href="http://darylbrowne.com">
@@ -33,30 +33,6 @@
 	<style id="all">
 		:root {
 			--stone : url("https://lh3.googleusercontent.com/oiq2vD7r0MCgU-brAdN58ZzVa4hC88InengCeXX0KO_l3DuCXiXIM9xyzDXVJrxIJUxPROivBOyHrrvjtp9duCA31uK13n76RzSOyUldhSRY0dmq65yi5vhmrqTeJ_r1C0Ctc_xF6Dcj3Bgs3KU7bY4rVPcZBlpyk5iLW6M_opOE3zg_ABKCoQvO5lbq_uKT_dvmPINag2DBVEja9JKxijdfJcf2jfKPlo-_Y5SHSYTq0F348TncBzRSQKBt70YmK0iE-vpiS38hDO2fUAJPHAZNUnoFPjIiHqkudLTn_veFUA0aqL7zMXQ3YZoyJXuxTyq7BbQoAaYVXbhJb5hufOzE506DmXj8bcW-mu-y9QB3g49zNsDWiRyMBGmoSkAK6-zjKIz540e54PcHX1L1WcETu94-23t8NymzS5DpnLfyHHl9uL8eEPUjJy8tSuzKmVanGJ50KrdDcCTY_s5_jSdcYKAorbxRt9qwR7-h7Rh66nky_GFbbU50Xk8-ltKw_Yb-V1cR5hdHna741j7hhX6X4-AKTF-tJj_CTJ49uAjeV8y5gubdLZugacvbav112sa5g0GRu5CGGxXw72ZTZw8ET1qmzTqNbsiJdvY0TKtpEk-nRQOMiMRIbUbjFKjxOhm6wg9Pqmo-wfUKNJM6cum7No5tJYZFEOKABa_hsyA42GSafJBtAw=w2102-h1576-no");
-		}
-
-		@-webkit-keyframes message {
-		  0%,100% { opacity: 0; }
-		  10% { opacity: 1; }
-		  75% { opacity: 0; }
-		}
-
-		@keyframes message {
-		  0%,100% { opacity: 0; }
-		  10% { opacity: 1; }
-		  75% { opacity: 0; }
-		}
-
-		@-webkit-keyframes interlude {
-		  0%,100% { opacity: 0; }
-		  5% { opacity: 1; }
-		  30%,95%% { opacity: .5; }
-		}
-
-		@keyframes interlude {
-		  0%,100% { opacity: 0; }
-		  5% { opacity: 1; }
-		  30%,95%% { opacity: .5; }
 		}
 
 		@media all {
@@ -242,9 +218,29 @@
 				font-size: 4vw;
 				background: #111;
 		    }
-		    body, p
-		    {
-		    }
+		@-webkit-keyframes message {
+		  0%,20%,75%,100% { opacity: 0; }
+		  50%,65% { opacity: 1; }
+		}
+
+		@keyframes message {
+		  0%,20%,75%,100% { opacity: 0; }
+		  50%,65% { opacity: 1; }
+		}
+
+		@-webkit-keyframes interlude {
+		  0%,100% { opacity: 0; }
+		  20%,80% { opacity: .75; }
+		}
+
+		@keyframes interlude {
+		  0%,100% { opacity: 0; }
+		  20%,80% { opacity: .75; }
+		}
+			p {
+			    -webkit-animation: message 30s ease infinite;
+			    animation: message 30s ease infinite;				
+			}
 			a, a:focus, a:hover, a:visited
 			{
 				color: #f7be84;
@@ -254,15 +250,12 @@
 				display:block;
 				font-weight: bolder;
 			}
-			section {
-			}
-			div.interlude {
-			   position: absolute;
-			    top: 0;
-			    left: 0;
-			    width: 100%;
-			    height: 100%;
-			    z-index: -100;				
+			div.bg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
 				overflow: hidden;
 				background-color: #111;
 				background-repeat: no-repeat;
@@ -270,11 +263,10 @@
 				background-image: var(--stone);
 				background-size: cover;
 			    -webkit-animation: interlude 30s ease infinite;
-			    animation: interlude 30s ease infinite;
+			    animation: interlude 30s ease infinite;				
 			}
 			section.cover
 			{
-				background: none;
 				flex: 1; /* same as flex: 1 1 auto; */
 			    display: flex;
 			    flex-direction: column;			    
@@ -285,10 +277,16 @@
 			    justify-content: center;
 			    -webkit-align-items: center;
 			    align-items: center;
-			    -webkit-animation: message 30s ease infinite;
-			    animation: message 30s ease infinite;
-			}
-	         
+				overflow: hidden;
+				overflow: hidden;
+				background-color: #111;
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-image: var(--stone);
+				background-size: cover;
+			    -webkit-animation: interlude 30s ease infinite;
+			    animation: interlude 30s ease infinite;	
+			 }	         
 			section article {
 				width: 100%;
 				height: auto;
@@ -344,7 +342,15 @@
 </head>
 <body>
 <pre>
-Treasure Yourself: Little Reminders That You Are the Gift
+Until you make it back in again,
+
+Enjoy this virtual salt cave Zen:
+
+Your Journey of 1,000 Breaths...
+
+
+
+Journey of 1,000 Breaths: Little Reminders That You Are the Gift
 
 ---
 
@@ -396,14 +402,6 @@ A feeling that there's no one here to please.
 
 ---
 
-Glowing yet grounding ancient stone,
-
-Still giving at 600,000,000 years old:
-
-<em>Talk to the Salt Cave for all it holds.</em>
-
----
-
 Close your eyes, pick a page and after that,
 
 Open them to wherever your thumb is at:
@@ -418,7 +416,7 @@ Here or at home, you can always just say...
 
 &ldquo;Hey Google, Talk to Daryl About Today.&rdquo;
 
-
+---
 
 Glowing yet grounding ancient stone,
 
@@ -25303,37 +25301,32 @@ As you let what is to be, simply unroll.
 					return next.pop();
 		}),
 		journey : (function (inner) {
-					var fate, destiny;
+					console.log('my.journey(' + inner + ')');
+					var fate, message;
 					var hash = Number((location.hash).substring(1)) || location.hash;
-              
-					function isOutside(n, a, b) {return (n - a) * (n - b) <= 0 ? false : true;}              
+					var stone = my.stone();
+					document.body.style.setProperty('--stone', 'url("' + stone['url'] + '")');						
 
 					while (!fate || fate < startAt) {
 						fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
 					}
-
-					if (!hash) {
-						cover = wisdom[1];
-						window.location.hash = '#1';
-						setInterval(my.journey, 30000, true);
-					} else if (inner && isOutside(hash,2,(cave.length + 1))) {
-						var stone = my.stone();
-						destiny = stone['stone'];
-						document.body.style.setProperty('--stone', 'url("' + stone['url'] + '")');						
-						cover = wisdom[destiny];
-						window.location.hash = '#' + destiny;
-					} else {
-						hash = location.hash ? Number((location.hash).substring(1)) : null;
-						cover = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
-						if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
-					}
 					
-					if (inner) {
-						document.getElementsByTagName('p')[0].innerHTML = cover;
-					} else {
-						wisdom.unshift(cover);
-						return wisdom;
+					console.log('my.journey(' + inner + ') hash = ' + hash);
+
+					if (!hash && !inner) {
+						console.log('my.journey(' + inner + ') !hash');
+						setInterval(my.journey,30000,true);
+					} else if (!isNaN(hash) && !inner) {
+						console.log('my.journey(' + inner + ') hash = ' + hash);
+						message = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
+						if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
+						document.getElementsByTagName('p')[0].innerHTML = message;
+					} else if (inner) {
+						window.location.hash = '#' + fate;
+						document.getElementsByTagName('p')[0].innerHTML = wisdom[fate];
 					}
+
+					return wisdom;
 
 				}),
 		jar : (function () {
@@ -25395,8 +25388,9 @@ As you let what is to be, simply unroll.
 						}
 
 					} else {
+						console.log(pages);
 						one = Math.min(Math.abs(Number(isType.substring(1))),pages.length-1) || 0;
-						scrolls = "<div class='interlude'></div><section class='scrolls cover'>" + pages[one] + "</section>";
+						scrolls = "<section class='scrolls cover'>" + pages[one] + "</section>";
 					}
 
 					document.body.innerHTML = scrolls;

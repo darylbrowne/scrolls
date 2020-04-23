@@ -194,8 +194,8 @@
 		    }
 			p {
 				opacity: 0;
-			    -webkit-animation: message 30s ease 2;
-			    animation: message 30s ease 2;				
+			    -webkit-animation: message 20s ease infinite;
+			    animation: message 20s ease infinite;				
 			}
 			a, a:focus, a:hover, a:visited {
 				color: #f7be84;
@@ -224,8 +224,8 @@
 				background-position: center top;
 				background-image: var(--stone);
 				background-size: cover;
-			    -webkit-animation: interlude 30s ease 2;
-			    animation: interlude 30s ease 2;	
+			    -webkit-animation: interlude 20s ease infinite;
+			    animation: interlude 20s ease infinite;	
 			}	         
 			section article {
 				width: 100%;
@@ -276,6 +276,14 @@
 </head>
 <body>
 <pre>
+Policy Statement: We track nothing at all.
+
+We share no data with companies that call.
+
++1.617.785.6994 | thedaryllama@gmail.com.
+
+
+
 I miss our cave chats, and hope you're okay.
 
 If you have a moment, wait here or else say,
@@ -284,19 +292,45 @@ If you have a moment, wait here or else say,
 
 
 
-Good to hear your voice, albeit in cyberspace.
+I miss our cave chats, and hope you're okay.
 
-After this, unplug awhile in some quiet place,
+I miss unrolling scrolls with you...if I may
 
-Know you can always talk to Daryl about today.
+Unroll some with you, it would make my day.
 
 
 
-Can you take one? Yes, of course you may!
+For each one of today's 22,000 breaths you take,
 
-Or else go back into the tea room and say,
+There is a pound of salt somewhere in this cave,
 
-&ldquo;Hey Google, talk to Daryl About Today.&rdquo;
+And here is what a few of them have to say...
+
+(Well, at least for... today, anyway)
+
+
+
+This... is more than a date from your past -
+
+It is congratulations for being here, at last:
+
+This particular one has... answers. Let's ask.
+
+
+
+Can you take one? Of course you may!
+
+Or go back into the tea room and say,
+
+&ldquo;Hey Google, talk to The Salt Cave.&rdquo;
+
+
+
+Welcome to tonight's Journey of 1,000 Breaths -
+
+a night of shared silence from beginning to end,
+
+which includes devices: Please check yours again.
 
 
 
@@ -732,7 +766,7 @@ Do you laugh from the belly or the chest?
 
 Do you forget about whatever comes next?
 
-Does this lightness make you feel blessed?
+Do you remember where you feel blessed?
 
 
 
@@ -1372,7 +1406,7 @@ Do you want the destination or the journey?
 
 Can you dig up gems without getting dirty?
 
-How will you show fate that you're worthy?
+How do you show Time that you're worthy?
 
 
 
@@ -12500,7 +12534,7 @@ What feels like the definition of mad -
 
 Pursuing something no one's ever had,
 
-Is how you stay fulfilled and glad.
+Is how you'll stay fulfilled... and glad.
 
 
 
@@ -25228,8 +25262,8 @@ As you let what is to be, simply unroll.
 			"url"	: "https://lh3.googleusercontent.com/HSDsds5N4EVCCQepZAJjJKijkCVXtXj_zWrZlA_kZDF9DGIBHQd_ZZhAUYmOpr5N1WeRzX3XNFNp_l4KEF88UnmX9BZxZeELaytjlKrc3Gz2BxG7u0rxmGXiBrDRq6yk5Iho_s7DE3XR_Wde9mws3AJ7mp6ftaxPjVFFwrN08hU20hQvzV1xxtygJkVRapSlr1rwbIcbjhZD7kk2UPyvaga8LdqP92GVfm8NbYNHL7bboG4Xw-K-ppDbZYWCEM_vvNNJqoxOSAsn5pef9v8RnBK8TqZJTvDoUgeJHn2YF8ILUyOYd-RTK02mYaD_DOuLfUyQO6afopP8a61RIPWQ2IsfmdtYlwz6uNOg49jwHJNVQ--DR3ztR1pmujs46d5DQksWyGMCyyiS3G61dVwT7BBHkBZMFjpdZYfChJpI40dw3BoU7sDCh3qlfzX5kK_PyyPexfMk-iNb_HsKVP0U_4X1V2nDPf9E-lkQ3YbmuRRjaCG3m9OqXm-Q1jIUOSQmXo8tIdAvtbeme-HupMB5EEpskQw7jZbkr-UvPzRCypIefpIA-qpGgKDY13AoUE9oZA1QvvUSTqVuIDoekItrE9KYNN8NtjJzTl1pVwIs28UZ0pU0Xq6Rqxk7wG3yU4R46fuAzEEA_LBi8l-3SkiRtDEDBqhsDHGA6q_gi8gZlf2uWufg8WhpwA=w2102-h1576-no"
 		}
 	];
-	const modes = ['~', 'all', 'art', 'book', 'labels', 'event', 'sign'];
-	const startAt = 20;
+	const modes = ['~', 'action', 'ad', 'all', 'art', 'book', 'event', 'journey', 'labels', 'policy', 'sign'];
+	const startAt = 21;
 
 	var local = false;
 	var stones = [];
@@ -25273,10 +25307,14 @@ As you let what is to be, simply unroll.
 
 					if (!hash && !inner) {
 						console.log('condition 1: my.journey(' + inner + ') !hash');
-						return wisdom[0];
+						return wisdom[1];
 					} else if (!isNaN(hash) && !inner) {
 						console.log('condition 2: my.journey(' + inner + ') hash = ' + hash);
 						//message = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
+						if (1 < hash < 2) {
+							hash = Number((location.hash).substring(3));
+							console.log('now hash = ' + hash);
+						}
 						message = (hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
 						//if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
 						return message;
@@ -25311,17 +25349,6 @@ As you let what is to be, simply unroll.
 					if (modes.includes(isType)) {
 						document.getElementById("screen").remove();
 						switch (isType) {
-							case 'sign' :
-								scrolls = "<section class='scrolls sign'>" + pages[2] + pages[2] + "</section>";
-								break;	
-							case 'event' :
-								pages = pages.slice(2,10);
-								scrolls = "<section class='scrolls'>" + pages.join("") + pages.join("") + "</section>";
-								break;	
-							case 'labels' :
-								pages = pages.slice(10,18);
-								scrolls = "<section class='scrolls'>" + pages.join("") + pages.join("") + "</section>";
-								break;	
 							case 'all' :
 								pages = pages.slice(startAt).reverse()
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
@@ -25338,6 +25365,23 @@ As you let what is to be, simply unroll.
 								}
 								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + "</section>";
 								break;
+							case 'event' :
+								pages = pages.slice(5,13);
+								scrolls = "<section class='scrolls'>" + pages.join("") + pages.join("") + "</section>";
+								break;	
+							case 'journey' :
+								scrolls = "<section class='policy'>" + pages[6] + "</section>";
+								break;
+							case 'labels' :
+								pages = pages.slice(13,21);
+								scrolls = "<section class='scrolls'>" + pages.join("") + pages.join("") + "</section>";
+								break;	
+							case 'policy' :
+								scrolls = "<section class='policy'>" + pages[0] + "</section>";
+								break;
+							case 'sign' :
+								scrolls = "<section class='scrolls sign'>" + pages[3] + "</section>";
+								break;									
 							default :
 								var pp = 5;
 								var perpage = 16;
@@ -25348,7 +25392,7 @@ As you let what is to be, simply unroll.
 
 					} else {
 						scrolls = "<section class='scrolls cover'>" + pages[0] + "</section>";
-						if (hash < 2) {setTimeout(my.journey,30000,true);}
+						if (hash === 1.2) {setInterval(my.journey,20000,true);}
 					}
 
 					document.body.innerHTML = scrolls;

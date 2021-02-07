@@ -56,6 +56,9 @@
 				letter-spacing: 1px;
 				position: relative;
 			}
+			strong {
+				font-size: 125%;
+			}
 			article {
 				width: 50%;
 				height: 130px;
@@ -286,25 +289,23 @@ We share no data with companies that call.
 
 
 
-It is time to put the screen away,
+<strong>600</strong> million years ago today,
 
-To use your voice instead and say,
+These crystals rode sea waves.
 
-"Hey Google, ask Daryl about today."
+So come talk to the Salt Cave.
 
 
 
 Ask the Salt Cave: 
 
-A Decade's Worth of Daily 
-
-Wisdom You Brought Soleil's
+A Decade's Worth of Daily Reminders
 
 ---
 
 You don't read this book from front to back;
 
-You let yourself find a page... and after that, 
+You let your fingers find a page & after that, 
 
 You read the message your thoughts attract.
 
@@ -16786,9 +16787,9 @@ Along their way to freedom.
 
 
 
-You are so beautiful, you needn't try,
+You are beautiful before you try -
 
-A beauty even visible to blind eyes,
+A beauty even clear to closed eyes,
 
 A beauty that has already arrived.
 
@@ -19575,14 +19576,6 @@ Sleep on it - let one good night of rest help
 Your whole decision-making process go well
 
 By bringing you back to your original self.
-
-
-
-What noises are sounding around you?
-
-Do any sound anything like the truth?
-
-Aren't you listening straight through?
 
 
 
@@ -29539,11 +29532,27 @@ So apply all the goodness you can to it.
 
 
 
-You'll never know exactly where this goes.
+Your mind wants things to be just so.
 
-When you'll get there? Who really knows!
+Remind it not to attempt to control.
 
-So your expectation office needs to close.
+Remind it to be still, so it can grow.
+
+
+
+Your ingredients are all right here.
+
+You combine them by being clear.
+
+Now create by holding truth dear.
+
+
+
+Trust actions. Ignore words.
+
+Lose concern. Outlast hurt.
+
+Forgive second. Love first.
 
 
 
@@ -29630,10 +29639,19 @@ Trust yourself to make this all fun.
 		}),
 		journey : (function (inner) {
 					console.log('my.journey(' + inner + ')');
-					let fate, message;
+					let fate, message, toggle;
 					let hash = Number((location.hash).substring(1)) || location.hash;
 					let stone = my.stone();
 					document.body.style.setProperty('--stone', 'url("' + stone['url'] + '")');						
+
+					function getText(el) {
+					  if (typeof el.textContent == 'string') {
+					    return el.textContent;
+					  }
+					  if (typeof el.innerText == 'string') {
+					    return el.innerText;
+					  }
+					}
 
 					while (!fate || fate < startAt) {
 						fate = Math.floor(Math.random() * (wisdom.length-startAt)) + startAt;
@@ -29646,7 +29664,6 @@ Trust yourself to make this all fun.
 						return wisdom[1];
 					} else if (!isNaN(hash) && !inner) {
 						console.log('condition 2: my.journey(' + inner + ') hash = ' + hash);
-						//message = (hash && (startAt-2) < hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
 						if (1 < hash < 2) {
 							hash = Number((location.hash).substring(3));
 							console.log('now hash = ' + hash);
@@ -29656,8 +29673,10 @@ Trust yourself to make this all fun.
 						return message;
 					} else if (inner) {
 						console.log('condition 3: my.journey(' + inner + ') hash = ' + hash);
-						window.location.hash = '#' + fate;
-						document.getElementsByTagName('p')[0].innerHTML = wisdom[fate];
+						var re = new RegExp(/600/);
+						toggle = (re.test(getText(document.getElementsByTagName('p')[0]))) ? fate : 1;
+						window.location.hash = '#' + toggle;
+						document.getElementsByTagName('p')[0].innerHTML = wisdom[toggle];
 					}
 
 					return wisdom;

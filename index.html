@@ -32,7 +32,7 @@
 	<link href="https://fonts.googleapis.com/css?family=IM+Fell+English|Homemade+Apple" rel="stylesheet" type="text/css">
 	<style id="all">
 		:root {
-			--stone : #f7be84;
+			--shade : #f7be84;
 		}
 
 		@media all {
@@ -210,7 +210,7 @@
 			    animation: message 30s ease infinite;				
 			}
 			a, a:focus, a:hover, a:visited {
-				color: var(--stone);				
+				color: var(--shade);				
 				outline: none;
 				text-decoration: none;
 				width: 100%;
@@ -284,22 +284,6 @@
 </head>
 <body>
 <pre>
-For appreciating (26)
-
-For deciding (22)
-
-For grieving (15)
-
-For growing (9)
-
-For healing (8)
-
-For resting (21)
-
-For success (10)
-
-
-
 Inhale. Exhale. This is one breath...
 
 In for your heart, out for your head
@@ -316,19 +300,19 @@ Choose you.
 
 
 
-From your arrival until you've left,
+From your cave session's start to end
 
 You take a Journey of 1,000 Breaths.
 
-So pick a scroll to clear your head.
+So breathe... and unroll what's next.
 
 
 
 Whether it challenges or uplifts,
 
-Fate is a matter of when, not if:
+Fate is a matter of when - not if.
 
-Unroll one (You are the Gift).
+Why? Because You are the Gift.
 
 
 
@@ -30961,6 +30945,94 @@ Own where you are. Own being strong.
 
 
 
+You're as amazing as the best of your friends,
+
+As challenging as all those at the other ends:
+
+You're where each of your connections begins.
+
+
+
+Say that you're about to say it,
+
+Then as if you rehearsed, say it,
+
+And recap so they can weigh it.
+
+
+
+It may go that way for some, but not you.
+
+For you, there is a different way through.
+
+It has always been different, but not new.
+
+
+
+To be sure you'll have something to show,
+
+This time, you should do what you know -
+
+Next time you can let the unknown unfold.
+
+
+
+If what you think and how you then act
+
+Are somehow sometimes so mismatched,
+
+What you need to do then is to backtrack.
+
+
+
+Think through the feeling you felt, but act.
+
+And if your actions left your thoughts intact,
+
+You have a place to which you can come back.
+
+
+
+Use your intuition, but only for yourself.
+
+Tune in to, for, with, about no one else.
+
+Know: to use it quietly is to use it well.
+
+
+
+Knowing what this is for is the challenge.
+
+Knowing how much to rest is the balance.
+
+Knowing when you don't know is so valid.
+
+
+
+That's enough of living overextended.
+
+This isn't what anyone ever intended.
+
+Do far less and feel far more splendid.
+
+
+
+When you are given an excuse, be grateful.
+
+They are telling you they have a plateful
+
+In a way that is nothing short of fateful.
+
+
+
+This is not even nearly the end, so relax.
+
+This is nothing to worry about. Detach.
+
+This is where to let complexity collapse.
+
+
+
 Trust yourself to think just enough.
 
 Trust yourself to perseveringly love.
@@ -30970,53 +31042,45 @@ Trust yourself to make this true fun.
 </body> 
 <script type="text/javascript">
   var $ = (function () {
-  	const cave = [
+  	const rainbow = [
 		{
-			"stone" : 2,
-			"name" : "Grandmother",
-			"url"	: "#009900"
+			"name"  : "Fuschia",
+			"hex"	: "#cc00cc"
 		},
 		{
-			"stone" : 3,
-			"name"	: "Grandfather",
-			"url"	: "#996633"
+			"name"  : "Orange",
+			"hex"	: "#ff6633"
 		},
 		{
-			"stone" : 4,
-			"name" : "Mother",
-			"url"	: "#ff6633"
+			"name"  : "Mustard",
+			"hex"	: "#cca300"
 		},
 		{
-			"stone" : 5,
-			"name" : "Sisters",
-			"url"	: "#ac3973"
+			"name"  : "Green",
+			"hex"	: "#009900"
 		},
 		{
-			"stone" : 6,
-			"name" : "Father",
-			"url"	: "#007acc"
+			"name"  : "Seablue",
+			"hex"	: "#007acc"
 		},
 		{
-			"stone" : 7,
-			"name" : "Brothers",
-			"url"	: "#cca300"
+			"name"  : "Aquamarine",
+			"hex"	: "#009999"
 		},
 		{
-			"stone" : 8,
-			"name" : "Old Sage",
-			"url"	: "#cc00cc"
+			"name"	: "Brown",
+			"hex"	: "#996633"
 		},
 		{
-			"stone" : 9,
-			"name" : "Elder",
-			"url"	: "#009999"
+			"name"  : "Magenta",
+			"hex"	: "#ac3973"
 		}
 	];
-	const modes = ['~', 'action', 'ad', 'all', 'art', 'book', 'event', 'frame', 'journey', 'labels', 'policy', 'sign'];
-	const startAt = 3;
+	const modes = ['~', 'all', 'art', 'book', 'frame', 'labels', 'policy', 'sign'];
+	const startAt = 5;
 
 	var local = false;
-	var stones = [];
+	var shades = [];
 	var wisdom, words,
 		ln = '<br />',
 		br = ln + ln,
@@ -31037,17 +31101,17 @@ Trust yourself to make this true fun.
 				    }
 				    return array;
 				}),
-		stone : (function (){
-					stones = stones.length > 0 ? stones : [...cave];
-					var next = my.shuffle(stones);
+		shade : (function (){
+					shades = shades.length > 0 ? shades : [...rainbow];
+					var next = my.shuffle(shades);
 					return next.pop();
 		}),
 		journey : (function (inner) {
 					console.log('my.journey(' + inner + ')');
 					let fate, message, toggle;
 					let hash = Number((location.hash).substring(1)) || location.hash;
-					let stone = my.stone();
-					document.body.style.setProperty('--stone', stone['url']);						
+					let shade = my.shade();
+					document.body.style.setProperty('--shade', shade['hex']);						
 
 					function getText(el) {
 					  if (typeof el.textContent == 'string') {
@@ -31066,20 +31130,17 @@ Trust yourself to make this true fun.
 
 					if (!hash && !inner) {
 						console.log('condition 1: my.journey(' + inner + ') !hash');
-						return wisdom[1];
+						return wisdom[0];
 					} else if (!isNaN(hash) && !inner) {
 						console.log('condition 2: my.journey(' + inner + ') hash = ' + hash);
-						if (1 < hash < 2) {
-							hash = Number((location.hash).substring(3));
-							console.log('now hash = ' + hash);
-						}
 						message = (hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
 						//if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
 						return message;
 					} else if (inner) {
 						console.log('condition 3: my.journey(' + inner + ') hash = ' + hash);
-						var re = new RegExp('This is one breath');
-						toggle = (re.test(getText(document.getElementsByTagName('p')[0]))) ? fate : 1;
+						//var re = new RegExp('This is one breath');
+						//toggle = (re.test(getText(document.getElementsByTagName('p')[0]))) ? fate : 0;
+						toggle = fate;
 						window.location.hash = '#' + toggle;
 						document.getElementsByTagName('p')[0].innerHTML = wisdom[toggle];
 					}
@@ -31126,8 +31187,8 @@ Trust yourself to make this true fun.
 								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + book[book.length-1] + "</section>";
 								break;
 							case 'labels' :
-								pages = pages.slice(3,11);
-								scrolls = "<section class='scrolls'>" + pages.join("") + pages.join("") + "</section>";
+								pages = pages.slice(1,4);
+								scrolls = "<section class='scrolls'>" + (pages.join("")).repeat(5) + pages[0] + "</section>";
 								break;	
 							case 'policy' :
 								scrolls = "<section class='policy'>" + pages[0] + "</section>";

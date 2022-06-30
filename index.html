@@ -117,6 +117,15 @@
 			sup:hover, .script sup {
 				opacity: .3;
 			}
+			sub {
+				font-size: 1em;
+				line-height: 2em;
+				position: relative;
+			}
+			section.array br:not(.chapter),
+			section.scrolls sub {
+				display: none;
+			}
 			section.scrolls article {
 				position: relative;
 			}
@@ -154,6 +163,18 @@
 				display: block;
 				position: relative;
 				text-align: center;
+			}
+			section.array p.book {
+				display: none;
+			}
+			section.array {
+				font-family: courier;
+				line-height: 2em;
+				margin: 3em;
+    			overflow-wrap: break-word;
+			}
+			section.array sub {
+				vertical-align: middle;
 			}
 		}
 	</style>
@@ -315,15 +336,15 @@ Why? Because You are the Gift.
 
 
 
-You Are the Gift: 
-
-A Decade's Worth of Daily Reminders
-
----
-
 5,000 Reasons
 
 You're Exactly Where You're Supposed to Be
+
+---
+
+You Are the Gift: 
+
+A Decade's Worth of Daily Reminders
 
 ---
 
@@ -333,11 +354,9 @@ A Book of Reminders That You Are the Gift
 
 ---
 
-To July 1st!
+July 1st and Beyond:
 
-This Year's 1,000 Reminders
-That You're Always Exactly 
-Where You're Supposed to Be
+1,000 Messages from Within
 
 ---
 
@@ -349,21 +368,31 @@ You read the message your thoughts attract.
 
 ---
 
-As for the Author, you can hear him explain.
+For you, does the spoken word feel stronger?
 
-Just scan below or open your device and say,
+Want to hear these straight from the author?
 
-"Hey Google, Talk to Daryl about Today."
+Just scan this square for your audiobook offer.
 
 ---
 
 About the Author
 
-He began writing bits of inner self-talk
+Raised in NH, Daryl then traveled the globe,
 
-To tell himself to think about less, a lot.
+but learned more about life by coming home
 
-About a photo, he said, "How about...not?"
+to journey within for peace, love, and hope.
+
+---
+
+About the Cover
+
+The Himalayas symbolize a climb
+
+you make each sunrise to sunrise
+
+to reach your own daily heights.
 
 ---
 
@@ -40564,8 +40593,9 @@ This moment is yours to like or love.
 						let thisSide = wisdom;
 						for (scroll = 0; scroll < thisSide.length; scroll++) {
 							suffix = "<sup>" + (parseInt(scroll)) + "</sup>";
+							prefix = "<sub>" + (parseInt(scroll)) + "</sub>";
 							pages.push('<a href="' + toURL + '"><article><div><p>' + thisSide[scroll] + suffix + '</p></div></article></a>');
-							book.push('<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
+							book.push(prefix + '<p class="book">' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 							if (isType === '') {break;}
 						}
 					} else {
@@ -40580,15 +40610,20 @@ This moment is yours to like or love.
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
 							case 'book1' :
-								var totalscrolls = 1000;
+								var perchapter = 50, totalscrolls = 1000;
+								var totalChapters = totalscrolls / perchapter;
 								var custom = my.shuffle(book.slice(startAt, totalscrolls));
-								//var custom = book.slice(startAt, totalscrolls+startAt);
-								var preface = (book.slice((startAt-1),startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
-								/*for (i = 1; i < totalpages+1; i++) {
-									chapterTitle = '<br /><br /><br /><br /><br /><br />'; 
+								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
+								var audiobook = "";
+								for (i = 1; i < totalChapters+1; i++) {
+									var thisChapter = custom.slice((perchapter*(i-1))+(i-1),(perchapter*i)+(i-1));
+									audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + i + ".mp3|Downloads/" + thisChapter.join(".mp3|Downloads/") + ".mp3\" -acodec copy Downloads/chapter-" + i + ".mp3;</section>";
+									chapterTitle = '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 									custom.splice((perchapter*i)+(i-1),0,chapterTitle);
-								}*/
+								}
+								audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + (totalChapters+1) + ".mp3|Downloads/" + book[book.length-1] + ".mp3\" -acodec copy Downloads/chapter-" + (totalChapters+1) + ".mp3;</section>";								
 								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + book[book.length-1] + "</section>";
+								scrolls += audiobook;
 								break;
 							case 'book2' :
 								var totalscrolls = 3652;
@@ -40643,3 +40678,8 @@ This moment is yours to like or love.
   }());
 </script>
 </html>
+<!--
+
+Downloads/ffmpeg -i "concat:Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3" -acodec copy Downloads/test-2.mp3;
+
+-->

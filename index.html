@@ -356,7 +356,7 @@ A Book of Reminders That You Are the Gift
 
 July 1st and Beyond:
 
-1,000 Messages from Within
+Inspiration for Every Minute of Your Daily Climb
 
 ---
 
@@ -2290,11 +2290,11 @@ Who has experience that you can build upon?
 
 
 
-When did you feel like you knew it all?
+When did you just know you knew it all?
 
-Was it just before your last worst fall?
+Was it just before or after a rise or a fall?
 
-What do you do to keep your ego small?
+Keep that ego not too big, not too small.
 
 
 
@@ -36013,7 +36013,7 @@ You gave answers - a generosity lesson.
 
 Who you are will keep changing
 
-Since you keep on reengaging.
+Since you keep on reengaging
 
 What feels most sustaining.
 
@@ -39173,7 +39173,7 @@ And where you get to sacrifice, surrender.
 
 One way through is smaller than the rest.
 
-It is a door to somewhere... "mysteriest,"
+It is a door with a bit of mysteriousness
 
 Where you will have your best time yet.
 
@@ -40467,7 +40467,31 @@ The truth that self-appreciation brings health.
 
 
 
-This choice is the essence of enough,
+The difference between wisdom and information
+
+Is that one is built by piling up higher education
+
+And one is built by breaking through limitations.
+
+
+
+How you think about anything is everything,
+
+So regardless of what it is you're considering,
+
+Consider the thoughts most worth mirroring.
+
+
+
+Here is your most reliable, lifelong test
+
+To tell if this current thinking is best:
+
+The feeling it breathes into your chest.
+
+
+
+This choice is the essence of enough -
 
 This is the one that sums them all up:
 
@@ -40584,7 +40608,7 @@ This moment is yours to like or love.
 				}),
 		jar : (function () {
 					let book = [], toURL = '', hash, isType = '', 
-						pages = [], suffix = '', scroll, scrolls = '';
+						pages = [], minute = [], final = [], suffix = '', scroll, scrolls = '';
 					
 					hash = Number(my.strHash()) || my.strHash();
 
@@ -40610,19 +40634,35 @@ This moment is yours to like or love.
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
 							case 'book1' :
-								var perchapter = 50, totalscrolls = 1000;
-								var totalChapters = totalscrolls / perchapter;
-								var custom = my.shuffle(book.slice(startAt, totalscrolls));
+								var perchapter = 60, totalscrolls = 1444;
+								var totalChapters = Math.ceil(totalscrolls / perchapter);
+								var custom = my.shuffle(book.slice(startAt, book.length-1));
+								custom = custom.slice(startAt, totalscrolls);
+								custom.push(book[book.length-1]);
+
+								for (h = 0; h < 24; h++){
+									hr = (h > 12) ? h - 12 : h;
+									hr = (hr < 1) ? 12 : hr;
+									ampm = h > 12 ? '	p.m.' : 'a.m.'; 
+									for (m = 0; m < 60; m++){
+										mn = m < 10 ? '0' + m : '' + m;
+										minute.push(hr + ':' + mn + ' ' + ampm);
+									}
+								}
+								
+								for (scroll = 0; scroll < custom.length; scroll++) {
+									final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">' + minute[scroll] + '<br />') + '</p><br /><br />');
+								}
+
 								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 								var audiobook = "";
-								for (i = 1; i < totalChapters+1; i++) {
+								for (i = 1; i < totalChapters; i++) {
 									var thisChapter = custom.slice((perchapter*(i-1))+(i-1),(perchapter*i)+(i-1));
 									audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + i + ".mp3|Downloads/" + thisChapter.join(".mp3|Downloads/") + ".mp3\" -acodec copy Downloads/chapter-" + i + ".mp3;</section>";
 									chapterTitle = '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
-									custom.splice((perchapter*i)+(i-1),0,chapterTitle);
+									final.splice((perchapter*i)+(i-1),0,chapterTitle);
 								}
-								audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + (totalChapters+1) + ".mp3|Downloads/" + book[book.length-1] + ".mp3\" -acodec copy Downloads/chapter-" + (totalChapters+1) + ".mp3;</section>";								
-								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + book[book.length-1] + "</section>";
+								scrolls = "<section class='scrolls " + isType + "'>" + preface + final.join("") + "</section>";
 								scrolls += audiobook;
 								break;
 							case 'book2' :

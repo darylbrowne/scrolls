@@ -6,6 +6,7 @@
     <meta http-equiv="content-type" content="text/html; charset=ASCII">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">	
 	<meta name="application-name" content="5000 Reasons You're Exactly Where You're Supposed to Be">
 	<meta name="author" content="Daryl Browne">
    	<meta name="description" content="5000 Reasons You're Exactly Where You're Supposed to Be: Messages from Within by Daryl Browne">
@@ -193,22 +194,18 @@
 			  0%,20%,75%,100% { opacity: 0; }
 			  50%,65% { opacity: 1; }
 			}
-			@-webkit-keyframes interlude {
-			  0%,100% { opacity: 0; }
-			  20%,80% { opacity: .75; }
-			}
-			@keyframes interlude {
-			  0%,100% { opacity: 0; }
-			  20%,80% { opacity: .75; }
-			}
 			html, section,article, p, span, a { 
 				background: none;
 			}		
 			html, body {
 				height: 100%;				
 				width : 100%;
+				min-width : 100%;
 				padding : 0;
 				margin: 0;
+			}
+			html {
+				padding: env(safe-area-inset); 				
 			}
 			body {
 			    display: -webkit-flex;
@@ -222,12 +219,12 @@
 				text-align : center;
 				font-family: 'IM Fell English', Oronteus Finaeus, serif;
 				font-size: 3.75vw;
-				background: #f2f0e6;
+				background: #fff9e6;
 		    }
 			p {
 				opacity: 0;
 			    -webkit-animation: message 30s ease infinite;
-			    animation: message 30s ease infinite;				
+			    animation: message 30s ease infinite;
 			}
 			a, a:focus, a:hover, a:visited {
 				color: var(--shade);				
@@ -238,22 +235,24 @@
 				font-weight: bolder;
 			}
 			section.cover {
-				opacity: 0;
-				flex: 1; /* same as flex: 1 1 auto; */
+				opacity: 1;
+				-webkit-box-flex:1;
+				-moz-box-flex:1;
+				-webkit-flex:1;
+				-ms-flex:1;
+				flex:1;
 			    display: flex;
-			    flex-direction: column;			    
-			    justify-content: flex-start; /* align items in Main Axis */
-			    align-items: stretch; /* align items in Cross Axis */
-			    align-content: stretch; /* Extra space in Cross Axis */
+			    display: -webkit-flex;
+			    flex-direction: column;		
+			    justify-content: flex-start;
+			    align-items: stretch;
+			    align-content: stretch;
 			    -webkit-justify-content: center;
 			    justify-content: center;
 			    -webkit-align-items: center;
 			    align-items: center;
 				overflow: hidden;
-				overflow: hidden;
-				background-color: #fff;
-			    -webkit-animation: interlude 30s ease infinite;
-			    animation: interlude 30s ease infinite;	
+				background-color: none;
 			}	         
 			section article {
 				width: 100%;
@@ -284,16 +283,13 @@
 			section.art sup {
 				display: none;
 			}
-			section.scrolls article p::after {
+			section.scrolls a article p::after {
 				position: relative;
 				display: block;
 				background-size: auto 2em;
-				background-position: bottom right;
-				right: 3em;
-				bottom: 1em;
-				opacity: .71;
-				width: 100%;
-				text-align: right;
+				background-position: top right;
+				left: 60%;
+				width: 5em;
 				height: 2em;
 			    -ms-transform: rotate(0deg);
 			    -webkit-transform: rotate(0deg);
@@ -301,10 +297,13 @@
 			}
 		}
 
-		@media (min-aspect-ratio: 8/5) {
+		@media (min-aspect-ratio: 3/2) {
 		  body {
 		    font-size: 3vw;
 		  }
+			section.scrolls a article p::after {
+				left: 64%;
+			}		  
 		}
 
 	</style>

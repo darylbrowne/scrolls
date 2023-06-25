@@ -273,9 +273,14 @@
 				text-align : center;
 				font-family: 'IM Fell English', Oronteus Finaeus, serif;
 				font-size: 3.75vw;
-				/*background: var(--background);*/
-				/*background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );*/
-				background-image: linear-gradient(to left, #434343 0%, black 100%);
+				/*background: var(--background);
+				background-image: linear-gradient( 95.2deg, rgba(173,252,234,1) 26.8%, rgba(192,229,246,1) 64% );
+				background-image: linear-gradient(to left, #434343 0%, black 100%);*/
+				background-image: url('https://02b7cf4.netsolhost.com/img/background.jpg');
+				background-attachment: fixed;
+				background-size: cover;
+				background-position: 50% 0;
+				background-repeat: no-repeat;
 
 		    }
 			p {
@@ -336,26 +341,22 @@
 			    right: 0;
 			    bottom: 0;
 			}
-			input {
+			input[type='date'] {
 				font-size: .8em;
 				background: none;
-				border: none;
+				border: 1px var(--shade) solid;
+				border-radius: .25em;
+				padding: .5em .5em .25em .5em;
 				margin: .5em;
+				color-scheme: light;				
 			}
-			button {
-				font-size: 1.5em;
+			input[type='image'] {
+				width: 5vw;
+				height: auto;
 				background: none;
 				border: none;
-				margin: .5em;
-			}
-			button span.material-symbols-outlined,
-			label span.material-symbols-outlined {
-				font-size: 1em;
-				color: var(--shade);
-			}
-			button {
-				display:  block;
 				margin: auto;
+				display:  block;
 			}
 			pre, section:not(.cover),
 			section.art sup {
@@ -46880,6 +46881,14 @@ They wait out newer confirmation.
 
 
 
+Too big? Break it down into little pieces
+
+To focus on learning about what each is.
+
+Take on one. You have today to reach it.
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -47021,31 +47030,31 @@ This moment is yours to like or love.
   	const rainbow = [
 		{
 			"name"  : "Fuschia",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Orange",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Mustard",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Green",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Seablue",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Aquamarine",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"	: "Brown",
-			"hex"	: "#FFF8DC"
+			"hex"	: "#522613"
 		},
 		{
 			"name"  : "Magenta",
@@ -47282,7 +47291,7 @@ This moment is yours to like or love.
 						}
 
 					} else {
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + convertDate(todaysDate) + "'><button onclick='openBook();'><span class='material-symbols-outlined'>favorite</span></button></nav></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<nav><input type='date' id='date' value='" + convertDate(todaysDate) + "'><input type='image' alt='Available on Amazon' src='https://02b7cf4.netsolhost.com/img/amazon-2.png' onclick='openBook();'></nav></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 

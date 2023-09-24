@@ -27,7 +27,6 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<!--
 	<meta property="og:image" content="http://darylbrowne.com/images/be-icon.png" />
 	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
@@ -713,7 +712,10 @@
 			    bottom: 0;
 			}
 			i.fa.fa-birthday-cake {
-				font-size: 4vw;
+				font-size: 4.5vw;
+			}
+			form span {
+				vertical-align: middle;
 			}
 			input[type='date'], select {
 				font-size: .8em;
@@ -730,7 +732,7 @@
 				background: none;
 				border: none;
 				margin: 0;
-				vertical-align: top;
+				vertical-align: bottom;
 			}
 			pre, section:not(.cover),
 			section.art sup {
@@ -47795,7 +47797,7 @@ This moment is yours to like or love.
 						const numMonths = Array.from(Array(12), (e,i)=>i+1);
 						const selMonths = numMonths.map(monthOptions);
 						const selDays = numDays.map(dayOptions);
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<form onsubmit='return openBook();'>For their<select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form></section>";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + "<form onsubmit='return openBook();'><span>For their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form></section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 

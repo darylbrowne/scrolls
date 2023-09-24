@@ -47802,6 +47802,8 @@ This moment is yours to like or love.
 					document.body.innerHTML = scrolls;
 					qr();
 					setTimeout(function () {window.scrollTo(0,1);},1);
+					document.getElementById('theDay').selectedIndex = (todaysDate.getDate()-1);
+					document.getElementById('theMonth').selectedIndex = todaysDate.getMonth();
             })
       };
     my.jar();

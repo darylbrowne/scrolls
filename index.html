@@ -47389,6 +47389,102 @@ More.
 
 
 
+If a job well-begun is already half done,
+
+Forget about trying to rush or outrun:
+
+Just find the best detail to confront.
+
+
+
+Stop whatever you were doing.
+
+Pause on the path of pursuing.
+
+Schedule something soothing.
+
+
+
+Invite someone you truly trust
+
+To silently sit or deeply discuss
+
+All that your heart says you must.
+
+
+
+When was the last time you took a breath
+
+Without a care in world what came next?
+
+Well, it's time to (if you have to check).
+
+
+
+You belong right here,
+
+Where the air is clear,
+
+And the calm, sincere.
+
+
+
+Give yourself permission to stop -
+
+To let all you're shouldering drop,
+
+To go where everyone else is not.
+
+
+
+Don't put off your need to relax;
+
+Busyness, more busyness attracts.
+
+Likewise, calm brings calm back.
+
+
+
+When you feel this pace needs to slow,
+
+You already know where you could go:
+
+Now you're accountable to make it so.
+
+
+
+If you do indeed need to decompress,
+
+What's the best thing you can do next?
+
+(Ask your calendar for a day of rest.)
+
+
+
+Where there is an ache, there is a need
+
+For not just intention, but for a deed.
+
+How could you water healing's seed?
+
+
+
+It's time to give restlessness a rest,
+
+Reflect on the ways you're blessed,
+
+And decide what you'd enjoy next.
+
+
+
+That doesn't have to be your story - ever -
+
+So long as you brave today's brief weather
+
+Knowing tomorrow heads toward better.
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -47801,28 +47897,33 @@ This moment is yours to like or love.
 						const numMonths = Array.from(Array(12), (e,i)=>i+1);
 						const selMonths = numMonths.map(monthOptions);
 						const selDays = numDays.map(dayOptions);
-						scrolls = "<section class='scrolls cover'>" + pages[0] + "<form onsubmit='return openBook();'><span>A <i class='fa fa-gift' aria-hidden='true'></i> for their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form></section>";
+						let nav = window.location.hostname ? "<form onsubmit='return openBook();'><span>A <i class='fa fa-gift' aria-hidden='true'></i> for their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form>" : "";
+						scrolls = "<section class='scrolls cover'>" + pages[0] + nav + "</section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 
 					document.body.innerHTML = scrolls;
 					qr();
 					setTimeout(function () {window.scrollTo(0,1);},1);
-					document.getElementById('theDay').selectedIndex = (todaysDate.getDate()-1);
-					document.getElementById('theMonth').selectedIndex = todaysDate.getMonth();
+					if (window.location.hostname) {
+						document.getElementById('theDay').selectedIndex = (todaysDate.getDate()-1);
+						document.getElementById('theMonth').selectedIndex = todaysDate.getMonth();
+					}
             })
       };
     my.jar();
   }());
 
 	function openBook() {
-		let selectedDay = document.getElementById("theDay").value;
-		let selectedMonth = document.getElementById("theMonth").value;
-		selectedDay = selectedDay.length < 2 ? '0' + selectedDay : selectedDay;
-		selectedMonth = selectedMonth.length < 2 ? '0' + selectedMonth : selectedMonth;
-		let dateBook = selectedMonth + '-' + selectedDay;
-		if (catalog[dateBook]){window.open(catalog[dateBook],'_blank');}
-		return false;
+		if (window.location.hostname) {
+			let selectedDay = document.getElementById("theDay").value;
+			let selectedMonth = document.getElementById("theMonth").value;
+			selectedDay = selectedDay.length < 2 ? '0' + selectedDay : selectedDay;
+			selectedMonth = selectedMonth.length < 2 ? '0' + selectedMonth : selectedMonth;
+			let dateBook = selectedMonth + '-' + selectedDay;
+			if (catalog[dateBook]){window.open(catalog[dateBook],'_blank');}
+			return false;			
+		}
 	}
 
 </script>

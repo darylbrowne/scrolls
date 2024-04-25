@@ -973,11 +973,11 @@ You expanded your own innermost frontier.
 
 
 
-Your presence has been a gift from today's grace
+Your arrival does no less than radiate.
 
-That's added more goodness to this special space.
+Your stay, they ask that you elongate.
 
-May you keep feeling the world's silent embrace.
+Your departure leaves them in grace.
 
 
 
@@ -42167,11 +42167,11 @@ Greet old friends with your sincerest embrace.
 
 
 
-Though pouring your time into a thorough plan
+Though pouring your day into thorough plans
 
-May seem and feel, and even be praised as grand,
+Might seem, feel, and even be praised as grand,
 
-You master what you stop trying to understand.
+You master all you stop trying to understand.
 
 
 
@@ -42255,7 +42255,7 @@ Show yourself in a way the crowd doesn't.
 
 
 
-Thanks from all who your example has awoken.
+Thanks from those your example has awoken.
 
 For now, that recognition comes as this token:
 
@@ -42903,19 +42903,19 @@ Wait right here - wait longer on yourself.
 
 
 
-That is enough complaining about what they do.
+That's enough complaining about all they do.
 
-The only one willing and able to act here is you.
+The only one willing/able to act may be you.
 
-Try something old and then try something new.
+Try something old, then try something new.
 
 
 
 Thinking you know, versus knowing you know
 
-Is the difference between maybe and what is so.
+Is the difference between maybe and what is so
 
-The first plants seeds that the second one grows.
+(The first plants seeds the second one grows).
 
 
 
@@ -43217,7 +43217,7 @@ Is there something you'd rather attract?
 
 No matter what new opportunity life brings -
 
-What new friends, what new thoughts to think,
+What new friends, or new thoughts to think,
 
 The healthiest of each adds balance to things.
 
@@ -43841,7 +43841,7 @@ But tell them you're a humble beginner.
 
 What were you like before this got underway?
 
-How did you used to spend time any given day?
+How did you used to spend any given day?
 
 Which parts of the past would you like to stay?
 
@@ -43871,9 +43871,9 @@ Can you offer it pure observation?
 
 
 
-Thoughts are thoughts, emotions are emotions.
+Thoughts are thoughts, emotions emotions.
 
-No one outside you can cause much commotion
+No one outside you can cause any commotion
 
 If you commit to yourself with daily devotion.
 
@@ -44841,7 +44841,7 @@ Either way, fill your directness with love.
 
 There are more factors than you've considered.
 
-So to prevent your crops from getting withered,
+So to ensure the crops don't become withered,
 
 Plant them where more nutrients get delivered.
 
@@ -45879,7 +45879,7 @@ When in truth, you must rise above it daily.
 
 
 
-To &ldquo;not think more of oneself than one ought,&rdquo;
+Thinking &ldquo;no more of oneself than one ought&rdquo;
 
 Is a sticky web in which &ldquo;oneself&rdquo; gets caught,
 
@@ -47831,9 +47831,9 @@ So, of all your options, be cognizant.
 
 
 
-Light makes shadows. Shadows are blocked light.
+Light makes shadows, but shadows frame light.
 
-Whatever feels in the way of you shining bright,
+Whatever is in the way of you shining bright,
 
 Is necessary to outline what you're doing right.
 
@@ -62032,7 +62032,7 @@ Grow as if your greatness has always known it.
 
 
 
-Would more of what you want bring you peace?
+Would more of what you want give you peace?
 
 Would satisfaction get your wanting to cease?
 
@@ -64712,7 +64712,7 @@ To master this part.
 
 
 
-You haven't shyed away from a clash,
+You haven't shied away from a clash,
 
 But what tends to happen after that?
 
@@ -65384,6 +65384,134 @@ Way that things can unfold.
 
 
 
+Place yourself where
+
+Your heart can care -
+
+And soul can dare.
+
+
+
+Thinking takes you there.
+
+Feeling determines where
+
+(Ideally, a place you care).
+
+
+
+Question that reality.
+
+Defy its physicality.
+
+Buck all normality.
+
+
+
+You have to question
+
+Everything mentioned
+
+For its true intention.
+
+
+
+Question your thoughts.
+
+Turn overactive ones off;
+
+What do you think a lot?
+
+
+
+Overactive thinking
+
+Also begins stinking,
+
+So begin unlinking.
+
+
+
+What thoughts started the day?
+
+Do they influence in some way,
+
+And if so, to brighten or gray?
+
+
+
+Audit your thoughts for worth.
+
+Starting with the big ones first.
+
+Think thoughts that heal hurt.
+
+
+
+That's incredible! Kudos
+
+On something so useful.
+
+Is it new to you though?
+
+
+
+It doesn't have to feel miraculous.
+
+It should feel a bit like a catalyst -
+
+It should render doubt actionless.
+
+
+
+Whether you wish to vanquish,
+
+Or abide where it is tranquil,
+
+Be precise in your language.
+
+
+
+Thankfully, they don't know yet:
+
+They can do nothing you prevent
+
+Through clear and prior intent.
+
+
+
+You have to be direct
+
+When you want to get
+
+Results you haven't yet.
+
+
+
+Some of those thoughts belong
+
+In the heap you label &ldquo;Wrong.&rdquo;
+
+Find the stack labeled &ldquo;Strong.&rdquo;
+
+
+
+What is funny to you changes.
+
+Levity ebbs and flows in stages.
+
+Laugh when life's humor engages.
+
+
+
+When asked to repeat,
+
+Make your reply neat
+
+(A quiet count keep).
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -65749,9 +65877,13 @@ You're exactly where you're supposed to be.
 							case 'book3' :
 								var totalscrolls = (book.length-1)-startAt;
 								//var custom = book.slice(startAt, totalscrolls);
-								var custom = my.shuffle(book.slice(startAt, totalscrolls));
+								//var custom = my.shuffle(book.slice(startAt, totalscrolls));
+								var custom = book.slice(startAt, totalscrolls);
+								custom.sort((a, b) => b.length - a.length);
 								var preface = (book.slice((startAt-1),startAt)).join("") + '<br /><br /><br /><br /><br /><br />'; 
-								scrolls = "<section class='scrolls " + isType + "'>" + preface + custom.join("") + book[book.length-1] + "</section>";
+								scrolls = "<section class='scrolls " + isType + "'>" + (custom.slice(0,2016)).join("") + book[book.length-1] + "</section>";
+								const lengths = custom.map(array => array.length);
+								console.dir(lengths);
 								break;
 							case 'labels' :
 								//pages = pages.slice(2,18);

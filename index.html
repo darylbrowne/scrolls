@@ -73470,6 +73470,13 @@ You're exactly where you're supposed to be.
   const DAYS = [31,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   let initialDate;
   function nth(n) {return(n%10==1&&n%100!=11?'st':n%10==2&&n%100!=12?'nd':n%10==3&&n%100!=13?'rd':'th');}
+  function shuffle (array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }  
 
   function qr() {
 		let s = [];
@@ -73644,6 +73651,222 @@ You're exactly where you're supposed to be.
 	words = words ? words.replace(/[\n\r]/g, ln).replace(/\'/g, '&rsquo;') : '';
 	wisdom = (re).test(words) ? words.split(p) : words.split(br);
 	wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;	
+
+	const emotions1 = [
+		"Angry",
+		"Anxious",
+		"Agitated",
+		"Aggravated",
+		"Apprehensive",
+		"Avoidant",
+		"Disoriented",
+		"Incomplete",
+		"Frustrated",
+		"Lacking",
+		"Needy",
+		"Reactive",
+		"Resistant",
+		"Self-conscious",
+		"Unsettled",
+	]
+
+	const emotions2 = [
+		"Annoyed",
+		"Contrary",
+		"Fretful",
+		"Indecisive",
+		"Insecure",
+		"Desperate",
+		"Confused",
+		"Nostalgic",
+		"Regretful",
+		"Reluctant",
+		"Resentful",
+		"Suspicious",
+		"Uncertain",
+		"Worried",
+	]
+
+	const emotions3 = [
+		"calm",
+		"certain",
+		"confident",
+		"courageous",
+		"curious",
+		"determined",
+		"driven",
+		"faithful",
+		"flexible",
+		"focused",
+		"forgiving",
+		"gentle",
+		"grateful",
+		"hopeful",
+		"loving",
+		"optimistic",
+		"patient",
+		"passionate",
+		"pleased",
+		"positive",
+		"resolute",
+		"self-compassionate",
+		"self-confident",
+		"self-forgiving",
+		"self-inspired",
+		"self-motivated",
+		"self-respecting",
+		"self-understanding",
+		"steady",
+		"strong",
+		"thankful",
+		"understanding",
+		"unflappable",
+		"unwavering",
+		"unshakable",
+	]
+
+	const text1 = [
+		["Almost unconsciously, you feel "," first,"],
+		["Almost unconsciously, you feel "," at first,"],
+		["Before realizing, you. will feel "," first,"],
+		["Before realizing, you will feel "," at first,"],
+		["Before realizing it, you. will feel "," first,"],
+		["Before realizing it, you will feel "," at first,"],
+		["For starters, you'll be feeling "," first,"],
+		["For starters, you'll be feeling "," at first,"],
+		["It starts with you feeling "," first,"],
+		["It starts with you feeling "," at first,"],
+		["It tends to starts with feeling "," first,"],
+		["It tends to starts with feeling "," at first,"],
+		["It might even have you feeling "," first,"],
+		["It might even have you feeling "," at first,"],
+		["It will somehow have you feeling "," first,"],
+		["It will somehow have you feeling "," at first,"],
+		["Some old habit has you feeling "," first,"],
+		["Starting out, you might feel "," first,"],
+		["Starting out, you might feel "," at first,"],
+		["That old habit has you feeling "," first,"],
+		["That old habit has you feeling "," at first,"],
+		["That one will have you feeling "," first,"],
+		["That one will have you feeling "," at first,"],
+		["The cycle starts with feeling "," first,"],
+		["The cycle starts with feeling "," at first,"],
+		["The loop starts with you feeling "," first,"],
+		["The loop starts with you feeling "," at first,"],
+		["The whole thing starts with feeling "," first,"],
+		["The whole thing starts with feeling "," at first,"],
+		["They will have you feeling somehow "," first,"],
+		["They will have you feeling somehow "," at first,"],
+		["To start, you'll be feeling "," first,"],
+		["To start, you'll be feeling "," at first,"],
+		["You will catch yourself feeling "," first,"],
+		["You will catch yourself feeling "," at first,"],
+		["You will notice yourself feeling "," first,"],
+		["You will notice yourself feeling "," at first,"],
+		["You will notice yourself feeling "," first,"],
+		["You will notice yourself feeling "," at first,"],
+		["Unexpectedly, you will begin to feel "," first,"],
+		["Unexpectedly, you will begin to feel "," at first,"],
+		["Without realizing, you will feel "," first,"],
+		["Without realizing, you will feel "," at first,"],
+	];
+
+	const text2 = [
+		["Then a little "," - as if you'd rehearsed -"],
+		["Then a little ",", almost as if rehearsed,"],
+		["Then a little ",", because patterns rehearse,"],
+		["Then a little "," (patterns always rehearse),"],
+		["Then a little "," (patterns ask to rehearse),"],
+		["Then a little "," (patterns have to rehearse),"],
+		["Then a little "," (patterns indeed rehearse),"],
+		["Then a little "," (patterns like to rehearse),"],
+		["Then a little "," (patterns love to rehearse),"],
+		["Then a little "," (patterns tend to rehearse),"],
+		["Then a little ",", since patterns rehearse,"],
+		["Then a bit "," - as if you'd rehearsed -"],
+		["Then a bit ",", almost as if rehearsed,"],
+		["Then a bit ",", because patterns rehearse,"],
+		["Then a bit "," (patterns always rehearse),"],
+		["Then a bit "," (patterns ask to rehearse),"],
+		["Then a bit "," (patterns have to rehearse),"],
+		["Then a bit "," (patterns indeed rehearse),"],
+		["Then a bit "," (patterns like to rehearse),"],
+		["Then a bit "," (patterns love to rehearse),"],
+		["Then a bit "," (patterns tend to rehearse),"],
+		["Then a bit ",", since patterns rehearse,"],
+		["Then somewhat "," - as if you'd rehearsed -"],
+		["Then somewhat ",", almost as if rehearsed,"],
+		["Then somewhat ",", because patterns rehearse,"],
+		["Then somewhat "," (patterns always rehearse),"],
+		["Then somewhat "," (patterns ask to rehearse),"],
+		["Then somewhat "," (patterns have to rehearse),"],
+		["Then somewhat "," (patterns indeed rehearse),"],
+		["Then somewhat "," (patterns like to rehearse),"],
+		["Then somewhat "," (patterns love to rehearse),"],
+		["Then somewhat "," (patterns tend to rehearse),"],
+		["Then somewhat ",", since patterns rehearse,"],
+		["And then "," (or perhaps in reverse),"],
+		["And then "," (or the order reversed),"],
+		["And then "," (or the sequence reversed),"],
+		["And then "," (or the process in reverse),"],
+		["Then maybe even "," - or the two in reverse -"],
+	]
+
+	const text3 = [
+		["But being "," is another way to traverse."],
+		["But being "," makes the other two disperse."],
+		["But being "," ensures you won't be coerced."],
+		["But being "," helps to decide and stay alert."],
+		["But being "," helps decide, and get to work."],
+		["But being "," keeps your energy conserved."],
+		["But being "," keeps your power conserved."],
+		["But being "," accumulates self-worth."],
+		["But being "," creates increased self-worth."],
+		["But being "," increases your self-worth."],
+		["But being "," restores your self-worth."],
+		["But choose to be "," - and don't divert."],
+		["But try being ",", and refuse to divert."],
+		["But choose to be "," - because it works."],
+		["But try being "," to constructively divert."],
+		["But try being ",". What does this unearth?"],
+		["But try being "," - how you do your best work."],
+		["But try being "," (You'll do your best work)."],
+		["But try being "," and do today's best work."],
+		["But try being "," to do today's best work."],
+		["But now try being ",". Which one works?"],
+		["But why not try out how being "," works."],
+		["Until you try being ",", and don't divert."],
+		["Until you try being ",": Put this to work."],
+		["Until you try being "," because it works."],
+		["Until you try being ",", since this works."],
+		["Until you choose to be "," (What works)."],
+		["Until you choose to be "," (Which works)."],
+		["Until you choose to be "," - what works."],
+		["Until you choose to be "," - which works."],
+	]
+
+	var subset = [];
+
+	for(let e1 = 0; e1 < emotions1.length; e1++){
+		for(let e2 = 0; e2 < emotions2.length; e2++){
+			for(let e3 = 0; e3 < emotions3.length; e3++){
+				let fate1 = Math.floor(Math.random() * (text1.length));
+				let fate2 = Math.floor(Math.random() * (text2.length));
+				let fate3 = Math.floor(Math.random() * (text3.length));
+
+				let line1 = text1[fate1][0] + emotions1[e1].toLowerCase() + text1[fate1][1];
+				let line2 = text2[fate2][0] + emotions2[e2].toLowerCase() + text2[fate2][1];
+				let line3 = text3[fate3][0] + emotions3[e3].toLowerCase() + text3[fate3][1];
+
+				if (line1.length < 50 && line2.length < 50 && line3.length < 50){
+					subset.push(([line1,line2,line3].join("<br /><br />")).replace(/\'/g, '&rsquo;'));
+				}
+			}
+		}
+	}
+
+	let tenth = (shuffle(subset)).slice(0,1008);
+	wisdom = wisdom.concat(tenth);
 
 	var my = {
 		strHash: (function () { return (location.hash).substring(1) || null;}),

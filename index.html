@@ -37,85 +37,26 @@
 	<link rel="apple-touch-icon-precomposed" href="images/be-icon.png" />-->
 	<script type="text/javascript">
 
-	const inspired = "Monica Yanosick";
-	const hourlyminute = 30;
-	const emotions1 = [
-		"angry",
-		"anxious",
-		"agitated",
-		"aggravated",
-		"apprehensive",
-		"conflicted",
-		"confrontational",
-		"disoriented",
-		"incomplete",
-		"isolated",
-		"frustrated",
-		"lacking",
-		"needy",
-		"overprotective",
-		"possessive",
-		"reactive",
-		"resistant",
-		"self-conscious",
-		"unsettled",
-		"untrusting",
-	]
+		let cause1 = [],
+			effect2 = [],
+			intent3 = [],
+			volnum = 0;
+			inspiredby = ((window.location.search).indexOf('\?i\=') > -1 ) ? (window.location.search).replace("\?i\=","") : "";
 
-	const emotions2 = [
-		"annoyed",
-		"contrary",
-		"fretful",
-		"indecisive",
-		"insecure",
-		"desperate",
-		"confused",
-		"nostalgic",
-		"regretful",
-		"reluctant",
-		"resentful",
-		"suspicious",
-		"uncertain",
-		"worried",
-	]
+		if(inspiredby) {
+			cause1 = ['CAUSE1','CAUSE2','CAUSE3'];
+			effect2 = ['EFFECT1','EFFECT2','EFFECT3'];
+			intent3 = ['INTENT1','INTENT2','INTENT3'];
+			volnum = inspiredby.split(",")[1] ?  inspiredby.split(",")[1] : 1;
+			inspiredby = inspiredby.split(",")[0];
+		} else {
+			cause1 = ["angry","anxious","agitated","aggravated","apprehensive","conflicted","confrontational","disoriented","incomplete","isolated","frustrated","lacking","needy","overprotective","possessive","reactive","resistant","self-conscious","unsettled","untrusting"];
 
-	const emotions3 = [
-		"calm",
-		"certain",
-		"confident",
-		"courageous",
-		"curious",
-		"determined",
-		"driven",
-		"faithful",
-		"flexible",
-		"focused",
-		"forgiving",
-		"gentle",
-		"grateful",
-		"hopeful",
-		"loving",
-		"optimistic",
-		"patient",
-		"passionate",
-		"pleased",
-		"positive",
-		"resolute",
-		"self-compassionate",
-		"self-confident",
-		"self-forgiving",
-		"self-inspired",
-		"self-motivated",
-		"self-respecting",
-		"self-understanding",
-		"steady",
-		"strong",
-		"thankful",
-		"understanding",
-		"unflappable",
-		"unwavering",
-		"unshakable",
-	]
+			effect2 = ["annoyed","contrary","fretful","indecisive","insecure","desperate","confused","nostalgic","regretful","reluctant","resentful","suspicious","uncertain","worried"];
+
+			intent3 = ["calm","certain","confident","courageous","curious","determined","driven","faithful","flexible","focused","forgiving","gentle","grateful","hopeful","loving","optimistic","patient","passionate","pleased","positive","resolute","self-compassionate","self-confident","self-forgiving","self-inspired","self-motivated","self-respecting","self-understanding","steady","strong","thankful","understanding","unflappable","unwavering","unshakable"];
+		}
+
 		const token = 'https://www.amazon.com/Youre-Exactly-Where-Supposed-Be/dp/B0BZF8VH2Y/ref=sr_1_1?crid=39ZPW12CPMEH2&keywords=%22Daryl+Browne%22+You%27re+Exactly+Where+You%27re+Supposed+to+Be&qid=1686828888&sprefix=daryl+browne+you%27re+exactly+where+you%27re+supposed+to+be%2Caps%2C85&sr=8-1';
 		const catalog = {
 					'01-01' : 'https://www.amazon.com/dp/B0CHL1CFLR',
@@ -81647,11 +81588,12 @@ You're exactly where you're supposed to be.
 
   function qr() {
 		let s = [];
+		let qstr = "";
 		function encode(d) {
 			const f = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335];
 			let h,k = [];
 			let a,b,j,m,n = 0;
-			if (isNaN(d)) {
+			if (isNaN(d) && d.indexOf("\/") > -1) {
 				k = d.split('/');
 				h = k.map(Number);
 				h[2] = h[2] < 1 ? 1 : h[2];
@@ -81681,20 +81623,36 @@ You're exactly where you're supposed to be.
 					title = TITLE[0];
 					subtitle = TITLE[3] + ' ' + h[2];
 				}
+				//s = ['https://daryl.be','https://daryl.be'];
+				n = (h[1]+1 > DAYS[h[0]] || (h[0] == 0 && h[1] == 0)) ?  1 : h[1]+1;
+				m = (h[1]+1 > DAYS[h[0]] || (h[0] > 0 && h[1] == 0)) ? (h[0]%12)+1 : h[0];
+				m = h[0] < 1 ? 0 : m;
+				n = h[1] < 1 ? 0 : n;
+				s = [d,URI[0] + a,URI[0] + b,j,title,subtitle];
+				qstr = m + "/" + n + "/" +  h[2];
+			} else {
+				h = [0,0,volnum];
+				k = d.split(',');
+				h[2] = k[1] ? Math.abs(k[1]) + 1 : 1;
+				title = TITLE[0];
+				subtitle = 'Inspired by INSPIREDBY, Volume VOLNUM';
+				s = ["",URI[0] + a,URI[0] + b,0,title,subtitle];
+				qstr = k[0] + "," +  h[2];
 			}
-			let e = 'new experience'; //???
-			s = [d,URI[0] + a,URI[0] + b,j,title,subtitle];
-			//s = ['https://daryl.be','https://daryl.be'];
-			n = (h[1]+1 > DAYS[h[0]] || (h[0] == 0 && h[1] == 0)) ?  1 : h[1]+1;
-			m = (h[1]+1 > DAYS[h[0]] || (h[0] > 0 && h[1] == 0)) ? (h[0]%12)+1 : h[0];
-			m = h[0] < 1 ? 0 : m;
-			n = h[1] < 1 ? 0 : n;
-			console.log(s[0] + '\n' + s[3] + '\n' + s[4] + '\npaperback:' + s[1] + '\nhardcover: ' + s[2] +  '\nvolume: ' + h[2]);
+
+			console.log(s[0] + '\n' + s[3] + '\n' + s[4] + '\n' + s[5] + '\npaper:' + s[1] + '\nhard: ' + s[2] +  '\nvol: ' + h[2]);
 	        let paperback = new QRious({element: document.getElementById('paperback_qr'),value: s[1]});
 	        let hardcover = new QRious({element: document.getElementById('hardcover_qr'),value: s[2]});
-			document.getElementById("title").innerHTML = "<a href='index.html?" + m + "/" + n + "/" +  h[2] + "#book1'>" + s[4] + "</a>";
-			if(inspired){final_subtitle = "<a>Inspired by " + inspired + ", Volume 1</a>";} else {final_subtitle = "<a href='index.html?" + m + "/" + n + "/" +  h[2] + "#book1'>" + s[5] + "</a>";}
-			document.getElementById("subtitle").innerHTML = final_subtitle;
+
+			if(document.getElementById("title")){
+				document.getElementById("title").innerHTML = "<a href='index.html?" + qstr + "#book1'>" + s[4] + "</a>";	
+			}
+
+			if(inspiredby){final_subtitle = "<a>" + subtitle + "</a>";} else {final_subtitle = "<a href='index.html?" + qstr + "#book1'>" + s[5] + "</a>";}
+			
+			if(document.getElementById("subtitle")){
+				document.getElementById("subtitle").innerHTML = final_subtitle;
+			}
 			//document.getElementById("edition").innerHTML = s[6];
 			document.title = s[4];
 			return a;
@@ -81722,7 +81680,7 @@ You're exactly where you're supposed to be.
 		var xx = (location.search).substr(1);
 		if (xx) {
 			console.log(xx);
-			if (xx.indexOf('\/') > -1) {
+			if (xx.indexOf('\/') > -1 || inspiredby) {
 				let qr_qa = document.createElement("div");
 				let qr_p = document.createElement("canvas");
 				let qr_h = document.createElement("canvas");
@@ -81820,165 +81778,196 @@ You're exactly where you're supposed to be.
 	wisdom = (re).test(words) ? words.split(p) : words.split(br);
 	wisdom = (wisdom[(wisdom.length-1)] === "") ? wisdom.pop() : wisdom;	
 
-	const text1 = [
-		["Almost unconsciously, you feel "," first,"],
-		["Almost unconsciously, you feel "," at first,"],
-		["Before realizing, you. will feel "," first,"],
-		["Before realizing, you will feel "," at first,"],
-		["Before realizing it, you will feel "," first,"],
-		["Before realizing it, you will feel "," at first,"],
-		["For starters, you may be feeling "," first,"],
-		["For starters, you may be feeling "," at first,"],
-		["For starters, you might be feeling "," first,"],
-		["For starters, you might be feeling "," at first,"],
-		["It tends to start with feeling "," first,"],
-		["It tends to start with feeling "," at first,"],
-		["It might even have you feeling "," first,"],
-		["It might even have you feeling "," at first,"],
-		["It somehow gets you feeling "," at first,"],
-		["It somehow stirs your feeling "," first,"],
-		["It somehow has you feeling "," at first,"],
-		["It somehow has you feeling "," first,"],
-		["Some old habit has you feeling "," first,"],
-		["Starting out, you might feel "," first,"],
-		["Starting out, you might feel "," at first,"],
-		["That old habit has you feeling "," first,"],
-		["That old habit has you feeling "," at first,"],
-		["That one will have you feeling "," first,"],
-		["That one will have you feeling "," at first,"],
-		["The cycle starts with feeling "," first,"],
-		["The cycle starts with feeling "," at first,"],
-		["The loop starts with you feeling "," first,"],
-		["The loop starts with you feeling "," at first,"],
-		["The whole thing starts with feeling "," first,"],
-		["The whole thing starts with feeling "," at first,"],
-		["They will have you feeling somehow "," first,"],
-		["They will have you feeling somehow "," at first,"],
-		["To start, you might be feeling "," first,"],
-		["To start, you might be feeling "," at first,"],
-		["You will catch yourself feeling "," first,"],
-		["You will catch yourself feeling "," at first,"],
-		["You will notice yourself feeling "," first,"],
-		["You will notice yourself feeling "," at first,"],
-		["You will notice yourself feeling "," first,"],
-		["You will notice yourself feeling "," at first,"],
-		["Unexpectedly, you will begin to feel "," first,"],
-		["Unexpectedly, you will begin to feel "," at first,"],
-		["Without realizing, you will feel "," first,"],
-		["Without realizing, you will feel "," at first,"],
-	];
-
-	const text2 = [
-		["Then a little "," - as if you'd rehearsed -"],
-		["Then a little ",", almost as if rehearsed,"],
-		["Then a little ",", because patterns rehearse,"],
-		["Then a little "," (patterns always rehearse),"],
-		["Then a little "," (patterns ask to rehearse),"],
-		["Then a little "," (patterns have to rehearse),"],
-		["Then a little "," (patterns indeed rehearse),"],
-		["Then a little "," (patterns like to rehearse),"],
-		["Then a little "," (patterns love to rehearse),"],
-		["Then a little "," (patterns tend to rehearse),"],
-		["Then a little ",", since patterns rehearse,"],
-		["Then a bit "," - as if you'd rehearsed -"],
-		["Then a bit ",", almost as if rehearsed,"],
-		["Then a bit ",", because patterns rehearse,"],
-		["Then a bit "," (patterns always rehearse),"],
-		["Then a bit "," (patterns ask to rehearse),"],
-		["Then a bit "," (patterns have to rehearse),"],
-		["Then a bit "," (patterns indeed rehearse),"],
-		["Then a bit "," (patterns like to rehearse),"],
-		["Then a bit "," (patterns love to rehearse),"],
-		["Then a bit "," (patterns tend to rehearse),"],
-		["Then a bit ",", since patterns rehearse,"],
-		["Then somewhat "," - as if you'd rehearsed -"],
-		["Then somewhat ",", almost as if rehearsed,"],
-		["Then somewhat ",", because patterns rehearse,"],
-		["Then somewhat "," (patterns always rehearse),"],
-		["Then somewhat "," (patterns ask to rehearse),"],
-		["Then somewhat "," (patterns have to rehearse),"],
-		["Then somewhat "," (patterns indeed rehearse),"],
-		["Then somewhat "," (patterns like to rehearse),"],
-		["Then somewhat "," (patterns love to rehearse),"],
-		["Then somewhat "," (patterns tend to rehearse),"],
-		["Then somewhat ",", since patterns rehearse,"],
-		["And then "," (or perhaps in reverse),"],
-		["And then "," (or the order reversed),"],
-		["And then "," (or the sequence reversed),"],
-		["And then "," (or the process in reverse),"],
-		["Then maybe even "," - or the two in reverse -"],
-		["Then maybe even "," on the way to worse,"],
-	]
-
-	const text3 = [
-		["But being "," is another way to traverse."],
-		["But being "," makes the other two disperse."],
-		["But being "," makes those saboteurs disperse."],
-		["But being "," helps to decide and stay alert."],
-		["But being "," helps decide, and get to work."],
-		["But being "," makes both of them disperse."],
-		["But being "," will make each disperse."],
-		["But being "," makes each of them disperse."],
-		["But being "," gets all that to disperse."],
-		["But being "," gets all of that to disperse."],
-		["But being "," reestablishes self-worth."],
-		["But being "," grows healthy self-worth."],
-		["But being "," supports your self-worth."],
-		["But being "," restores your self-worth."],
-		["But being "," will make everything turn."],
-		["But choose to be "," - for all it's worth."],
-		["But into being "," let yourself immerse."],
-		["But into being "," gradually immerse."],
-		["But into being "," let yourself immerse."],
-		["But into being ",", intentionally immerse."],
-		["But try being ",", and this will turn."],
-		["But try being "," - something you know works."],
-		["But try being "," to constructively divert."],
-		["But try being ",". What does this unearth?"],
-		["But try being "," - how you do your best work."],
-		["But try being "," (You'll do your best work)."],
-		["But try being "," and do today's best work."],
-		["But try being "," to do today's best work."],
-		["But now try being ",". Which one works?"],
-		["But why not try how being "," works?"],
-		["Until you recall being "," makes things turn."],
-		["Until you recall being "," is what works."],
-		["Until you recall being "," always works."],
-		["Until you remember being "," makes things turn."],
-		["Until you remember being "," is what works."],
-		["Until you remember being "," always works."],
-		["Until you try being "," - which you know works."],
-		["Until you choose to be "," (What works)."],
-		["Until you choose to be "," (Which works)."],
-		["Until you choose to put being "," to work."],
-		["Until you choose to be "," - which works."],
-	]
+	const triads = [
+		[
+			[
+				["Almost unconsciously, you feel "," first,"],
+				["Almost unconsciously, you feel "," at first,"],
+				["Before realizing, you. will feel "," first,"],
+				["Before realizing, you will feel "," at first,"],
+				["Before realizing it, you will feel "," first,"],
+				["Before realizing it, you will feel "," at first,"],
+				["For starters, you may be feeling "," first,"],
+				["For starters, you may be feeling "," at first,"],
+				["For starters, you might be feeling "," first,"],
+				["For starters, you might be feeling "," at first,"],
+				["It tends to start with feeling "," first,"],
+				["It tends to start with feeling "," at first,"],
+				["It might even have you feeling "," first,"],
+				["It might even have you feeling "," at first,"],
+				["It somehow gets you feeling "," at first,"],
+				["It somehow stirs your feeling "," first,"],
+				["It somehow has you feeling "," at first,"],
+				["It somehow has you feeling "," first,"],
+				["Some old habit has you feeling "," first,"],
+				["Starting out, you might feel "," first,"],
+				["Starting out, you might feel "," at first,"],
+				["That old habit has you feeling "," first,"],
+				["That old habit has you feeling "," at first,"],
+				["That one will have you feeling "," first,"],
+				["That one will have you feeling "," at first,"],
+				["The cycle starts with feeling "," first,"],
+				["The cycle starts with feeling "," at first,"],
+				["The loop starts with you feeling "," first,"],
+				["The loop starts with you feeling "," at first,"],
+				["The whole thing starts with feeling "," first,"],
+				["The whole thing starts with feeling "," at first,"],
+				["They will have you feeling somehow "," first,"],
+				["They will have you feeling somehow "," at first,"],
+				["To start, you might be feeling "," first,"],
+				["To start, you might be feeling "," at first,"],
+				["You will catch yourself feeling "," first,"],
+				["You will catch yourself feeling "," at first,"],
+				["You will notice yourself feeling "," first,"],
+				["You will notice yourself feeling "," at first,"],
+				["You will notice yourself feeling "," first,"],
+				["You will notice yourself feeling "," at first,"],
+				["Unexpectedly, you will begin to feel "," first,"],
+				["Unexpectedly, you will begin to feel "," at first,"],
+				["Without realizing, you will feel "," first,"],
+				["Without realizing, you will feel "," at first,"],
+			],[
+				["Then a little "," - as if you'd rehearsed -"],
+				["Then a little ",", almost as if rehearsed,"],
+				["Then a little ",", because patterns rehearse,"],
+				["Then a little "," (patterns always rehearse),"],
+				["Then a little "," (patterns ask to rehearse),"],
+				["Then a little "," (patterns have to rehearse),"],
+				["Then a little "," (patterns indeed rehearse),"],
+				["Then a little "," (patterns like to rehearse),"],
+				["Then a little "," (patterns love to rehearse),"],
+				["Then a little "," (patterns tend to rehearse),"],
+				["Then a little ",", since patterns rehearse,"],
+				["Then a bit "," - as if you'd rehearsed -"],
+				["Then a bit ",", almost as if rehearsed,"],
+				["Then a bit ",", because patterns rehearse,"],
+				["Then a bit "," (patterns always rehearse),"],
+				["Then a bit "," (patterns ask to rehearse),"],
+				["Then a bit "," (patterns have to rehearse),"],
+				["Then a bit "," (patterns indeed rehearse),"],
+				["Then a bit "," (patterns like to rehearse),"],
+				["Then a bit "," (patterns love to rehearse),"],
+				["Then a bit "," (patterns tend to rehearse),"],
+				["Then a bit ",", since patterns rehearse,"],
+				["Then somewhat "," - as if you'd rehearsed -"],
+				["Then somewhat ",", almost as if rehearsed,"],
+				["Then somewhat ",", because patterns rehearse,"],
+				["Then somewhat "," (patterns always rehearse),"],
+				["Then somewhat "," (patterns ask to rehearse),"],
+				["Then somewhat "," (patterns have to rehearse),"],
+				["Then somewhat "," (patterns indeed rehearse),"],
+				["Then somewhat "," (patterns like to rehearse),"],
+				["Then somewhat "," (patterns love to rehearse),"],
+				["Then somewhat "," (patterns tend to rehearse),"],
+				["Then somewhat ",", since patterns rehearse,"],
+				["And then "," (or perhaps in reverse),"],
+				["And then "," (or the order reversed),"],
+				["And then "," (or the sequence reversed),"],
+				["And then "," (or the process in reverse),"],
+				["Then maybe even "," - or the two in reverse -"],
+				["Then maybe even "," on the way to worse,"],
+			],[
+				["But being "," is another way to traverse."],
+				["But being "," makes the other two disperse."],
+				["But being "," makes those saboteurs disperse."],
+				["But being "," helps to decide and stay alert."],
+				["But being "," helps decide, and get to work."],
+				["But being "," makes both of them disperse."],
+				["But being "," will make each disperse."],
+				["But being "," makes each of them disperse."],
+				["But being "," gets all that to disperse."],
+				["But being "," gets all of that to disperse."],
+				["But being "," reestablishes self-worth."],
+				["But being "," grows healthy self-worth."],
+				["But being "," supports your self-worth."],
+				["But being "," restores your self-worth."],
+				["But being "," will make everything turn."],
+				["But choose to be "," - for all it's worth."],
+				["But into being "," let yourself immerse."],
+				["But into being "," gradually immerse."],
+				["But into being "," let yourself immerse."],
+				["But into being ",", intentionally immerse."],
+				["But try being ",", and this will turn."],
+				["But try being "," - something you know works."],
+				["But try being "," to constructively divert."],
+				["But try being ",". What does this unearth?"],
+				["But try being "," - how you do your best work."],
+				["But try being "," (You'll do your best work)."],
+				["But try being "," and do today's best work."],
+				["But try being "," to do today's best work."],
+				["But now try being ",". Which one works?"],
+				["But why not try how being "," works?"],
+				["Until you recall being "," makes things turn."],
+				["Until you recall being "," is what works."],
+				["Until you recall being "," always works."],
+				["Until you remember being "," makes things turn."],
+				["Until you remember being "," is what works."],
+				["Until you remember being "," always works."],
+				["Until you try being "," - which you know works."],
+				["Until you choose to be "," (What works)."],
+				["Until you choose to be "," (Which works)."],
+				["Until you choose to put being "," to work."],
+				["Until you choose to be "," - which works."],
+			]
+		],
+		[
+			[
+				["Lorem ipsum dolor ",", consectetur adipiscing cycle,"],
+				["Lorem ipsum dolor ",", consectetur adipiscing elit,"],
+				["Lorem ipsum dolor ",", consectetur adipiscing elit,"]
+			],
+			[
+				["sit amet sed do eiusmod tempor","incididunt ut labore et tidal"],
+				["sit amet sed do eiusmod tempor","incididunt ut labore et tidal"],
+				["sit amet sed do eiusmod tempor","incididunt ut labore et tidal"],
+			],
+			[
+				["Ut enim ad minim veniam,","consectetur adipiscing vital"],
+				["Ut enim ad minim veniam,","consectetur adipiscing vital"],
+				["Ut enim ad minim veniam,","consectetur adipiscing vital"],
+			]			
+		],
+		[
+			[
+				["Lorem ipsum dolor ",", consectetur adipiscing loop,"],
+				["Lorem ipsum dolor ",", consectetur adipiscing loop,"],
+				["Lorem ipsum dolor ",", consectetur adipiscing loop,"],
+			],
+			[
+				["sit amet sed do eiusmod tempor","incididunt ut labore et recoup"],
+				["sit amet sed do eiusmod tempor","incididunt ut labore et recoup"],
+				["sit amet sed do eiusmod tempor","incididunt ut labore et recoup"],
+			],
+			[
+				["Ut enim ad minim veniam,","consectetur adipiscing confuse"],
+				["Ut enim ad minim veniam,","consectetur adipiscing confuse"],
+				["Ut enim ad minim veniam,","consectetur adipiscing confuse"],
+			]			
+		]
+];
 
 	var subset = [];
 
-	for(let e1 = 0; e1 < emotions1.length; e1++){
-		for(let e2 = 0; e2 < emotions2.length; e2++){
-			for(let e3 = 0; e3 < emotions3.length; e3++){
-				let fate1 = Math.floor(Math.random() * (text1.length));
-				let fate2 = Math.floor(Math.random() * (text2.length));
-				let fate3 = Math.floor(Math.random() * (text3.length));
+	for(let e1 = 0; e1 < cause1.length; e1++){
+		for(let e2 = 0; e2 < effect2.length; e2++){
+			for(let e3 = 0; e3 < intent3.length; e3++){
+				let fate1 = Math.floor(Math.random() * (triads[0][0].length));
+				let fate2 = Math.floor(Math.random() * (triads[0][1].length));
+				let fate3 = Math.floor(Math.random() * (triads[0][2].length));
 
-				let line1 = text1[fate1][0] + emotions1[e1].toLowerCase() + text1[fate1][1];
-				let line2 = text2[fate2][0] + emotions2[e2].toLowerCase() + text2[fate2][1];
-				let line3 = text3[fate3][0] + emotions3[e3].toLowerCase() + text3[fate3][1];
+				let line1 = triads[0][0][fate1][0] + cause1[e1].toLowerCase() + triads[0][0][fate1][1];
+				let line2 = triads[0][1][fate2][0] + effect2[e2].toLowerCase() + triads[0][1][fate2][1];
+				let line3 = triads[0][2][fate3][0] + intent3[e3].toLowerCase() + triads[0][2][fate3][1];
 
 				if (line1.length < 50 && line2.length < 50 && line3.length < 50){
-					subset.push('<p class="book"><br />' + ([line1,line2,line3].join("<br />")).replace(/\'/g, '&rsquo;') + '</p><br /><br />');
+					subset.push('<sub>*</sub><p class="book"><br />' + ([line1,line2,line3].join("<br />")).replace(/\'/g, '&rsquo;') + '</p><br /><br />');
 				}
 			}
 		}
 	}
 
 	let uniques = (shuffle(subset));
-	let unique = uniques.slice(0,24);;
-	console.log(uniques.length);
-	console.dir(uniques);
-	console.dir(unique);
+	console.log('Number of viable triads: ' + uniques.length);
 
 	var my = {
 		strHash: (function () { return (location.hash).substring(1) || null;}),
@@ -82039,6 +82028,10 @@ You're exactly where you're supposed to be.
 		jar : (function () {
 					let book = [], toURL = '', hash, isType = '', 
 						pages = [], minute = [], final = [], suffix = '', scroll, scrolls = '';
+
+					let jsonResponse = {};
+					const xhr = new XMLHttpRequest();
+
 					
 					hash = Number(my.strHash()) || my.strHash();
 					var todaysDate = new Date();
@@ -82089,7 +82082,39 @@ You're exactly where you're supposed to be.
 								var custom = my.shuffle(book.slice(startAt, book.length-1));
 								custom = custom.slice(startAt, lastscroll);
 
-								for(var u = 0; u < 24; u++){custom[((u*60)+hourlyminute)] = unique[u];}
+								//for(var u = 0; u < 24; u++){custom[((u*60)+(Math.ceil(Math.random() * 57)))] = uniques[u];}
+
+								xhr.open('GET', 'https://02b7cf4.netsolhost.com/json.php');
+								xhr.responseType = 'text';
+								xhr.onload = function(e) {
+								  if (this.status == 200) {
+								    jsonResponse = JSON.parse(this.response);
+								    console.dir(jsonResponse);
+								    if(jsonResponse[inspiredby]){
+
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause1/g, jsonResponse[inspiredby].cause[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause2/g, jsonResponse[inspiredby].cause[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause3/g, jsonResponse[inspiredby].cause[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect1/g, jsonResponse[inspiredby].effect[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect2/g, jsonResponse[inspiredby].effect[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect3/g, jsonResponse[inspiredby].effect[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent1/g, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent2/g, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent3/g, jsonResponse[inspiredby].intent[0]);
+									    document.title = "Inspired by " + jsonResponse[inspiredby].by;
+										
+										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/INSPIREDBY/g, jsonResponse[inspiredby].by);
+										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/VOLNUM/g, volnum);
+
+										
+									} else {
+
+
+
+									}
+								  }
+								};
+								xhr.send();	
 
 								custom.push(book[book.length-1]);
 
@@ -82103,6 +82128,9 @@ You're exactly where you're supposed to be.
 									}
 								}
 								
+								console.dir(custom);
+								console.dir(final);
+
 								for (scroll = 0; scroll < custom.length; scroll++) {
 									final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">' + minute[scroll]) + '</p><br /><br />');
 									//final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">...') + '</p><br /><br />');
@@ -82160,6 +82188,27 @@ You're exactly where you're supposed to be.
 								console.dir(lengths);
 								break;
 							case 'uniques' :
+								xhr.open('GET', 'https://02b7cf4.netsolhost.com/json.php');
+								xhr.responseType = 'text';
+								xhr.onload = function(e) {
+								  if (this.status == 200) {
+								    jsonResponse = JSON.parse(this.response);
+								    console.dir(jsonResponse);
+								    if(jsonResponse[inspiredby]){
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause1/g, jsonResponse[inspiredby].cause[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause2/g, jsonResponse[inspiredby].cause[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/cause3/g, jsonResponse[inspiredby].cause[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect1/g, jsonResponse[inspiredby].effect[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect2/g, jsonResponse[inspiredby].effect[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/effect3/g, jsonResponse[inspiredby].effect[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent1/g, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent2/g, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/intent3/g, jsonResponse[inspiredby].intent[0]);
+									    document.title = "Inspired by " + jsonResponse[inspiredby].by;
+									}
+								  }
+								};
+								xhr.send();								
 								scrolls = "<section class='scrolls " + isType + "'>" + uniques.join("") + "</section>";
 								break;
 							case 'labels' :
@@ -82233,7 +82282,7 @@ You're exactly where you're supposed to be.
 					document.body.innerHTML = scrolls;
 					qr();
 					setTimeout(function () {window.scrollTo(0,1);},1);
-					if (window.location.hostname) {
+					if (window.location.hostname && !isType) {
 						document.getElementById('theDay').selectedIndex = (todaysDate.getDate()-1);
 						document.getElementById('theMonth').selectedIndex = todaysDate.getMonth();
 					}

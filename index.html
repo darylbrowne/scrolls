@@ -81974,8 +81974,8 @@ You're exactly where you're supposed to be.
 				["You don't strive to feel "," when it's so -"],
 			],
 			[
-				["However, once you begin to feel ",", do know"],
-				["However, once you begin to feel ",", know"],
+				["But once you begin to feel ",", do know"],
+				["But once you begin to feel ",", know"],
 				["Still, the moment you feel ",", do know"],
 				["Still, the moment you feel ",", know"],
 				["Nonetheless, as soon as you feel "," do know"],
@@ -81985,6 +81985,39 @@ You're exactly where you're supposed to be.
 				["That feeling "," gets rid of both of those."],
 				["Your feeling "," gets rid of each of those."],
 				["That feeling "," eliminates both of those."],
+			]			
+		],
+		[
+			[
+				["Feeling "," can sometimes happen -"],
+				["Sometimes feeling "," - it happens,"],
+				["Feeling "," occasionally happens -"],
+				["Feeling "," will sometimes happen -"]
+			],
+			[
+				["To which feeling "," often fastens"],
+				["To which feeling "," might attach"],
+				["To which feeling "," tends to fasten"],
+				["To which feeling "," quickly fastens"]
+			],
+			[
+				["(Feeling "," unhooks chained reactions)."],
+				["(Feeling "," convinces each to unlatch)."],
+				["(Feeling "," leads to wiser actions)."],
+				["(Feeling "," generates better actions)."],
+				["(Feeling "," undermines overreaction)."],
+				["(Until you let feeling "," hatch)."]
+			]			
+		],
+		[
+			[
+				["Feeling "," acts like an invitation"]
+			],
+			[
+				["For feeling "," to then hasten:"]
+			],
+			[
+				["Feel "," and everything changes."]
 			]			
 		]
 ];
@@ -82136,19 +82169,19 @@ You're exactly where you're supposed to be.
 								    console.dir(jsonResponse);
 								    if(jsonResponse[inspiredby]){
 
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause1/g, jsonResponse[inspiredby].cause[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause2/g, jsonResponse[inspiredby].cause[1]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause3/g, jsonResponse[inspiredby].cause[2]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect1/g, jsonResponse[inspiredby].effect[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect2/g, jsonResponse[inspiredby].effect[1]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect3/g, jsonResponse[inspiredby].effect[2]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent1/g, jsonResponse[inspiredby].intent[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent2/g, jsonResponse[inspiredby].intent[1]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent3/g, jsonResponse[inspiredby].intent[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE1/gi, jsonResponse[inspiredby].cause[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE2/gi, jsonResponse[inspiredby].cause[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE3/gi, jsonResponse[inspiredby].cause[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT1/gi, jsonResponse[inspiredby].effect[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT2/gi, jsonResponse[inspiredby].effect[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT3/gi, jsonResponse[inspiredby].effect[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT1/gi, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT2/gi, jsonResponse[inspiredby].intent[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT3/gi, jsonResponse[inspiredby].intent[2]);
 									    document.title = "Inspired by " + jsonResponse[inspiredby].by;
 										
-										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/INSPIREDBY/g, jsonResponse[inspiredby].by);
-										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/VOLNUM/g, volnum);
+										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/INSPIREDBY/gi, jsonResponse[inspiredby].by);
+										document.getElementById("subtitle").innerHTML = document.getElementById("subtitle").innerHTML.replace(/VOLNUM/gi, volnum);
 
 										
 									} else {
@@ -82239,15 +82272,15 @@ You're exactly where you're supposed to be.
 								    jsonResponse = JSON.parse(this.response);
 								    console.dir(jsonResponse);
 								    if(jsonResponse[inspiredby]){
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause1/g, jsonResponse[inspiredby].cause[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause2/g, jsonResponse[inspiredby].cause[1]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/cause3/g, jsonResponse[inspiredby].cause[2]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect1/g, jsonResponse[inspiredby].effect[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect2/g, jsonResponse[inspiredby].effect[1]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/effect3/g, jsonResponse[inspiredby].effect[2]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent1/g, jsonResponse[inspiredby].intent[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent2/g, jsonResponse[inspiredby].intent[0]);
-									    document.body.innerHTML = document.body.innerHTML.replace(/intent3/g, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE1/gi, jsonResponse[inspiredby].cause[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE2/gi, jsonResponse[inspiredby].cause[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/CAUSE3/gi, jsonResponse[inspiredby].cause[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT1/gi, jsonResponse[inspiredby].effect[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT2/gi, jsonResponse[inspiredby].effect[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/EFFECT3/gi, jsonResponse[inspiredby].effect[2]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT1/gi, jsonResponse[inspiredby].intent[0]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT2/gi, jsonResponse[inspiredby].intent[1]);
+									    document.body.innerHTML = document.body.innerHTML.replace(/INTENT3/gi, jsonResponse[inspiredby].intent[2]);
 									    document.title = "Inspired by " + jsonResponse[inspiredby].by;
 									}
 								  }
@@ -82346,6 +82379,25 @@ You're exactly where you're supposed to be.
 			return false;			
 		}
 	}
+
+	function getOsFromUserAgent() {
+
+		let userAgent = navigator.userAgent;
+		let platform;
+
+		if (userAgent.includes('Android')) {
+		  platform = 'Android';
+		  //window.location.href = 'https://www.google.com'
+		} else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
+		  platform = 'iOS';
+		  //window.location.href = 'https://www.apple.com'
+		} else {
+		  platform = 'non-Android or iOS';
+		  //window.location.href = 'https://www.windows.com'
+		}
+		console.log(platform);
+	}
+	getOsFromUserAgent();
 
 </script>
 </html>

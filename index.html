@@ -37,6 +37,7 @@
 	<link rel="apple-touch-icon-precomposed" href="images/be-icon.png" />-->
 	<script type="text/javascript">
 
+		const app = 's-a.lt';
 		let cause1 = [],
 			effect2 = [],
 			intent3 = [],
@@ -466,7 +467,25 @@
 				margin: 0px;
 				border: 0px dotted black;
 			}
-			section.scrolls.art article {
+			canvas {
+				height: 36px;
+				width: 36px;
+				position: absolute;
+				right: 0;
+				top: 37%;
+			}
+			.sign  canvas {
+				display: none;
+			}
+			canvas#qrcode, .sign i.fa {
+				display: inline-block;
+				vertical-align: middle;
+				height: 1.3em;
+				width: 1.3em;
+				position: relative;
+			}
+
+			section.scrolls.wall article {
 				width: 33%;
 			}
 			body{
@@ -539,7 +558,7 @@
 			}
 			section.scrolls article {
 				position: relative;
-			}
+			}/*
 			section.scrolls a:nth-child(odd) article p::after {
 				background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAA+9JREFUeF7tncGO4zAMQ6f//9FdYG51gTw8UE7dHe5VsS2TEiU76ezj+Xw+f/rvGAQeJeQYLn4dKSFn8VFCDuOjhJSQ0xA4zJ/WkBJyGAKHuYMZ8ng8bnX57mPRafsrIYcFXAkpIdcKWMkCBFaNnQaM5if7Si/VhNV/O78tqHZ+LVklxFFSQqAmNEMgoCiCyF7JWl6fkGavgKURagkigaH5bt8fvQ85zuFFktKadtz+SsjrTQRlMGUcjacAirus21O6GfLZCCLCMeKAwEoWNAWU8tQkUNdF85P9z0tWM2QJgU+ndAk5jBCSCAqYdDwFBEmo9e/ruixbI0oIIEBFk7qmEiLbRorIEnL95W4sWUQA2UljrYbTetMBQevR/t4yPr06IYfITg6XENllEeBkLyGvCFWyhu/G0qZDE0IRn9qtxtsMo/lT/2k8dZElpJ8BXccQRfBuO0V4am+GDJ+jPk5I6sDu8VRDdq8/PT/WkOkFp+crIdOIhvOVkBDA6eF/jpC7ry4sYbu7run5aX9YQ0rI6+0sZSTZS0j4UUUzhEJosU8DRhGe2ml7sWRZQMghspOE4kn45quSdT/on30fQgtQBBHgZC8hh//eggKErsMpAKbtzZAFUcqwaQJ0wJBkWQetZE0DRDXN7gcjWioIrY9FnSYgSUg3ZNcvISAJJcT9wb5mCKRgGlA0/k1hbA1Ja4R2UJ4brGSRP7bG0XwkwTpDSsg1pCVEXqXoNjTMUMqIShYQSF0jAfzxDLk74qY1nSSY1iMCaP7xDCkh8DW7/DIyLuolpISQjL/YU0k5XrIUGgMPWw2mJWk+IoDmp3MQBog9GJJD03YC0K5H85UQQJQALCEWgfD5EgK3tyG+ODzW4PD9hA0AkjiqGfocQgsiwvKBEgIUlhB3zrDnsmYI/A9PXydZVhNJsVIASOJo/XR8mhFxhpSQa4pTfPAuy0YwReRbRNjLt+GfqDVDoK2mCKMAsU3If0fINAAEEBGWZqgdP+4P3WXdHZElRJ5DCDCKMBpv7bQe2W2GT3dV412W3ZAFnDKUACe79b+EhF1VqvEUEESoXT9ue8khiii7YcowWo8yxrbltP8SsiBqASkhUpKaIRIwkgQClOw0v7XTepRhJLnWn6+rIXaD9HwJCX83TgBbewkpIZcxE0uWjciPdzHh7TLtl2oOjS8h8g0iAVpCAFCbkfR8CQk/6yGAKaLpJD5+M2Cv3ylCUjt1PTR/Op4ApnMH2cl/XUNowtSeApqOLyFw95RKhh1fQkrICwIoWakEdbxDoIQ4vLY/XUK2Q+wWKCEOr+1Pl5DtELsFSojDa/vTJWQ7xG6BEuLw2v70P4fuqy97wM2oAAAAAElFTkSuQmCC");				
 				background-repeat: no-repeat;
@@ -567,9 +586,8 @@
 				right: 0px;
 				top: 46px;
 				opacity: .8;
-			}
-						/*
-			section.scrolls a:nth-child(even) article p::after {
+			}*/
+			section.scrolls a article p::after {
 				background: url("data:image/png;base64,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");
 				background-repeat: no-repeat;
 				background-size: auto 20px;
@@ -589,10 +607,10 @@
 			section article > div {
 				margin-top: 15px;
 			}
-			section:not(.all):not(.script):not(.ads) sup {
+			section:not(.full):not(.script):not(.promo) sup {
 				display: none;
 			}
-			.ads sup {
+			.promo sup {
 				position: relative;
 			    top: 0;
 			    left: 0;
@@ -667,7 +685,11 @@
 		}		
 */
 	</style>
-	<style id="screen">
+	<style id="screen" title="screen">
+		:root {
+			--change : 0;
+		}
+
 		@media only screen {
 			*, *:before, *:after {
 				-moz-box-sizing: border-box;
@@ -675,11 +697,11 @@
 				box-sizing: border-box;
 			}
 			@-webkit-keyframes message {
-			  0%,20%,75%,100% { opacity: 0; }
+			  0%,20%,75%,100% { opacity: var(--change); }
 			  50%,65% { opacity: 1; }
 			}
 			@keyframes message {
-			  0%,20%,75%,100% { opacity: 0; }
+			  0%,20%,75%,100% { opacity: var(--change); }
 			  50%,65% { opacity: 1; }
 			}
 			html, section,article, p, span, a { 
@@ -785,7 +807,7 @@
 			    margin-top: .1em;
 			    display: inline-block;
 			}
-			.nft {
+			.app {
 				font-variant: small-caps;
 				letter-spacing: .3em;
 				color: #edd1c6;
@@ -809,7 +831,7 @@
 				vertical-align: bottom;
 			}
 			pre, section:not(.cover),
-			section.art sup {
+			section.wall sup {
 				display: none;
 			}
 			section.scrolls a:nth-child(odd) article p::after, 
@@ -878,6 +900,14 @@ Yesterdays and tomorrows lack guarantees,
 Which makes your today all the more free:
 
 You're exactly where you're supposed to be.
+
+
+
+Take a moment...
+
+Pause. Unroll it.
+
+<canvas id="qrcode"></canvas> to <i class="fa fa-assistive-listening-systems" aria-hidden="true"></i> via <i class="fa fa-mobile" aria-hidden="true"></i>
 
 
 
@@ -81594,6 +81624,7 @@ You're exactly where you're supposed to be.
   const URI = ['http://daryl.be?'];
   const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
   const DAYS = [31,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  const CODEC = ["a","b","c","d","e","f","g","h","i","j","k","n","p","q","r","s","t","u","v","w","x","y","z"];
   let initialDate;
   function nth(n) {return(n%10==1&&n%100!=11?'st':n%10==2&&n%100!=12?'nd':n%10==3&&n%100!=13?'rd':'th');}
   function shuffle (array) {
@@ -81603,6 +81634,27 @@ You're exactly where you're supposed to be.
     }
     return array;
   }  
+function convertBase(value, from_base, to_base) {
+  var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
+  var from_range = range.slice(0, from_base);
+  var to_range = range.slice(0, to_base);
+  var dec_value = value || null;
+  var new_value ;
+
+  if (value) {
+	  	value.split('').reverse().reduce(function (carry, digit, index) {
+	    if (from_range.indexOf(digit) === -1) throw new Error('Invalid digit `'+digit+'` for base '+from_base+'.');
+	    return carry += from_range.indexOf(digit) * (Math.pow(from_base, index));
+	  }, 0);
+
+	  while (dec_value > 0) {
+	    new_value = to_range[dec_value % to_base] + new_value;
+	    dec_value = (dec_value - (dec_value % to_base)) / to_base;
+	  }
+  }
+  
+  return new_value || '0';
+}
 
   function qr() {
 		let s = [];
@@ -81696,8 +81748,9 @@ You're exactly where you're supposed to be.
 		}
 
 		var xx = (location.search).substr(1);
-		if (xx) {
-			console.log(xx);
+		var yy = (location.hash).substr(1);
+		if (xx && xx.length > 3) {
+			console.log('xx = ' + xx);
 			if (xx.indexOf('\/') > -1 || inspiredby) {
 				let qr_qa = document.createElement("div");
 				let qr_p = document.createElement("canvas");
@@ -81713,6 +81766,8 @@ You're exactly where you're supposed to be.
 				document.body.prepend(qr_qa);
 				encode(xx);
 
+			} else if (convertBase(xx,23,10)){
+				console.log('2.5 continued... see? ' + convertBase(xx,23,10));
 			} else {
 				decode(xx);
 				let r = document.querySelector(':root');
@@ -81722,26 +81777,35 @@ You're exactly where you're supposed to be.
 				document.body.innerHTML = scrolls;
 			}
 		} else {
-			//Display a month grid of qr codes for hardcover audio, paperback audio, hardcover NFT, paperback NFT
-			/*alert('hey');
 
-			let qr_month = document.createElement("div");
-				qr_month.setAttribute("id", "qr_month");			
-			//Iterate over month's-worth of audio root + mm/dd/yyyy + book origin
-			//Iterate over month's-worth of mm/dd/yyyy + book origin + nft root
-			for(let i = 1; i < DAYS[1]; i++){
-				let qr_p = document.createElement("canvas");
-					qr_p.setAttribute("title", "qr_day_"+i);
-					qr_p.setAttribute("id", "qr_day_"+i);
-				qr_month.append(qr_p);
+			if (yy && yy.length > 0 && yy.length < 4) {
+				//convertBase(value, from_base, to_base);
+				let zz = convertBase(yy, 23, 10);
+				console.log('pre-conversion = ' + yy);
+				console.log('raw conversion = ' + zz);
+				console.log('test conversion 1 = ' + convertBase(yy, 23, 10));
+				console.log('test conversion 2 = ' + convertBase(zz.toString(), 10, 23));
 			}
 
-			document.body.prepend(qr_month);
+			const supQRs = document.querySelectorAll("sup");
 
-			for(let i = 1; i < DAYS[1]; i++){
-				let today = new QRious({element: document.getElementById('qr_day_'+i),value: s[1]});
+			if (supQRs.length < 100) {
+				for(let i = 0; i < supQRs.length; i++){
+					let qr_p = document.createElement("canvas");
+						qr_p.setAttribute("title", "qr_"+i);
+						qr_p.setAttribute("id", "qr_"+i);
+						document.querySelectorAll("sup")[i].after(qr_p);
+				}
+
+				for(let i = 0; i < supQRs.length; i++){
+				  let rawOne = supQRs[i].innerText;
+				  let encOne = convertBase(rawOne, 10, 23);
+				  let salty = 'http://' + app + '?' + encOne;
+				  new QRious({element: document.getElementById('qr_'+i),value: salty});
+				}
+
 			}
-*/
+
 		}
   }
 
@@ -81780,8 +81844,8 @@ You're exactly where you're supposed to be.
 			"hex"	: "#522613"
 		}
 	];
-	const modes = ['~', 'ads', 'all', 'art', 'audiobook', 'book1', 'book2', 'book3', 'frame', 'labels', 'policy', 'sign', 'script', 'scrolls', 'uniques'];
-	const startAt = 5;
+	const modes = ['~', 'promo', 'full', 'wall', 'audiobook', 'book1', 'book2', 'book3', 'flag', 'frame', 'labels', 'policy', 'sign', 'script', 'scrolls', 'uniques'];
+	const startAt = 6;
 
 	var local = false;
 	var shades = [];
@@ -82048,6 +82112,7 @@ You're exactly where you're supposed to be.
 
 	var my = {
 		strHash: (function () { return (location.hash).substring(1) || null;}),
+		strQuery: (function () { return (location.search).substring(1) || null;}),
 		shuffle : (function (array) {
 				    for (let i = array.length - 1; i > 0; i--) {
 				        let j = Math.floor(Math.random() * (i + 1));
@@ -82064,6 +82129,7 @@ You're exactly where you're supposed to be.
 					console.log('my.journey(' + inner + ')');
 					let fate, message, toggle;
 					let hash = Number((location.hash).substring(1)) || location.hash;
+					let quer = Number(convertBase((location.search).substring(1),23,10)) || location.search;
 					let shade = my.shade();
 					document.body.style.setProperty('--shade', shade['hex']);						
 
@@ -82082,35 +82148,46 @@ You're exactly where you're supposed to be.
 					
 					console.log('my.journey(' + inner + ') hash = ' + hash);
 
-					if (!hash && !inner) {
+					if (!hash && !inner && !quer) {
 						console.log('condition 1: my.journey(' + inner + ') !hash');
 						return wisdom[0];
-					} else if (!isNaN(hash) && !inner) {
-						console.log('condition 2: my.journey(' + inner + ') hash = ' + hash);
+					} else if (!isNaN(hash) && (!quer || isNaN(quer)) && !inner) {
+						console.log('condition 2: my.journey(' + inner + '), quer = ' + quer + ' hash = ' + hash);
 						message = (hash && hash < wisdom.length) ? wisdom[hash] : wisdom[fate];
-						//if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
+						return message;
+					} else if (!isNaN(quer) && !hash && !inner) {
+						console.log('condition 2.5: my.journey(' + inner + '), quer = ' + quer + ' hash = ' + hash);
+						message = (quer && quer < wisdom.length) ? wisdom[quer] : wisdom[fate];
+						let r = document.querySelector(':root');
+						r.style.setProperty('--change', '1');
+
+   					//if ((hash < (startAt-1) || hash > wisdom.length)) {window.location.hash = '#' + fate;}
 						return message;
 					} else if (inner) {
-						console.log('condition 3: my.journey(' + inner + ') hash = ' + hash);
+						console.log('condition 3: my.journey(' + inner + '), quer = ' + quer + ' hash = ' + hash);
 						//var re = new RegExp('This is one breath');
 						//toggle = (re.test(getText(document.getElementsByTagName('p')[0]))) ? fate : 0;
 						toggle = fate;
 						window.location.hash = '#' + toggle;
 						document.getElementsByTagName('p')[0].innerHTML = wisdom[toggle];
+					} else {
+						console.log('condition 5: my.journey(' + inner + '), quer = ' + quer + ' hash = ' + hash);
 					}
 
 					return wisdom;
 
 				}),
 		jar : (function () {
-					let book = [], toURL = '', hash, isType = '', 
+					let book = [], toURL = '', hash, qstr, isType = '', 
 						pages = [], minute = [], final = [], suffix = '', scroll, scrolls = '';
 
+					console.dir(pages.length);
 					let jsonResponse = {};
 					const xhr = new XMLHttpRequest();
 
 					
 					hash = Number(my.strHash()) || my.strHash();
+					qstr = Number(my.strQuery()) || my.strQuery();
 					var todaysDate = new Date();
 
 					function convertDate(date) {
@@ -82135,18 +82212,43 @@ You're exactly where you're supposed to be.
 							book.push(prefix + '<p class="book"><br />' + thisSide[scroll].replace(/<br \/><br \/>/gi, '<br />') + '</p><br /><br />');
 							if (isType === '') {break;}
 						}
+						console.log('1.5 isNaN(hash) && isNaN(qstr)...');
+						console.dir(pages);
+
+					} else if (!isNaN(hash)) {
+						let userAgent = navigator.userAgent;
+						let platform;
+						if (userAgent.includes('Android')) {
+						  platform =  'https://www.google.com'; // Android
+						} else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
+						  platform = 'https://www.apple.com'; // iOS
+						} else {
+						  platform = 'https://www.windows.com'; // Windows App
+						}					
+						pages.push('<a href="' + platform + '"><article><div><p>' + my.journey() + '</p></div></article></a>');
 					} else {
-						pages.push('<a href="' + toURL + '"><article><div><p>' + my.journey() + '</p></div></article></a>');						
+						pages.push('<a href="' + toURL + '"><article><div><p>' + my.journey() + '</p></div></article></a>');
+						console.log('2.5 continues...');
+						console.dir(pages);
+
 					}
 
-					if (modes.includes(isType) || location.search) {
+					console.log('I. modes.includes(isType) : ' + modes.includes(isType));
+					console.dir(modes);
+					console.dir(isType);
+					console.log('II. location.search : ' + location.search);
+					console.log('III. isNaN(convertBase(my.strQuery(),23,10)) : ' + isNaN(convertBase(my.strQuery(),23,10)));
+
+					if (modes.includes(isType) || (location.search && isNaN(convertBase(my.strQuery(),23,10)))) {
+					//if (modes.includes(isType)) {
+						console.log('-----(modes.includes(isType) || (location.search && isNaN(convertBase(my.strQuery(),23,10))))');
 						document.getElementById("screen").remove();
 						let r = document.querySelector(':root');
 						r.style.setProperty('--background', 'white');
 						r.style.setProperty('--shade', 'black');
 
 						switch (isType) {
-							case 'all' :
+							case 'full' :
 								pages = pages.slice(startAt).reverse();
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
@@ -82303,19 +82405,22 @@ You're exactly where you're supposed to be.
 								pages = pages.slice(startAt);
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
-							case 'sign' :
-								scrolls = "<section class='scrolls sign'>" + pages[2] + "</section>";
+							case 'flag' :
+								scrolls = "<section class='scrolls sign'>" + pages[1] + "</section>";
 								break;
-							case 'art' :
+							case 'sign' :
+								scrolls = "<section class='scrolls sign'>" + pages[3] + "</section>";
+								break;
+							case 'wall' :
 								var pp = 3;
 								var perpage = 15;
 								var custom = my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
-								custom[0] = pages[3];
+								custom[0] = pages[4];
 								custom[custom.length-1] = pages[pages.length-1];
 								scrolls = "<section class='scrolls " + isType + "'>" + custom.join("") + "</section>";
 								break;
-							case 'ads' :
-								var pp = 10;
+							case 'promo' :
+								var pp = 1;
 								var perpage = 14;
 								var custom = my.shuffle(pages.slice(startAt)).slice(0,perpage*pp);
 								var blob = custom.join("");
@@ -82325,7 +82430,7 @@ You're exactly where you're supposed to be.
 									return '<sup>- from <em>The ' + fDay + nth(fDay) + ' of ' + MONTHS[fMonth] + ' and Beyond</em></sup>';
 								});*/
 								blob = blob.replace(/<sup>(.*?)<\/sup>/g,function(x){
-									return '<sup><em>BirthdayZen.com</em></sup>';
+									return "<sup><em>" + x + "</em></sup>";
 								});
 
 								scrolls = "<section class='scrolls " + isType + "'>" + blob + "</section>";
@@ -82343,15 +82448,16 @@ You're exactly where you're supposed to be.
 
 					} else {
 
+						console.log('-----NOT (modes.includes(isType) || (location.search && isNaN(convertBase(my.strQuery(),23,10))))');
+
 						function dayOptions(numDay) {return '<option value=\"' + numDay + '\">' + numDay + nth(numDay) + '</option>';}
 						function monthOptions(numMonth) {return '<option value=\"' + numMonth + '\">' + (MONTHS[numMonth-1]).substr(0,3) + '</option>';}
 						const numDays = Array.from(Array(31), (e,i)=>i+1);
 						const numMonths = Array.from(Array(12), (e,i)=>i+1);
 						const selMonths = numMonths.map(monthOptions);
 						const selDays = numDays.map(dayOptions);
-						//const nft = "todays.dao";
-						const nft = "Your scroll for today*";
-						let nav = window.location.hostname ? "<form onsubmit='return openBook();'><span>A <i class='fa fa-gift' aria-hidden='true'></i> for their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form>" : "<form><span class='nft'>" + nft + "<span></form>";
+						const ad = "Get the <i>Table Salt</i> App";
+						let nav = !(window.location.hostname).includes(app) ? "<form onsubmit='return openBook();'><span>A <i class='fa fa-gift' aria-hidden='true'></i> for their</span><select id='theMonth'>" + selMonths + "</select><select id='theDay'>" + selDays + "</select><button type='submit' name='submit'><i class='fa fa-birthday-cake' aria-hidden='true'></i></button></form>" : "<form><span class='app'>" + ad + "<span></form>";
 						scrolls = "<section class='scrolls cover'>" + pages[0] + nav + "</section>";
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
@@ -82359,10 +82465,15 @@ You're exactly where you're supposed to be.
 					document.body.innerHTML = scrolls;
 					qr();
 					setTimeout(function () {window.scrollTo(0,1);},1);
-					if (window.location.hostname && !isType) {
+					if (!(window.location.hostname).includes(app) && !isType) {
 						document.getElementById('theDay').selectedIndex = (todaysDate.getDate()-1);
 						document.getElementById('theMonth').selectedIndex = todaysDate.getMonth();
 					}
+					if(document.getElementById("qrcode")){
+						console.log('A. GOT ELEMENT BY ID QRCODE');
+						new QRious({element: document.getElementById('qrcode'),value: 'http://' + app});
+					}
+
             })
       };
     my.jar();
@@ -82379,25 +82490,6 @@ You're exactly where you're supposed to be.
 			return false;			
 		}
 	}
-
-	function getOsFromUserAgent() {
-
-		let userAgent = navigator.userAgent;
-		let platform;
-
-		if (userAgent.includes('Android')) {
-		  platform = 'Android';
-		  //window.location.href = 'https://www.google.com'
-		} else if (userAgent.includes('iPhone') || userAgent.includes('iPad')) {
-		  platform = 'iOS';
-		  //window.location.href = 'https://www.apple.com'
-		} else {
-		  platform = 'non-Android or iOS';
-		  //window.location.href = 'https://www.windows.com'
-		}
-		console.log(platform);
-	}
-	getOsFromUserAgent();
 
 </script>
 </html>

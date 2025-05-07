@@ -22,10 +22,9 @@
 	<meta name="DC.Language" content="en">
 	<meta property="og:title" content="You're Exactly Where You're Supposed to Be" />
 	<meta property="og:description" content="You're Exactly Where You're Supposed to Be: Mindful Messages by Daryl Browne" />
-	<script src="https://elevenlabs.io/convai-widget/index.js" async type="text/javascript"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Crimson+Text&display=swap" rel="stylesheet">
 	<!--
 	<meta property="og:image" content="http://darylbrowne.com/images/be-icon.png" />
 	<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
@@ -600,7 +599,7 @@
 			section.scrolls article {
 				position: relative;
 			}
-			section:not(.frame):not(.scrolls) a article p::after {
+			section.scrolls.longest a article p::after {
 				background: url(var(--signature));
 				background-repeat: no-repeat;
 				background-size: auto 20px;
@@ -819,7 +818,7 @@
 			    right: 0;
 			    bottom: 0;
 			}
-			form, select#theVolume {
+			select#theVolume {
 				display: none;
 			}
 			form span {
@@ -913,6 +912,13 @@
 				top: -15vh;
 			}		  
 		}
+
+.signature {
+  font-family: "Corinthia", cursive;
+  font-weight: 700;
+  font-style: normal;
+  color: var(--shade);
+}
 
 	</style>
 	<!--
@@ -1992,7 +1998,7 @@ Why not appreciate your own lovely stride?
 
 
 
-When your mind wishes to retaliate,
+When the mind prepares to retaliate,
 
 This is the perfect time to negotiate
 
@@ -10728,11 +10734,11 @@ Feel free to make preparations galore.
 
 
 
-Or don't prepare at all; Just improvise
+We diminish when we conceptualize,
 
-If you find it too foreign to visualize
+So don't prepare at all; Just improvise.
 
-But try to have some feel of the prize.
+May the feeling itself be your prize.
 
 
 
@@ -32851,7 +32857,7 @@ Or does the link feel somewhat tacky?
 
 Happiness isn't so much a goal
 
-As it is to defy what you're told
+As it is to leave what you're told
 
 In order to live from your soul.
 
@@ -47846,7 +47852,7 @@ No more discussing yourself abstractly.
 
 What are you looking forward to exactly?
 
-Discuss you yourself defying satisfactory.
+Discuss how to leave behind satisfactory. 
 
 
 
@@ -52548,9 +52554,9 @@ And a true education earn.
 
 It can't work until you try
 
-A way with no reason why
+A way without a reason why,
 
-That serves mostly to defy.
+That can effortlessly defy.
 
 
 
@@ -65271,7 +65277,7 @@ Create swiftly.
 
 Spend thriftily.
 
-Defy history.
+Sow history.
 
 
 
@@ -65515,11 +65521,11 @@ Feeling determines where
 
 
 
-Question that reality.
+Question that reality
 
-Defy its physicality.
+Past its physicality.
 
-Buck all normality.
+Don't answer normality.
 
 
 
@@ -81659,6 +81665,46 @@ You now have exactly what you need.
 
 
 
+Ask yourself if it's worth all that -
+
+Worth things sliding a bit off track -
+
+Worth the experience of heading back.
+
+
+
+Ask yourself if it's worth the cost -
+
+The price of possible progress lost -
+
+All the bridges long-since crossed.
+
+
+
+Ask yourself if that
+
+Feels like going back
+
+(like a broken pact).
+
+
+
+Ask yourself what you feel -
+
+Which part registers as real,
+
+How it's clear you've healed.
+
+
+
+Keep asking yourself - often as you can -
+
+Whether your mind claims to understand,
+
+Or your heart genuinely knows this land.
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -82582,11 +82628,12 @@ function convertBase(value, from_base, to_base) {
 						const ad = "<form><span class='app'>Get the <i>Take-a-Moment</i> App</span></form>";
 						const vo = "https://02b7cf4.netsolhost.com/audio/q" + (Math.floor(Math.random() * 520) + 1) + ".mp3";
 						const wk = `<form id='form' onsubmit='return openBook();'><select id='theMonth'>${selMonths}</select><select id='theDay'>${
-						selDays}</select><select id='theVolume'><option value=''>Vol.</option>${selVols}</select>${button1}</form><elevenlabs-convai agent-id='2HTNsI9yZpRKlgZWzOSp'></elevenlabs-convai>`;
+						selDays}</select><select id='theVolume'><option value=''>Vol.</option>${selVols}</select>${button1}</form>`;
 						const nav = !(window.location.hostname).includes(app) ?  wk : ad;
 						//scrolls = "<section class='scrolls cover'>" + pages[0] + nav + "</section>";
-						const dab = `<img id="signature" src="${signature}" />`;
-						scrolls = `<section class='scrolls cover'>` +  pages[0] + dab + nav + `</section>`;
+						//const dab = `<img id="signature" src="${signature}" />`;
+						const dab = `<span class='signature' id='signature'>darylbrowne@darylbrowne.com</span>`;
+						scrolls = `<section class='scrolls cover'>` +  pages[0] + nav + `</section>`;
 						if (!isType && !location.search) {setInterval(my.journey,30000,true);}
 					}
 

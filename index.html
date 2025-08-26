@@ -34,7 +34,8 @@
 	<link rel="apple-touch-icon" href="images/be-icon.png" />
 	<link rel="apple-touch-icon-precomposed" href="images/be-icon.png" />-->
 	<script type="text/javascript">
-		const app = 's-a.lt';
+		//window.alert(window.location.hostname);
+		const app = '';
 		const signature = `data:image/png;base64,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`;
 		let cause1 = [],
 			effect2 = [],
@@ -1126,14 +1127,6 @@ Proceed knowing you are enough.
 
 
 
-It originates in your heart, sadly then
-
-Moves between your eyes into your head,
-
-To attempt to cloud your perception next.
-
-
-
 It's as brave - whether you go or remain -
 
 To leave what's left to any one of them:
@@ -1770,7 +1763,7 @@ Be sad for as long as you must and move on.
 
 You don't need to be ready, or even strong.
 
-Just find a nearby path you can walk along.
+Just find a nearby path you can go along.
 
 
 
@@ -1792,7 +1785,7 @@ Recognizing the past helps what's not yet.
 
 Pain is allowed. Let it flow right by.
 
-Bear witness with a compassionate eye,
+Bear witness with a compassionate sigh,
 
 Remembering that trust makes it subside.
 
@@ -1960,7 +1953,7 @@ Yet thanklessly handle daily lifesaving.
 
 Appreciate ordeals that feel harder still,
 
-When the intended goals go unfulfilled,
+When expressed needs remain unfilled,
 
 When all you truly are and own is Will.
 
@@ -2138,7 +2131,7 @@ What are you most focused on today?
 
 And what if this doesn't go your way?
 
-Can you see goodness within a delay?
+Can you find goodness within a delay?
 
 
 
@@ -2296,7 +2289,7 @@ When do you perform at your best?
 
 Is there something you need to ask yourself?
 
-Is there a story you need to hear You tell?
+Is there a story you need this You to tell?
 
 Is there something you know all too well?
 
@@ -2310,11 +2303,11 @@ Either way, are you doing so consciously?
 
 
 
-Are you hearing just what you want to hear?
-
-Or do you try to make your listening clear?
-
 Don't both ends of this have to be sincere?
+
+Don't both of you have to be fully here?
+
+Don't both of you have to be just as clear?
 
 
 
@@ -3126,7 +3119,7 @@ Can top your own unfolding mysteries.
 
 
 
-Clarity needs ample room to see true, so
+Clarity requires space, distance, room.
 
 Stay unattached from all points of view.
 
@@ -3202,7 +3195,7 @@ Time always reveals more, so just wait.
 
 Have a lifetime view; you can't be late.
 
-You see turns, but the way is straight.
+You meet turns, but the way is straight.
 
 
 
@@ -3298,7 +3291,7 @@ The words themselves are nearly useless.
 
 How they're delivered is the truest test.
 
-Forgo what's said to hear what's meant.
+Gather the intent. Filter out the rest.
 
 
 
@@ -3450,7 +3443,7 @@ Looking at the effort you've exerted,
 
 Has this made you even more certain?
 
-Do you see another door you can open?
+Is there another door you can open?
 
 
 
@@ -3466,7 +3459,7 @@ Being good to yourself can mean to stop.
 
 Let all the tasks and appointments drop.
 
-Raise your busy hands and let them flop.
+Harvest free time like it's your crop.
 
 
 
@@ -3544,9 +3537,9 @@ And choose to become impossible to beat.
 
 Until you can move on, keep your spirit
 
-By being mindful of who you let near it.
+By being mindful of who you let near it
 
-Among noisy folk will you even hear it?
+(A pathway works best when you clear it).
 
 
 
@@ -3554,7 +3547,7 @@ The one who's asking, &ldquo;Oh, but what if?&rdquo;
 
 Would be better off just looking within
 
-To see there is only from here to begin. 
+Because there is only from here to begin. 
 
 
 
@@ -3608,7 +3601,7 @@ Loving-kindness is more powerful fuel.
 
 Hold your tongue as you would a feather;
 
-Your ears and words are closely tethered
+Thoughts and words are closely tethered
 
 And turn the world when used together.
 
@@ -3686,11 +3679,11 @@ New benefits are to be found elsewhere.
 
 
 
-Listen closest to what is sitting silent.
+Clues unintentionally expressed
 
-Clues that were never openly expressed
+Point to what was truly meant.
 
-Point directly into what's truly meant.
+By your own intuition, be led.
 
 
 
@@ -3934,7 +3927,7 @@ And allow everything, including a delay.
 
 
 
-Remain right here and see for yourself:
+Remain right here and behold, yourself:
 
 You don't need anything to enjoy health;
 
@@ -3982,11 +3975,11 @@ Sharp thought so nothing can yolk us.
 
 
 
-They may know more than you do today.
+They may know more than you today,
 
-Best to silence inner backtalk and wait
+So rather than respond, just wait
 
-To hear everything they have to say.
+(Faster results require a delay).
 
 
 
@@ -4014,19 +4007,11 @@ And then renders your charisma electric.
 
 
 
-Life is long. You have time. Calm down.
-
-Wake up. Open your eyes. Look around.
-
-Wiggle your toes deep into this ground.
-
-
-
-Try another approach and see the results
+Try another approach. Track the results.
 
 But whatever your theory, don't give up.
 
-You're farther than you had dreamed of.
+You're closer than you ever dreamed of.
 
 
 
@@ -4168,7 +4153,7 @@ Whichever asks more of you, by it stay.
 
 Surroundings influence all your beliefs.
 
-Surroundings tell your eyes what to see.
+Surroundings limit what you perceive.
 
 Choose your own surroundings carefully.
 
@@ -4294,15 +4279,15 @@ Delivered right to your schedule's door.
 
 
 
-Be as deaf ears to their negative words.
+Be done with all their negative words.
 
 Mind your manners as you inwardly turn.
 
-Save hearing for what helps to be heard.
+Within there's still plenty to learn.
 
 
 
-Use patient ears to hear negative words.
+Use patience to receive negative words.
 
 Someone is trying to convey their hurt.
 
@@ -4482,15 +4467,7 @@ Have you made a list yet?
 
 That is a dream's best bet
 
-To get you in its mindset.
-
-
-
-How you do today is what matters most.
-
-Be lively, do not haunt it like a ghost.
-
-As guest, see the day as gracious host.
+To get you into its mindset.
 
 
 
@@ -4542,9 +4519,9 @@ Edging you outside of your own presence.
 
 
 
-What nourishes you changes all the time.
+Your needs seem to change all the time,
 
-Have to be listening to hear the rhyme -
+But recognize how many of them rhyme -
 
 The belly's verse followed by the mind's.
 
@@ -4632,9 +4609,9 @@ You be the landmark that you base upon.
 
 Savor times between wanting and getting.
 
-They're when you see what you're letting
+They expose everything you're letting
 
-Jam up your present by never forgetting.
+Jam up your present via not forgetting.
 
 
 
@@ -4686,7 +4663,7 @@ So you'll recognize useful connections.
 
 
 
-If you can see confusion up ahead, turn.
+If you're sensing confusion up ahead, turn.
 
 Chaos leads one way - straight to a burn.
 
@@ -4718,7 +4695,7 @@ Deception points back to a heart unwell.
 
 
 
-This is but one way to see things. Tilt
+This is but one angle of approach. Tilt
 
 To notice how your perspective's filled
 
@@ -4734,9 +4711,9 @@ How a bit of exercise helps your brain.
 
 
 
-Step outside of it, and walk its edges.
+Get outside of it, to the outer edges,
 
-Get to where you can see how precious
+Out to where it's clear how precious
 
 It all is - even the tiny imperfections.
 
@@ -4744,7 +4721,7 @@ It all is - even the tiny imperfections.
 
 There is no point in forever responding.
 
-To hear yourself should get you yawning.
+Your reactivity should get you yawning.
 
 You're the sun - it is time for dawning.
 
@@ -4766,19 +4743,11 @@ Anything you think or sense is tenable.
 
 
 
-Are the rules necessary, or convenient?
+Your heart is patient, your mind is not.
 
-Do they cheer you on or watch, silent?
+Thinking will get you tangled/caught.
 
-Can you tell which ones are irrelevant?
-
-
-
-The heart doesn't have nearsightedness.
-
-When you use it to see you'll find this,
-
-That they haven't found their way yet.
+Loving will get doubting to drop.
 
 
 
@@ -4862,11 +4831,11 @@ The mind just full of training is weak.
 
 
 
-Rise - it is now the time for you to rise,
+Rise. It is now time for you to rise,
 
-To face the master you already are inside,
+To face who you already are inside,
 
-And see yourself from behind your eyes.
+To leave external limits behind.
 
 
 
@@ -5022,11 +4991,11 @@ Take every chance to extend a kind hand.
 
 
 
-You're already ready to see on your own.
+The best intuition to trust is your own,
 
-True clarity you have found and grown.
+Understanding you have found and grown,
 
-It perceives, no matter what is shown.
+That perceives no matter what it's shown.
 
 
 
@@ -5144,9 +5113,9 @@ Be hilarious without caring.
 
 Are you there more than you realize?
 
-Ask someone with a fresh set of eyes -
+Ask someone objective, on the outside,
 
-As denial can put on a clever disguise.
+As denial dons some clever disguises.
 
 
 
@@ -5238,11 +5207,11 @@ Don't, that habit will leave you bereft.
 
 
 
-What they do may even deeply annoy,
+What they do may aggravate or annoy,
 
 But irritation is the mind's best ploy.
 
-Work on yourself; see past this decoy.
+Work on yourself; forgo that decoy.
 
 
 
@@ -5296,7 +5265,7 @@ To discover your source and stand apart.
 
 Think of a time when you lost your voice
 
-And see if you had already made a choice
+And ask if you had already made a choice
 
 To silence your inner expressing of joy.
 
@@ -5408,7 +5377,7 @@ All lose who think in terms of some win.
 
 You can let go of understanding your why.
 
-Just watch it unroll in its own due time.
+Just let it unroll in its own due time.
 
 You are the first line - it is the rhyme.
 
@@ -5470,7 +5439,7 @@ Where do you find yourself most often?
 
 
 
-If you could see more of what others see,
+If you realized how little they perceive,
 
 You would be energized with an urgency
 
@@ -5496,7 +5465,7 @@ That'll sprout, spread, shade and feed.
 
 Given a gift, how do you then treat it?
 
-Do you look for what seems incomplete,
+Do you check whether it's incomplete,
 
 Or celebrate as you gratefully receive?
 
@@ -5608,7 +5577,7 @@ Let love and understanding own today.
 
 Recognize when you have nothing to say
 
-And see if some words come out anyway.
+And check if words come out anyway.
 
 If so, to your silence more attention pay.
 
@@ -5659,14 +5628,6 @@ It's possible you're being too relaxed
 About what you'll need to stay intact.
 
 That said, start keeping better track.
-
-
-
-Speaking holds an energy that recreates,
-
-Breathing life into all one contemplates
-
-Echoing - ears to mouths - it circulates.
 
 
 
@@ -5758,11 +5719,11 @@ It is being what's just been lighted.
 
 
 
-Something unmistakable fills your eyes.
+Something unmistakable fills your life.
 
 Something about you can shift the tides.
 
-Something in you just makes this right.
+Something in you just makes things right.
 
 
 
@@ -5806,19 +5767,11 @@ To be as open to gifts as to challenges.
 
 
 
-This is your chance to take Life's dare:
+This is your chance to take Life's dare.
 
-Look it in the eye with an impish glare
+Meet it straight on with an impish glare.
 
-Go after what's most precious and rare.
-
-
-
-Beautiful, lulling spots along your way
-
-May have much to show but little to say
-
-So look more than listen - do not stay.
+Pursue your &ldquo;most precious and rare.&rdquo;
 
 
 
@@ -5842,7 +5795,7 @@ Take advantage of every chance you can
 
 To tell your story where it's in demand.
 
-Wit accomplishes more than the hands.
+Wit accomplishes more than you understand.
 
 
 
@@ -5856,9 +5809,9 @@ By doing things that treasure health.
 
 Laughter is priceless. Treat it as such.
 
-With fun folks, spend time, and much.
+With fun friends, spend time, and much.
 
-If hurt, it eases the need for a crutch.
+With fragile folks, spend less, ease up.
 
 
 
@@ -5882,15 +5835,15 @@ Take not as genuine that which is guile:
 
 A venomous snake also appears to smile.
 
-Stand still and watch from here awhile.
+Be still. Wait right here for a while.
 
 
 
 Before you vouch, make sure they qualify.
 
-Listen to accomplishments, not to alibis.
+Consider accomplishments, not alibis.
 
-Choose making sure over answering why.
+Choose making sure, not answering why.
 
 
 
@@ -5915,14 +5868,6 @@ If even now they are still looking back,
 Reminiscing, narrating, rehashing past,
 
 Are you in fact with those who will act?
-
-
-
-When you need one, a teacher will appear
-
-To grant lessons or to speak into your ear
-
-What your soul has been waiting to hear.
 
 
 
@@ -6011,14 +5956,6 @@ It doesn't matter how long it takes you
 Because that which appears to delay you
 
 Only proves it's impossible to sway you.
-
-
-
-Be aware, just when you hit your stride
-
-And the conversation leans to your side,
-
-It's your ears that should be open wide.
 
 
 
@@ -6206,17 +6143,17 @@ Don't be among those who sigh, &ldquo;I tried.&rdquo;
 
 
 
-Listen only lightly to those who boast
+Pay less attention to those who boast
 
 And claim of anything to know the most.
 
-For now let them serve as humor's host.
+For now, let them serve as humor's host.
 
 
 
 Take lightly the commentary of a critic
 
-Who preferred to look for the fault in it
+Who preferred to find the fault in it
 
 Rather than stand for, beside or within.
 
@@ -6336,9 +6273,9 @@ That can far more than just time waste.
 
 Bad examples can provide the best advice
 
-Needing to neither be packaged nor nice.
+Needing to neither be packaged nor nice
 
-Listen to every life for the lessons inside.
+(Every experience has lessons inside).
 
 
 
@@ -6374,15 +6311,7 @@ Of a loving living and of living lovingly.
 
 
 
-Everyone may say, but you won't hear or
-
-See it until you can look in the mirror
-
-Loving yourself day-by-day ever-dearer.
-
-
-
-What they see is only a delayed reflection:
+What they get is but a delayed reflection:
 
 Where you were, not where you're headed.
 
@@ -6522,7 +6451,7 @@ It's alright to let your schedule bend,
 
 But you must return to what you intend
 
-To see your original goals to the end.
+To take your original goal to its end.
 
 
 
@@ -6590,11 +6519,11 @@ Though more of you is ready for action.
 
 
 
-Revisit some of your less pressing goals
+Revisit some of your less pressing goals.
 
-To see which ones are now stale or cold
+Check which ones are now stale or cold
 
-And which if any can still serve a role.
+And which can still serve a key role.
 
 
 
@@ -6624,9 +6553,9 @@ In matters of positivity, work and love.
 
 The conversation is not worth your time
 
-Unless it is of that special engaging kind
+Unless it's of that special engaging kind
 
-That makes each one of you look inside.
+That makes each of you do an inward dive.
 
 
 
@@ -6648,7 +6577,7 @@ That right answers are the ones to get.
 
 If you don't get just what you expected,
 
-You must see that it is you being tested
+You must know that you're being tested
 
 For what you yourself actually invested.
 
@@ -6771,14 +6700,6 @@ If conversations take a superficial turn
 Don't let your impatience ignite or burn
 
 The listening lesson you need to learn.
-
-
-
-It only seems petty because of your eye
-
-That's trying to focus elsewhere nearby
-
-Instead of upon this answer in disguise.
 
 
 
@@ -7048,7 +6969,7 @@ Get right down to what truly matters.
 
 You come, you go; you shed, you grow.
 
-Only in darkness can you see it glow:
+The darkness helps you notice the glow:
 
 A star in the direction you must go.
 
@@ -7154,7 +7075,7 @@ It comes from where you least expect -
 
 The guidance you will be needing next,
 
-So be open and have both ears prepped.
+So have your attentiveness prepped.
 
 
 
@@ -7168,9 +7089,9 @@ And even more so for what you did not.
 
 Tip your chin up, because you don't know
 
-Who is watching and needs you to show
+Who learns from you/needs you to show
 
-An example of gracefully making it so.
+Living proof of gracefully making it so.
 
 
 
@@ -7342,14 +7263,6 @@ But to each and every one of them, &ldquo;No.&rdquo;
 
 
 
-Take a closer look at what you are doing:
-
-Are you nourished or still just chewing?
-
-Put finishing power into your pursuing.
-
-
-
 Moving forward means not looking back.
 
 You have allies who'll guard your tracks.
@@ -7390,11 +7303,11 @@ Your future with so much more is loaded.
 
 
 
-Hopefully by now you look back and see:
+Just reflect upon your very own history:
 
-Progress walks closest behind adversity
+Progress is packaged up within adversity.
 
-So ease is exactly what you don't need.
+No less will pop out of this difficulty.
 
 
 
@@ -7582,9 +7495,9 @@ On your way home or just paying visits?
 
 
 
-Here, new habits don't look like much,
+Here, new habits don't seem like much,
 
-And so for now, let faith be your crutch
+And so for now, let beliefs be enough
 
 Until they manifest what you can touch.
 
@@ -8008,7 +7921,7 @@ Less judgment and more contemplation.
 
 It is as foolish to blame your reflection
 
-For a blemish you see in its complexion
+For what you notice in its complexion
 
 As it is to find the fault in the tension.
 
@@ -8142,19 +8055,19 @@ Like learning how to maintain a flow.
 
 
 
-Enough of trying to meet their demands
+Enough of trying to meet their demand,
 
-That always use the work of your hands;
+That always expects you to understand.
 
-Root your two feet. In stillness stand.
+Try stillness, and from here expand.
 
 
 
-You can listen regardless of interest,
+Rather than actually address,
 
-And hear if a heart is being addressed.
+Words can make quite a mess;
 
-If not, words are just making a mess.
+You don't need words to bless.
 
 
 
@@ -8198,11 +8111,11 @@ Dismiss your inner court with a nudge.
 
 
 
-If you can look past each circumstance,
+This unrequested circumstance
 
-And past every opportunity to advance,
+Is your opportunity to advance,
 
-You'll see your genuine, actual chance.
+To take a wholly inward chance.
 
 
 
@@ -8267,14 +8180,6 @@ You will come across it everywhere else
 So why not start right here with yourself?
 
 Work solely on your own highest health.
-
-
-
-In matters of eating, fitness and wealth
-
-Find one way each day to push yourself:
-
-Do what you learned despite what's felt.
 
 
 
@@ -8382,7 +8287,7 @@ And each must leave you nothing to do.
 
 
 
-If you're hearing from just one source
+If you're drawing from just one source
 
 You're ignoring life's far greater force
 
@@ -8494,9 +8399,9 @@ You can master the art of being still.
 
 
 
-Look at what you are doing to yourself
+Notice what you're doing to yourself,
 
-To see whether it benefits your health
+Whether it benefits your health,
 
 Or just echoes what someone else felt.
 
@@ -8523,14 +8428,6 @@ Ranking yourself from expert to novice
 Only adds sand to a desert of nonsense;
 
 Put your focus on remaining conscious.
-
-
-
-When given the words you prefer to hear,
-
-Treat your ears as eyes that keenly peer
-
-Past them to what quickly draws near.
 
 
 
@@ -8654,11 +8551,11 @@ Laugh and give it your silliest smile.
 
 
 
-Take a moment to see it from the finish
+Take a moment. Imagine it's been finished.
 
-And see what stress this does diminish;
+What stressful detail does this diminish?
 
-To be most effective, remain a witness.
+To be effective, imagine from a distance.
 
 
 
@@ -8998,7 +8895,7 @@ To hold both elements in one hand.
 
 
 
-There's a time for hearing, but not now;
+There are times to reconsider. Not now.
 
 This is the time to tilt your head down
 
@@ -9043,14 +8940,6 @@ You are best fit to negotiate
 Because you know how to wait.
 
 Next, prepare to demonstrate.
-
-
-
-Knowing what you have is no small feat,
-
-Like tasting ingredients in all you eat
-
-So take your time by taking a seat.
 
 
 
@@ -9166,14 +9055,6 @@ While you do what you came here for.
 
 
 
-And now open your hands for all to see
-
-That you've shared with them everything
-
-And that now they must all let you be.
-
-
-
 You are most you when you are a channel,
 
 And things greater than you could handle
@@ -9246,27 +9127,11 @@ To enjoy going, you'll need to rejoice.
 
 
 
-Most important today is what you'll eat,
-
-More so than where you point your feet
-
-Because it decides what you you'll meet.
-
-
-
 You got too comfortable - look around:
 
 You blended into your own background.
 
 You are hereby no longer spellbound.
-
-
-
-You can walk away from compromise
-
-If it requires you to close your eyes;
-
-If it does not, it is the way most wise.
 
 
 
@@ -9323,14 +9188,6 @@ Say whatever must be said - but kindly.
 The mind opens when dealt with wisely.
 
 Words work best when delivered mildly.
-
-
-
-Be steady in who you see yourself to be
-
-And yet willing to change into anything
-
-That your vision tells you is necessary.
 
 
 
@@ -9482,7 +9339,7 @@ It can feel right - chasing enemies down
 
 Until you catch up and turn them around
 
-And see it's you yourself you have found.
+(And it's you yourself you've found).
 
 
 
@@ -9494,11 +9351,11 @@ Behind what it would rather be feeling.
 
 
 
-Listen to yourself, but not too closely
+Follow yourself, but not too closely.
 
-To the inner chatter talking mostly:
+Notice daily choices you make mostly.
 
-It is just a guest - you are hosting.
+If each is a guest, which you is hosting?
 
 
 
@@ -9656,7 +9513,7 @@ Enough to prove that you belong here.
 
 If you need proof, just look back a year
 
-To see no one single thing got you here
+To note no one single thing got you here
 
 Yet you knew it would one day be clear.
 
@@ -9790,14 +9647,6 @@ And back out again. Forget the rest.
 
 
 
-A few key things you need to increase:
-
-More water, rest and nutrients to eat
-
-For the clarity you're going to need.
-
-
-
 Right now it is about being stable
 
 And doing well what you are able;
@@ -9870,7 +9719,7 @@ The habits that have produced this issue.
 
 
 
-Love yourself and you'll see another way
+Love yourself and behold another way -
 
 One that you overlooked just yesterday -
 
@@ -9894,11 +9743,11 @@ Shrewd judgment is another form of love.
 
 
 
-It only takes one decision to turn this
+Eventually, you'll get the gist.
 
-Into what can give power to your spirit
+Go ahead and make your whole list,
 
-No one but you needs to know or hear it.
+But leave room for fate to fit.
 
 
 
@@ -9910,11 +9759,11 @@ Entire destinies change just like this.
 
 
 
-You're not obligated to be what you were.
+The past is but a deceptively vivid blur,
 
-Look back to see your past as a vivid blur.
+So decide anew based on what you prefer
 
-So decide anew based on what you prefer.
+(You're not obligated to be what you were).
 
 
 
@@ -9990,7 +9839,7 @@ You would stop being so surprised.
 
 
 
-Can you see yourself as a conduit?
+Can you feel you're more of a conduit?
 
 Realize you're not here to &ldquo;do it.&rdquo;
 
@@ -10011,14 +9860,6 @@ To some, you are the utmost authority
 On thinking about patterns creatively.
 
 Be proud of this and live accordingly.
-
-
-
-Before life can be what you make it
-
-Life's ears need to hear you say it -
-
-That you've now chosen to commit.
 
 
 
@@ -10064,7 +9905,7 @@ But that somehow you already knew.
 
 You know a thing is far from dead
 
-When you see its skin being shed;
+When you notice its skin being shed;
 
 Is your discomfort being misread?
 
@@ -10144,9 +9985,9 @@ To bring the whole thing down to earth.
 
 It helps to know which you're up against -
 
-Someone who doesn't care or an opponent;
+Someone who doesn't care, or an opponent;
 
-To hear what their words really meant.
+To interpret what their words truly meant.
 
 
 
@@ -10582,19 +10423,11 @@ So telling them everything is a must.
 
 
 
-Hopefully you can see you're much wiser,
+Hopefully you notice you've grown wiser,
 
 Much more observant, yet far from a miser
 
 In how you used this to open up wider.
-
-
-
-Sometimes it's hard to see from up close
-
-But what you have done deserves a toast -
-
-Daring to be more vulnerable than most.
 
 
 
@@ -10603,14 +10436,6 @@ Your focus should be aimed at one thing
 Or else you won't do enough of anything
 
 To enjoy mastery's wonderful feeling.
-
-
-
-After the longest stretch take a break
-
-And see what's floating in your wake -
-
-Anything there that you saw too late?
 
 
 
@@ -10667,14 +10492,6 @@ Once you're creating, it's less about you
 And more about letting it pass through -
 
 The messages being sent from your muse.
-
-
-
-Raise it high enough to see the heavens
-
-But keep it where it is still relevant
-
-Both in what's said and in what is meant.
 
 
 
@@ -10792,7 +10609,7 @@ There is nothing here worth the fight.
 
 All it means is it's not yet your time;
 
-Though you hear otherwise from the mind,
+Despite the juicy claims of the mind,
 
 There is more left to peel of your rind.
 
@@ -10811,14 +10628,6 @@ It's not always your reflection you see.
 Sometimes you are faced with what's ugly
 
 To learn about how not to create beauty.
-
-
-
-Look at it with your own eyes. Go. See.
-
-Because the picture is still incomplete
-
-And you must have it before you agree.
 
 
 
@@ -10944,9 +10753,9 @@ Into bottomless buckets of promises grand.
 
 It's also known as coming around the bend
 
-When you see you haven't reached the end
+When you know this isn't the end,
 
-But even more amazing road ahead instead.
+But more amazing paths ahead instead.
 
 
 
@@ -11178,7 +10987,7 @@ Unobserved, you become your routines -
 
 Triggers, reactions, then you in between;
 
-Check tendencies with an eye that's keen.
+Check tendencies with a discernment keen.
 
 
 
@@ -11214,11 +11023,11 @@ Because you need this in your repertoire.
 
 
 
-Stop everything - rethink your thoughts
-
-To see if an assumption's got you caught.
+Stop everything - rethink your thoughts.
 
 Do what you dream, not what you ought.
+
+Certain assumptions are certainly wrong.
 
 
 
@@ -11510,11 +11319,11 @@ But is answering your life's question.
 
 
 
-It is uncomfortable to overextend
+It can be uncomfortable to extend,
 
-But you must, to see yourself bend
+But you must, to let yourself bend
 
-To break what's brittle at each end.
+And strengthen what's at each end.
 
 
 
@@ -11678,7 +11487,7 @@ And expand your definition of wealth.
 
 
 
-Schedule time to just walk away,
+Schedule time to just get away,
 
 To give your mind space to stray
 
@@ -11690,7 +11499,7 @@ And some connections need to be cut
 
 To keep you from falling into a rut
 
-Where it's hard to see what is what.
+Where it's hard to know what's what.
 
 
 
@@ -11699,14 +11508,6 @@ Exactly why does it need to be so huge?
 Is your thirst only quenched by deluge?
 
 How much of it all will your heart use?
-
-
-
-Go ahead and be as specific as you can,
-
-So precise you can feel it in your hand,
-
-So clear you can see each grain of sand.
 
 
 
@@ -11747,14 +11548,6 @@ You know you've closed a life chapter
 When your belly holds healthy laughter
 
 Over your unique happily-ever-after.
-
-
-
-If your ears could walk away they would,
-
-But since they cannot, your feet should
-
-Head to those who speak of what is good.
 
 
 
@@ -12262,11 +12055,11 @@ A reach that is both loving and wise.
 
 
 
-What you're hearing isn't who they are
+What they've given isn't who they are
 
 Any more than the melody is the guitar;
 
-Are their words and deeds both on par?
+What knows the difference? Your heart.
 
 
 
@@ -12344,7 +12137,7 @@ Do not pass it back, just gently drop it.
 
 Be mindful of the words you select
 
-To keep your mind's ears in check.
+To keep your opinions in check.
 
 Try out new ones and then reflect.
 
@@ -12371,14 +12164,6 @@ Part of your work must be shrouded,
 Somewhere you alone are allowed in,
 
 So your center does not get crowded.
-
-
-
-In order to help, they must first know
-
-That you need help to continue to go.
-
-They only see this by what you show.
 
 
 
@@ -12606,19 +12391,19 @@ And not just something new.
 
 
 
-Now be brave and put your name on it,
+Now be brave and put your name on it.
 
-Because courage needs to be flaunted
+Courage doesn't need to be flaunted;
 
-So others see how to be undaunted.
+Naming reminds you you're undaunted.
 
 
 
-If ever you hear yourself stiffen,
+Our habits put us into positions.
 
-A habit put you in that position:
+Offer all of them up for revision
 
-Offer all of it up for revision.
+(Patterns are flexibility stiffened).
 
 
 
@@ -12766,14 +12551,6 @@ That listens until all is clear.
 
 
 
-No need to glare at what you want to change
-
-But you must craft perfection in your brain
-
-So your subconscious can see where to aim.
-
-
-
 Along with patience have a plan
 
 That includes everything it can -
@@ -12886,19 +12663,11 @@ Then pack your gear before setting out.
 
 
 
-What you love to hold, you sometimes drop.
-
-When you do, it's just as urgent to stop
-
-To see if you made a mess you need to mop.
-
-
-
 Pick up after yourself
 
-As a matter of health,
+As a habit of health,
 
-And proof of wealth.
+And harbinger of wealth.
 
 
 
@@ -12979,14 +12748,6 @@ Start that next piece before this one is done
 And if your mind keeps asking for a reason:
 
 Nothing can finish until after you've begun.
-
-
-
-Hold those fears in two closed hands
-
-And let them escape as grains of sand
-
-Each too small to make any demands.
 
 
 
@@ -13078,11 +12839,11 @@ By starting you are winning.
 
 
 
-Listen to what is being offered -
+Consider what is being offered.
 
-Is it being said to sound proper?
+Does it feel genuine or &ldquo;proper?&ldquo;
 
-Is it from a real doer or a talker?
+Has it been kept intact or altered?
 
 
 
@@ -13102,19 +12863,11 @@ By using the power of collaboration.
 
 
 
-When they ask you for the story
-
-Be sure to cover every category
-
-As if they were an actual jury.
-
-
-
 More people than is evident
 
-Truly do appreciate silence;
+Truly do appreciate silence.
 
-Give it and see what you get.
+Give it: Notice what you get.
 
 
 
@@ -13162,7 +12915,7 @@ Things are headed right where they're going.
 
 You yourself get to witness life flowing,
 
-And to see firsthand how useless is knowing.
+Reminded firsthand how useless is knowing.
 
 
 
@@ -13171,14 +12924,6 @@ Let them tell you it's unbelievable
 As your knowing defies the physical
 
 And creates completely new material.
-
-
-
-No one knows what they're talking about
-
-Except for the inner voice with no mouth.
-
-Listen so well you become deaf to all doubt.
 
 
 
@@ -13198,11 +12943,11 @@ Exactly who is bringing who along?
 
 
 
-Can you see how you've repeated enough?
+You've repeated that pattern enough.
 
-Do you see there's no more to gain from
+There's nothing more to gain from
 
-Continuing with no point to speak of?
+Continuing. Get yourself freed up.
 
 
 
@@ -13366,27 +13111,11 @@ Give them no more of your time.
 
 
 
-Signs simply wait to be read.
-
-You're speeding by one again.
-
-Rely on the eyes of a friend.
-
-
-
 If you get stuck in the circle of thought
 
 For far longer than you realize or ought,
 
 Take one bold leap and out you will pop!
-
-
-
-If you see that you've come back here again,
-
-And don't quite recall how or when,
-
-Breathe in fresh knowing, to a count of ten.
 
 
 
@@ -13410,7 +13139,7 @@ Being able to sense a disguise
 
 Is part of becoming this wise;
 
-Do you also see what's inside?
+But what else do you recognize?
 
 
 
@@ -13435,14 +13164,6 @@ You will never get enough -
 You will only have enough -
 
 Once you decide, &ldquo;Enough.&rdquo;
-
-
-
-Forget what you've been reading -
-
-The kind of day you're completing
-
-Is what decides what to be eating.
 
 
 
@@ -13531,14 +13252,6 @@ Open up a little bit more of your attention
 To absorb beauty from every direction
 
 And feel how it immediately cures tension.
-
-
-
-You should now be asserting yourself
-
-Via firm handshake or wishing well;
-
-Make an impression that is heartfelt.
 
 
 
@@ -13686,11 +13399,11 @@ Is how you'll stay fulfilled... and glad.
 
 
 
-Listen so closely, not for guidance,
+Pay close attention, not for guidance,
 
 But to find your next great alliance
 
-Or who deserves your full defiance.
+(Or who deserves your full defiance).
 
 
 
@@ -13720,9 +13433,9 @@ Without hotheads flaring up.
 
 The ones who feel like long lost friends
 
-Are the ones you can trust, tell and send
+Are the ones you can entrust with/lend
 
-Or ask to hear you out again and again.
+The whole of your heart again and again.
 
 
 
@@ -13794,7 +13507,7 @@ You do not need to be any smarter
 
 Nor do you need to work any harder,
 
-You just need to walk a bit farther.
+You just need to go a bit farther.
 
 
 
@@ -13835,14 +13548,6 @@ Do your part of the work,
 And if your helpers shirk,
 
 Let this teach, not hurt.
-
-
-
-Do all you can before luck arrives
-
-And you'll discover it in disguise
-
-Right here in front of your eyes.
 
 
 
@@ -14022,9 +13727,9 @@ And then the impact is major.
 
 
 
-Your morning rituals are critical,
+Your morning rituals are critical.
 
-And when you see just how pivotal,
+When you realize just how pivotal,
 
 They become your secret miracle.
 
@@ -14574,27 +14279,11 @@ They will withstand even direct hits.
 
 
 
-Let the outcome go either way.
-
-If it matters, you'll be led astray;
-
-Always benefit, come what may.
-
-
-
-Fine, call this your obsession - 
-
-But see what else must get done
-
-To give more to your intention.
-
-
-
 Enjoy feeling this inner passion,
 
 But make sure the tasks get done
 
-To fulfill your external mission.
+To honor your original mission.
 
 
 
@@ -14662,14 +14351,6 @@ Choose what sounds and feels like flotation.
 
 
 
-Trust your ears even more than your eyes
-
-And you will soon be pleasantly surprised
-
-At how easy it is to know things' insides.
-
-
-
 Being reliable is pulling you under.
 
 Change is what gives your life color.
@@ -14682,7 +14363,7 @@ Regardless of the effort you exert,
 
 Not everything you do will work.
 
-Listen to feedback and stay alert.
+Get good feedback and stay alert.
 
 
 
@@ -14774,14 +14455,6 @@ Either way delivers you to transition.
 
 
 
-There is more of you you can call upon.
-
-Go to the mirror, take time, look long.
-
-It's there in your eyes: endless beyond.
-
-
-
 You've reached the end of standing still.
 
 Once you get moving your momentum will
@@ -14854,7 +14527,7 @@ All throughout this you should feel content.
 
 
 
-Treasure those who hear your intention.
+Treasure those who value your intention.
 
 Treasure those who pay close attention.
 
@@ -15038,14 +14711,6 @@ Some pretend to go, but it's just a ruse.
 
 
 
-How you see the exact same thing
-
-Determines how every day begins,
-
-So make a ritual of perceiving.
-
-
-
 Choose to have a plan for the day or
 
 Get pushed and pulled every which way.
@@ -15070,11 +14735,11 @@ Allow timing to have its own reasons.
 
 
 
-While looking for a way to approach it,
+While planning a way to approach it,
 
 Stop to consider if you've even noticed
 
-Whether your eyes are actually open.
+Whether your mind is actually open.
 
 
 
@@ -15094,11 +14759,11 @@ Until you learn how to be where you're at.
 
 
 
-When they say it is too complicated,
+If they say it's too complicated,
 
-Listen with a great deal of patience.
+It's because they haven't waited
 
-You did the work - they just waited.
+For the simplicity of patience.
 
 
 
@@ -15182,14 +14847,6 @@ Is there proof of what they can unleash?
 
 
 
-Despite what the resentful are whining,
-
-The greatest impact is all about timing:
-
-Keep your eyes, ears and arms aligning.
-
-
-
 Let everyone else stay at the festival -
 
 For you, let that be incomprehensible
@@ -15230,11 +14887,11 @@ Now shore up against the downside.
 
 
 
-Before you hear the howling of the wind
+Long before the arrival of strong winds
 
 Is when your stormproofing must begin;
 
-It is the time to build things, not listen.
+Build now and confusion won't get in.
 
 
 
@@ -15256,7 +14913,7 @@ Out of everything try to get the most use.
 
 Study the sources offering you advice:
 
-Do they need you to see them as right?
+Do they need you to call them right?
 
 Is their delivery honest or overly nice?
 
@@ -15350,14 +15007,6 @@ That it is time to entrust others to do.
 
 
 
-Your vision is stuck behind your beliefs.
-
-Other people can provide you with relief,
-
-Offering to be your extra hands and feet.
-
-
-
 This is not the time or place for focus.
 
 It is the time to find space to be open
@@ -15366,9 +15015,9 @@ To make sense of all that's unfolded.
 
 
 
-They need you to rush. Instead, wait.
+They need you to rush. Therefore, wait.
 
-You may see more if you just hesitate
+More reveals itself if you hesitate,
 
 Or at least take time to contemplate.
 
@@ -15416,9 +15065,9 @@ Start over with what can keep you curious.
 
 Ask until you find what intrigues you most.
 
-Question as if you're the most curious host
+Engage as if you're the most curious host,
 
-Wanting to hear everything you can be told.
+Eager to ensure everyone's name is known.
 
 
 
@@ -15462,11 +15111,11 @@ To behold all the deeper circumstances.
 
 
 
-Next, stop all that inner speaking -
+The essence of being wise is receiving,
 
-Listen to all that they were feeling.
+So welcome their thoughts and feelings
 
-All that being wise is, is receiving.
+(Without clinging to either, ideally).
 
 
 
@@ -15638,14 +15287,6 @@ It's cleared with intention backed by will.
 
 
 
-But this time they see more than you can,
-
-The entire horizon and not just the land.
-
-Beside them for a while is where to stand.
-
-
-
 Put your whole trust in that biggest dream
 
 Regardless of how impossible it may seem;
@@ -15702,14 +15343,6 @@ Feel for what goes on and on.
 
 
 
-Put one hand on your heart
-
-So the other one can start
-
-Then each can do its part.
-
-
-
 You're likely upset over the wrong thing,
 
 Like ignoring music while trying to sing;
@@ -15750,11 +15383,11 @@ You should do what has lifelong worth.
 
 
 
-Who would you be happiest to see again?
+Who would you be happiest to meet again?
 
-Here they are! This is not play pretend,
+Here they are! This is not play pretend.
 
-Rather a bit of your awareness to mend.
+Imagination has even more powers to lend.
 
 
 
@@ -15774,19 +15407,11 @@ How you respond is what gets overheard.
 
 
 
-Those you're happiest to see again return
+Those you're happiest to meet again return
 
 Not for any extra love they hope to earn,
 
 But because you don't just glow, you burn.
-
-
-
-There's little you do someone else can't.
-
-It's how you do it that forever enchants:
-
-Everyone here loves to watch you dance.
 
 
 
@@ -15798,7 +15423,7 @@ To notice what each helps you become.
 
 
 
-If you look around and see a mess,
+This doesn't mean it's all a mess -
 
 It means your routine is in distress
 
@@ -15848,7 +15473,7 @@ Be the riverbed. Let it flow through.
 
 It will be better to focus on quality
 
-Of a kind you can touch, hear and see
+Rather than appealing to popularity,
 
 So you can live deep within integrity.
 
@@ -15878,11 +15503,11 @@ Express what you rarely mention.
 
 
 
-Listen up for words that sit you down
+Let this be your new high ground.
 
-Moments after you meet their sound:
+From here, notice what surrounds.
 
-They will be your new high ground.
+From here, let future plans abound.
 
 
 
@@ -15955,14 +15580,6 @@ As often as you admit you do not know,
 You will give answers one place to flow
 
 And prove there is nothing to control.
-
-
-
-It's so important to keep making plans.
-
-Whether they take you to distant lands,
-
-Or just take your heart to your hands. 
 
 
 
@@ -16094,11 +15711,11 @@ To help clarify and refine.
 
 
 
-You need to keep heading this same way
+You need to keep heading this same way.
 
-For what you'll get to hear yourself say
+As you find better ways to do each day,
 
-As you find better ways to do each day.
+Others will find you harder to delay.
 
 
 
@@ -16110,11 +15727,11 @@ Let your dawn light up this forest.
 
 
 
-Rather than judge where you see a mess,
+Rather than call the whole thing a mess,
 
 You should stop and investigate instead
 
-To find what turned neatness on its head.
+To find what turned your plan on its head.
 
 
 
@@ -16171,22 +15788,6 @@ Why does it have to be wrapped so tight?
 Does this symbolize a desire to be right?
 
 Loosen: discover both meanings of light.
-
-
-
-Look at your hands - the work they've done:
-
-How they've tirelessly served for everyone.
-
-They probably deserve a little bit more fun.
-
-
-
-If you make your hands work too hard,
-
-They'll start to put up their own guard;
-
-You get more done by using your heart.
 
 
 
@@ -16478,17 +16079,17 @@ You will strengthen what was brittle.
 
 
 
-Listen closely or long enough to hear it:
+If you cannot stop, start or steer it,
 
-That warning not to go anywhere near it
+That's a sign not to go anywhere near it
 
-Because you cannot stop, start or steer it.
+And instead do what feeds on your spirit.
 
 
 
 Have they given themselves enough time
 
-To hear your request and properly align?
+To address your needs or fittingly align?
 
 Decide before things get too intertwined.
 
@@ -16814,7 +16415,7 @@ Allow your mind to drift and stray.
 
 
 
-You should start to see some benefit
+You should start to feel some benefit
 
 From working near those you're with,
 
@@ -16928,9 +16529,9 @@ Will patiently wait for you to open it.
 
 Whatever you focus on multiplies,
 
-And whatever you ignore subsides,
+And whatever you ignore subsides
 
-So decide what to show your eyes.
+(So spend longer before you decide).
 
 
 
@@ -16950,11 +16551,11 @@ Look at this as an exact opposite route.
 
 
 
-That wasn't the way you prefer to hear it,
+That wasn't the delivery you prefer.
 
-But could it have been made any clearer?
+But trust that it did actually occur
 
-You are not the doer - you're the hearer.
+(Proceed undaunted and undeterred).
 
 
 
@@ -17006,11 +16607,11 @@ Let it fade. Let every bit of it go free.
 
 
 
-You're here now to experience surprise,
+Better to be inexperienced than wise
 
-To experience disbelieving your eyes -
+In things that involve only the mind.
 
-To feel more inexperienced than wise.
+How many unmarked paths have you tried? 
 
 
 
@@ -17102,11 +16703,11 @@ It is a loud call to raise your standard.
 
 
 
-You are the only one in your way:
+Throughout the course of the day,
 
-Simply hear some of what you say.
+You are the only critic in your way:
 
-Change your language this very day.
+When was your last inner hooray?
 
 
 
@@ -17198,19 +16799,11 @@ Until you get there, count on belief.
 
 
 
-You can see it on involved people's faces,
+It's begun to show right on your face,
 
-An inner glow that reflects engagement:
+The inner glow from feeling engaged:
 
-Make yourself useful in fulfilling places.
-
-
-
-You can live as perfectly as you like,
-
-And remain unfulfilled on the inside,
-
-So seek to grow gratitude, not pride.
+You're useful in fulfilling places.
 
 
 
@@ -17502,11 +17095,11 @@ And ignoring the tales told boastfully.
 
 
 
-If you need to yell to be heard,
+Where are your efforts incapacitated?
 
-When it's calm, you'll sound absurd:
+Where do you feel most appreciated?
 
-Go where they hear your words.
+From what do you need to be liberated?
 
 
 
@@ -17518,11 +17111,11 @@ Your fresh presence turns them rotten.
 
 
 
-Their worries take over their ears
-
-And warp everything they might hear;
-
 Be gentle where they have most fear.
+
+Be kind, even if you cannot be clear.
+
+Be helpful by being subtly sincere.
 
 
 
@@ -17568,7 +17161,7 @@ Would get them to shout, &ldquo;Encore!&rdquo;
 
 Some use conversation as a form of attack,
 
-To battle your ear for what it is they lack.
+To invade your time for what it is they lack.
 
 In situations like this, pull listening back.
 
@@ -17936,7 +17529,7 @@ Along their way to freedom.
 
 You are beautiful before you try -
 
-A beauty even clear to closed eyes,
+A beauty of a being, a heart, a life,
 
 A beauty that has already arrived.
 
@@ -18358,11 +17951,11 @@ Giving thanks will always keep you strong.
 
 
 
-One hand builds while the other battles -
+Part of you builds as the other battles.
 
-Right now, that's just where things are at,
+Right now, that's where things are at, so
 
-So stay fully aware of each effort's status.
+Stay fully aware of each effort's status.
 
 
 
@@ -18470,7 +18063,7 @@ You can decide what to drop.
 
 
 
-When you hear people complain about time,
+When someone is complaining about time,
 
 How they're managing theirs isn't right,
 
@@ -18530,7 +18123,7 @@ If you thought it otherwise, you mistook:
 
 As it was in all that you ever undertook,
 
-Help is everywhere you're open to look.
+Help awaits in every unsuspecting nook.
 
 
 
@@ -19074,15 +18667,15 @@ How you allow yourself to be addressed
 
 Is more important than can be expressed
 
-Because it decides what you'll hear next.
+Because it decides what you'll take next.
 
 
 
-Despite the fact that it may get botched,
+A detail or two may get botched,
 
-Sometimes your job is to sit and watch:
+But let patience stay topnotch
 
-Patience is all that should be topnotch.
+(under Time's keen watch).
 
 
 
@@ -19374,14 +18967,6 @@ You shouldn't be doing so much at once.
 
 
 
-This new information that you've found -
-
-Is in your hands - to pick up or put down
-
-Based on whether it serves you right now.
-
-
-
 You've done a lot quickly. Now slow down
 
 To truly meet people and just look around
@@ -19590,7 +19175,7 @@ Becoming real just by having you listen.
 
 
 
-Listen more closely than you have been.
+Pay attention more than you have been.
 
 So that you can more carefully examine
 
@@ -19686,7 +19271,7 @@ Is lighting your path's 10,000 candles.
 
 
 
-First figure out if they're hearing you
+Figure out if they're understanding you
 
 Before starting to figure out what to do,
 
@@ -19779,14 +19364,6 @@ You underestimate the dangers of staying,
 And overestimate the ones still naysaying.
 
 Get out there where creators are playing.
-
-
-
-They're far now, yet still feel very dear,
-
-Which is a reminder to focus right here
-
-So you can both be heard as well as hear.
 
 
 
@@ -19899,14 +19476,6 @@ Parts of the journey will feel exciting,
 Others will seem a little frightening;
 
 What will help is to do some writing.
-
-
-
-More important than having a plan
-
-Is being tired of where you stand,
-
-And trusting your own two hands.
 
 
 
@@ -20488,9 +20057,9 @@ You can put everything to good use.
 
 It will be wisest to wait the news out
 
-With your heart's hand over your mouth
+With your heart taking the inward route
 
-Until you feel what this is all about.
+While you decide what this is all about.
 
 
 
@@ -20680,7 +20249,7 @@ What's left is what's never been wrong.
 
 It's alright to find yourself in a mess.
 
-It's alright to walk in a fog of stress.
+It's alright to be in a fog of stress.
 
 It's alright to not return here again.
 
@@ -20784,7 +20353,7 @@ That may tell you which to leave alone.
 
 To get to the heart of this matter,
 
-Listen to some of the daily chatter
+Recognize more of the daily pattern,
 
 And filter out the nonsense faster.
 
@@ -21222,11 +20791,11 @@ What should you truly not be working on?
 
 
 
-Self-sabotage is stealthy and merciless.
+Self-sabotage is stealthily merciless.
 
-So as each new thing invites your best,
+As each new thing invites your best,
 
-Keep a loving eye on what you do next.
+Lovingly guard your purest intent.
 
 
 
@@ -21854,7 +21423,7 @@ Your energy is like water - care is the river.
 
 
 
-Listen to yourself, but not too terribly much.
+Trust yourself - but not too much.
 
 When overthinking, enough is enough.
 
@@ -21971,14 +21540,6 @@ Things are never as they initially seem;
 Your worst day is someone else's dream.
 
 (May your gratitude flow like a stream.)
-
-
-
-If you think of your schedule as a parasite,
-
-What cures it now or the rest of your life?
-
-Moving around, resting well, eating right.
 
 
 
@@ -22462,14 +22023,6 @@ Discovery's viewfinder is dismay.
 
 
 
-You don't need an exact plan,
-
-But knowing where you stand
-
-Is good both for feet and hands.
-
-
-
 If you feel yourself coming unhinged,
 
 Or as if your peace is being infringed,
@@ -22494,11 +22047,11 @@ You will become your own source of dawn.
 
 
 
-Giving them space to hear themselves speak
+Let them know you appreciate their unique.
 
-Makes them feel more than safely unique -
+Give their creativity space/time to peak.
 
-It frees them all from judgment's critique.
+They'll shed their own judgment's critique.
 
 
 
@@ -23310,7 +22863,7 @@ Asking things no one else thinks to.
 
 
 
-You are hearing the movement of a mouth
+And then there is the movement of a mouth
 
 That may not know what it's talking about.
 
@@ -23822,11 +23375,11 @@ Things such as how to actually produce.
 
 
 
-Listen to those with actual experience,
+Trust those with actual experience,
 
-To what's said, as well as what's meant,
+Study how they mastered heart and head.
 
-To how they mastered heart and head.
+Now get back to it with earnest intent.
 
 
 
@@ -23994,7 +23547,7 @@ There is a funny thing about advice -
 
 Whether it's given to teach or entice,
 
-You won't hear it the same way twice.
+It won't reach you the same way twice.
 
 
 
@@ -24382,14 +23935,6 @@ Mastery without love is misery's ploy.
 
 
 
-In all this noise, the answer is quiet.
-
-That's why you can't hear it quite yet.
-
-Can you create the necessary silence?
-
-
-
 If you truly agree that there's too much,
 
 What are you doing to say that's enough?
@@ -24587,14 +24132,6 @@ The comfort of having an exit plan
 Can make drama easier to withstand
 
 And turn harsh desert into soft sand.
-
-
-
-Can you not hear what your gut is saying?
-
-Is that because something loud is playing?
-
-What can help to hear what it's conveying?
 
 
 
@@ -25096,9 +24633,9 @@ When you're simply riding atop its wings.
 
 What if you're generally thinking too much
 
-About facts, figures and fantasies and such?
+About facts, figures, fantasies, and such?
 
-Is thinking really your will's clever crutch?
+The power of your heart is more than enough.
 
 
 
@@ -26406,14 +25943,6 @@ You shatter useless patterns of thought.
 
 
 
-Does it feel like you've reached your limit?
-
-This is points to something in your spirit.
-
-A core need is speaking: do more than hear it.
-
-
-
 Whether the advice sounds flexible or firm,
 
 It is no shortcut to what you have to learn -
@@ -26766,11 +26295,11 @@ Make use of a few key real-world laws.
 
 
 
-Your body is trying to speak to you: hear.
+Your body is communicating with you here.
 
-Even without words, its messages are clear
+Even without words, its messages are clear:
 
-As you consider each and every organ dear.
+Each and every organ considers you dear.
 
 
 
@@ -27182,11 +26711,11 @@ Give them time to think and speak.
 
 
 
-As fast as you were going to get it done,
+Regardless of when you wanted it done,
 
-You now need to go from a walk to a run
+You need to get the hardest part begun
 
-In order to arrive there as the chosen one.
+Even if it requires help from someone.
 
 
 
@@ -28166,9 +27695,9 @@ Discuss common ground that's real.
 
 
 
-Listen past all their claims and slogans.
+Out past all their claims and slogans.
 
-Hear out all their overreaching hopes -
+Out beyond their overreaching hopes -
 
 Good can come from this if you're open.
 
@@ -28451,14 +27980,6 @@ It's not you getting upset - it's your ego.
 Forget feeling snubbed, so you can grow.
 
 You're being pruned. Believe it to be so.
-
-
-
-This time, be angry silently
-
-And you may get more clarity
-
-By hearing just what's noisy.
 
 
 
@@ -28814,14 +28335,6 @@ Edit them out, even if it's awkward.
 
 
 
-Vigilance. Keep your eyes on the road.
-
-Don't be distracted by your heavy load.
-
-Beware conditions you cannot control.
-
-
-
 Focus on precisely what you do best,
 
 With a simple, &ldquo;No,&rdquo; to all the rest.
@@ -29010,7 +28523,7 @@ It seems like you're being asked too much,
 
 Being asked to change your ways and such.
 
-But is your own measuring of it a crutch?
+What if there's no more left to give up?
 
 
 
@@ -29758,11 +29271,11 @@ What do you cling to and, how much?
 
 
 
-When you encounter some kindred souls,
+When you encounter kindred souls,
 
-You might hear yourself sounding bold.
+You become unmistakably bold.
 
-It's because the depth of you just knows.
+Where they celebrate you, go.
 
 
 
@@ -29946,7 +29459,7 @@ This is only the first crossing.
 
 So before you consider pausing,
 
-Listen for your purpose calling.
+Heed what within you is calling.
 
 
 
@@ -30358,7 +29871,7 @@ Forgive second. Love first.
 
 
 
-Listen - the answers are all right here,
+Despite them, the answers are all here,
 
 And they don't even have to be sincere:
 
@@ -30494,11 +30007,11 @@ Do you answer as well as you ask?
 
 
 
-Listen straight through what's said.
+Even if they had the opposite intent,
 
-Even if deception was their intent,
+There is goodness in what they sent:
 
-What will be clear is what's meant.
+A chance to study what someone meant.
 
 
 
@@ -30726,7 +30239,7 @@ It needs your imprint to be of use.
 
 
 
-Keep watching your thought process;
+Keep tracking your thought process;
 
 Does it loop, or seek its new &ldquo;next&rdquo;?
 
@@ -31334,7 +30847,7 @@ Stay open (You can always gain something).
 
 
 
-Will they get to hear what you're up to?
+Will they be told what you're up to?
 
 Will you be straightforward or smooth?
 
@@ -31482,7 +30995,7 @@ If you're so fortunate as to have a vision,
 
 You're responsible to make the decision
 
-To create all your own ideal conditions.
+To create your own ideal conditions.
 
 
 
@@ -31702,11 +31215,11 @@ Without them, when would you self-realize?
 
 
 
-You hear the difference in your own voice,
+Remember when annoyed,
 
-Hear it when you don't just speak to avoid,
+Deciding to avoid
 
-Hear it when you declare your next choice.
+Is a wise choice.
 
 
 
@@ -32414,14 +31927,6 @@ Save space to savor some surprise sublime.
 
 
 
-Who do you need to hear from right now?
-
-Who knows what to say, and exactly how?
-
-Who but you awaits as the one you allow?
-
-
-
 How do you talk to yourself? In what tone?
 
 Do you chide/chastise/challenge/condone?
@@ -32480,9 +31985,9 @@ Everyone benefits from that smile.
 
 The feeling is the whole point.
 
-Everything else will disappoint.
+Everything else will disappoint
 
-Listen for it in your own voice.
+(You deserve a life you enjoy).
 
 
 
@@ -33918,11 +33423,11 @@ This train of thought, you can no longer ride.
 
 
 
-Better choices meet better choices,
+The same way that any gathering rejoices,
 
-So clear out the distracting noises
+Clutter loves more and noise hails noises,
 
-To clearly hear some wiser voices.
+But good decisions welcome better choices.
 
 
 
@@ -34064,9 +33569,9 @@ Await victories you once disallowed.
 
 In the dark, many things may seem bright.
 
-But walk with those who live in their light
+But find those who live in their light
 
-And you will pick up speed and take flight.
+And you'll pick up speed and take flight.
 
 
 
@@ -34290,7 +33795,7 @@ Every choice unlocks another door ahead.
 
 Though you can always turn back, instead
 
-Listen near each door - what's being said?
+By intuition let this next decision be led.
 
 
 
@@ -35134,11 +34639,11 @@ Be sure it can go from good to great.
 
 
 
-Is it just to hear yourself say the words?
-
 It is a good thing this thought occurred.
 
-But find the feeling that all of this stirs.
+But find the feeling all of this stirs.
+
+Get to know the you who is beyond words.
 
 
 
@@ -35842,7 +35347,7 @@ How ever it gets done, don't be attached.
 
 Your job was just to get the idea hatched.
 
-The rest is in everyone's hands after that.
+Trust others to handle things after that.
 
 
 
@@ -36782,11 +36287,11 @@ Back up to appreciate the whole mosaic.
 
 
 
-There are steps, if you seek a paved path.
+There's their way, that's been prepared,
 
-Otherwise, you could walk across the grass
+And there's yours, that few have dared
 
-And head straight into the forest, at last.
+(The difference can't be compared).
 
 
 
@@ -37174,11 +36679,11 @@ The same way people change when in love.
 
 
 
-It is inconvenient, but you can adjust
+It's inconvenient, but you can adjust
 
 To what's now needed to sustain and such.
 
-Once-good habits fail as today's crutch.
+Your best good habits are more than enough.
 
 
 
@@ -37208,7 +36713,7 @@ Detach from outcomes, latch your gate.
 
 Open a drain, and that's what it will do.
 
-Open a door, some may walk over you.
+Open a door, some may barge past you.
 
 Open a heart, you have a breakthrough.
 
@@ -37248,9 +36753,9 @@ Passing time makes good things better.
 
 Rush, and you're guaranteed to ruin
 
-What heart, head, or hand was doing.
+What heart, head, or help was doing.
 
-To rush is to chase time's illusion.
+Rushing boils; Time's just brewing.
 
 
 
@@ -38050,7 +37555,7 @@ Not an ill to be conquered,
 
 It's alright to feel awkward:
 
-Be at peace being bothered.
+Be at peace even when bothered.
 
 
 
@@ -39318,14 +38823,6 @@ From what's very best in you, share.
 
 
 
-Your mind is wonderful at what it does,
-
-But asking it for advice on love is like
-
-Seeking food insights from your lungs.
-
-
-
 An invitation to focus on fears
 
 Is one you can invite to disappear.
@@ -39528,7 +39025,7 @@ Exactly what this is, poorly disguised?
 
 The sooner you deepen loving yourself,
 
-The sooner you will hear no one else's
+The sooner you will take no one else's
 
 Opinion on what you need to be well.
 
@@ -40110,14 +39607,6 @@ At first dawn, be ready to first share.
 
 
 
-Catch your mood if it starts to turn down.
-
-Search for the cause, listen for its sound.
-
-Bring your intuition's ear to the ground.
-
-
-
 Everything has a story to it.
 
 Explore yourself through it,
@@ -40574,14 +40063,6 @@ The difference is often just slight enough.
 
 
 
-If they feed their ears a garbage stew,
-
-And extend a dinner invitation to you,
-
-The disease-free answer is, to refuse.
-
-
-
 Choice is your greatest power, not will.
 
 Choosing is how your world gets built.
@@ -40590,11 +40071,11 @@ Choosing brings you every other skill.
 
 
 
-If they feast their eyes on unsightly stew,
+What nourishment do they offer you?
 
-What healthy insights can they offer you?
+Become more aware of what feeds whom;
 
-Become more aware of what feeds whom.
+Whose ingredients are simple and true?
 
 
 
@@ -41330,7 +40811,7 @@ When your friends can't help, you can.
 
 What they don't have that you demand,
 
-Is your next level up of helping hands.
+Is how much you now need to expand.
 
 
 
@@ -41488,7 +40969,7 @@ First, be decisive. Right after that, flow.
 
 What you pay attention to always grows,
 
-Even if it's a thing you're still telling no:
+Even if it's a thing you're telling no:
 
 What you immediately ignore, you forgo.
 
@@ -42275,14 +41756,6 @@ That one habit keeps getting in your way
 By interrupting your choosing for today:
 
 Conscious choices are now your mainstay.
-
-
-
-Greet everyone warmly. Remember names.
-
-Put presence into every handshake.
-
-Meet old friends with renewed embrace.
 
 
 
@@ -43248,7 +42721,7 @@ Stop you from forgiving while forgetting.
 
 Complaints breed complaints, they just do.
 
-So it's wise - if you receive one that's new -
+So it's wise if you receive one that's new
 
 To receive it as an offer you should refuse.
 
@@ -44802,7 +44275,7 @@ You are so close. Go deeper, further.
 
 You are no longer just the observer -
 
-You are the only one with the fervor.
+You are the one who brings the fervor.
 
 
 
@@ -45158,11 +44631,11 @@ Always be the one who listens most.
 
 
 
-Listen to your entire self
+Make room for your entire self
 
-As if it were someone else
+As if it were someone else's
 
-Speaking of their health.
+Body, mind, and soul's health.
 
 
 
@@ -46126,11 +45599,11 @@ Make up your mind between the best two
 
 
 
-An apology does not make a good crutch.
+Apologies are not worth much
 
-It might bear some weight, but not much.
+Compared to actions and such
 
-They can though, lean on actions and such.
+(Actual change measures up).
 
 
 
@@ -54726,11 +54199,11 @@ Your toolbox can be called complete.
 
 
 
-Don't expect anyone to run your torch.
+No one else is able to carry your torch.
 
-It has been with you along this course
+No one else can draw from your source.
 
-Because you took your flame by force.
+You got here by love, not force.
 
 
 
@@ -69498,7 +68971,7 @@ It just might be too much.
 
 Should you tell them such?
 
-Or leave them their crutch?
+When should you give up?
 
 
 
@@ -76656,7 +76129,7 @@ So that their own way via yours, they can tell.
 
 How can you ever be sure what might work?
 
-You can't, let's get that much settled first;
+You can't, let's get that settled first;
 
 Now generously answer what you're worth.
 
@@ -77190,7 +76663,7 @@ This isn't a time to hold back tension.
 
 
 
-It's going to be a about building momentum,
+It's going to be about building momentum,
 
 Not easing into an unchallenged humdrum.
 
@@ -79354,7 +78827,7 @@ Ignoring old problems invites in some new.
 
 There are some aspects in need of a review,
 
-Some things you need to stop being used to.
+Some things you need to stop being &ldquo;used to.&rdquo;
 
 
 
@@ -82030,6 +81503,158 @@ Getting another perspective is good.
 
 
 
+Are you ready for a better question?
+
+Your answer deepens your intention.
+
+Ask of your innermost dimensions.
+
+
+
+When you share a wavelength, it's rapid,
+
+The speed at which changes can happen.
+
+Where your feelings firmly fit, map it.
+
+
+
+There is more to you than you have known,
+
+Awaiting within friendships you've grown,
+
+As much as within more quality time alone.
+
+
+
+Their perspective is all theirs.
+
+Yours, if you choose to share,
+
+Is yours to bear and/or bare.
+
+
+
+If thinking of them brings you joy, then
+
+Imagine the happiness that happens when
+
+It dawns on you how much love they send.
+
+
+
+Are they a wrecker or a builder?
+
+Study their communication filter
+
+(Make sure it's not off kilter).
+
+
+
+Do all you can before luck arrives
+
+And you'll have more ready inside,
+
+Which makes more good fortune arise.
+
+
+
+Therefore, take even better care of yourself
+
+Than you've done for everyone else.
+
+They need your example, not your &ldquo;help.&rdquo;
+
+
+
+Pain certainly focused your attention.
+
+Getting better rest was the lesson.
+
+Busying yourself carries consequences.
+
+
+
+These are your standards you're setting,
+
+Not for what you hope to be getting,
+
+But to recognize what needs shedding.
+
+
+
+Where words don't fit, stop using them.
+
+If you don't, meanings may turn numb.
+
+Create the space for sincerity to come.
+
+
+
+So much awaits behind this decision.
+
+Forgo the plans, the goal, the mission,
+
+And choose, driven solely by intuition.
+
+
+
+Be still. Let it happen all around you.
+
+Slow down as much as you're able to
+
+And things will present themselves anew.
+
+
+
+There's something there. Pay attention.
+
+Focus on more than what was mentioned.
+
+There's always a deeper, waiting lesson.
+
+
+
+You don't have to grant permission.
+
+It is solely/wholly your decision
+
+Who/what gets past the audition.
+
+
+
+Be mindful not to perform
+
+In order to fit their norm
+
+(Nor to their theatrics warm).
+
+
+
+Whether family, foe, or friend,
+
+You'll have a rhythm with them
+
+If you do that same thing again.
+
+
+
+There's an even deeper level of rest
+
+You haven't even experienced yet
+
+(Even attempts, you won't regret).
+
+
+
+All your help can do is hurt
+
+If this isn't answered first:
+
+Have they put in their work?
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -82935,41 +82560,6 @@ function convertBase(value, from_base, to_base) {
 															</svg>
 														  <span class="visually-hidden">Give Gift</span>
 														</button>`;
-						const button2 = `<button type="button">
-														    <svg class="svg-icon" role="img" aria-hidden="true" focusable="false" height="50px" width="50px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22.935 22.935" xml:space="preserve">
-																<svg class="svg-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-																<path d="M4 2C4.55228 2 5 1.55228 5 1C5 0.447715 4.55228 0 4 0C3.44772 0 3 0.447715 3 1C3 1.55228 3.44772 2 4 2Z" />
-																<path d="M9 4V6H11V4H13V6C14.1046 6 15 6.89543 15 8V9H1V8C1 6.89543 1.89543 6 3 6V4H5V6H7V4H9Z" />
-																<path d="M1 11V15H15V11H1Z" />
-																<path d="M9 1C9 1.55228 8.55228 2 8 2C7.44772 2 7 1.55228 7 1C7 0.447715 7.44772 0 8 0C8.55228 0 9 0.447715 9 1Z" />
-																<path d="M12 2C12.5523 2 13 1.55228 13 1C13 0.447715 12.5523 0 12 0C11.4477 0 11 0.447715 11 1C11 1.55228 11.4477 2 12 2Z" />
-																</svg>
-															  <span class="visually-hidden">
-															      Order Birthday Book
-															  </span>
-														</button>`;
-						const button3 = `<button id="player-button" class="player-button" type="button">
-														    <svg class="svg-bookagent" role="img" aria-hidden="true" focusable="false"  version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 22.935 22.935" xml:space="preserve">
-															<g>
-																<path d="M20.836,21.205V0.785C20.836,0.159,20.049,0,20.049,0H4.458c-2.359,0-2.36,1.954-2.36,1.954v20.143
-																	c0,0.461,0.374,0.838,0.839,0.838h15.105c0.462,0,0.838-0.377,0.838-0.838l1.115-0.002C20.899,22.095,20.836,21.205,20.836,21.205z
-																	 M5.578,13.994c-0.313-0.104-0.567-0.244-0.567-0.426c0-0.472,0-1.649,0-2.321c0-0.259,0.254-0.441,0.567-0.57V13.994z
-																	 M10.587,16.635c0,0.517-0.597,0.017-0.597,0.017l-3.255-2.414c0,0-0.311-0.035-0.668-0.113V10.52
-																	c0.357-0.087,0.668-0.12,0.668-0.12l3.327-2.483c0,0,0.525-0.396,0.525,0.009C10.587,8.397,10.587,16.116,10.587,16.635z
-																	 M12.497,15.222c-0.183,0-0.366-0.07-0.503-0.214c-0.272-0.276-0.267-0.721,0.011-0.994c0.594-0.581,0.885-1.171,0.864-1.755
-																	c-0.033-0.927-0.82-1.619-0.827-1.627c-0.297-0.25-0.333-0.694-0.083-0.991c0.251-0.296,0.697-0.333,0.992-0.082
-																	c0.052,0.043,1.27,1.095,1.325,2.648c0.036,0.999-0.398,1.946-1.288,2.815C12.852,15.155,12.675,15.222,12.497,15.222z
-																	 M15.278,16.243c-0.137,0.132-0.315,0.199-0.493,0.199c-0.184,0-0.366-0.071-0.503-0.213c-0.271-0.276-0.266-0.724,0.011-0.995
-																	c1.004-0.979,1.495-1.993,1.458-3.015c-0.057-1.606-1.407-2.797-1.421-2.807c-0.297-0.252-0.333-0.695-0.082-0.993
-																	c0.252-0.296,0.696-0.332,0.993-0.081c0.074,0.062,1.838,1.583,1.917,3.831C17.208,13.603,16.576,14.973,15.278,16.243z
-																	 M19.747,20.788c0,0-0.149,0.547-0.867,0.547v-6.543V2.828c0-0.462-0.375-0.838-0.838-0.838L3.749,1.984
-																	c0-0.577,0.866-0.869,0.866-0.869H18.88c0.893,0,0.867,0.786,0.867,0.786V20.788z"/>
-															</g>
-															</svg>
-														  <span class="visually-hidden">
-														      Hear the Author
-														  </span>
-														</button>`;
 						const ad = "<form><span class='app'>Get the <i>Take-a-Moment</i> App</span></form>";
 						const vo = "https://02b7cf4.netsolhost.com/audio/q" + (Math.floor(Math.random() * 520) + 1) + ".mp3";
 						const wk = `<form id='form' onsubmit='return openBook();'><select id='theMonth'>${selMonths}</select><select id='theDay'>${
@@ -83032,8 +82622,3 @@ function convertBase(value, from_base, to_base) {
 	});
 </script>
 </html>
-<!--
-
-Downloads/ffmpeg -i "concat:Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3|Downloads/a.mp3|Downloads/b.mp3|Downloads/c.mp3|Downloads/d.mp3|Downloads/e.mp3|Downloads/f.mp3|Downloads/g.mp3|Downloads/h.mp3|Downloads/i.mp3|Downloads/j.mp3|Downloads/k.mp3|Downloads/l.mp3|Downloads/m.mp3|Downloads/n.mp3|Downloads/o.mp3|Downloads/p.mp3|Downloads/q.mp3|Downloads/r.mp3|Downloads/s.mp3|Downloads/t.mp3|Downloads/u.mp3|Downloads/v.mp3|Downloads/w.mp3|Downloads/x.mp3|Downloads/y.mp3|Downloads/z.mp3" -acodec copy Downloads/test-2.mp3;
-
--->

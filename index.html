@@ -596,7 +596,7 @@
 				line-height: 2em;
 				position: relative;
 			}
-			section.array br:not(.chapter),
+			section.biblio br:not(.chapter),
 			section.scrolls sub {
 				display: none;
 			}
@@ -625,6 +625,11 @@
 			}
 			section:not(.full):not(.script):not(.promo) sup {
 				display: none;
+			}
+			h1,h2 {
+				user-select: none;
+				line-height: 2em;
+				text-align: center;
 			}
 			img {
 				width: 10vw;
@@ -665,16 +670,16 @@
 				position: relative;
 				text-align: center;
 			}
-			section.array p.book {
+			section.biblio p.book {
 				display: none;
 			}
-			section.array {
+			section.biblio {
 				font-family: courier;
 				line-height: 2em;
 				margin: 3em;
     			overflow-wrap: break-word;
 			}
-			section.array sub {
+			section.biblio sub {
 				vertical-align: middle;
 			}
 			#qr_qa {
@@ -689,21 +694,58 @@
 			#hardcover_qr {
 				float: right;
 				margin: 3vw;
-			}			
+			}
+		  menu {
+				user-select: none;		  	
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				background-color: #FD3DB5;
+				padding: 0em;
+				margin: 0;
+				width: 100%;
+				height : 2em;
+		  	list-style-type: none;
+		  	text-align: center;
+		  	z-index: 999;
+		  }
+		  menu li {
+		  	text-align: center;
+		  	display: inline-block;
+		  	margin: .3em 0;
+		  }
+		  menu li + li {
+		  	margin-left: 1em;
+		  }
+		  menu li button {
+		  	width: 7em;
+		  }
+
 		}
 
 		@media all and (orientation: landscape) {
-		  .array {
+		  .biblio {
 		    display: none;
 		  }
 		}		
-/*
+
 		@media all and (orientation: portrait) {
-		  section:not(.array) {
+		  section p.book {
 		    display: none;
 		  }
+		  a {
+			  pointer-events: none;
+			  cursor: default;
+			  text-decoration: none;
+			  color: black;		  	
+		  }
+		  textarea {
+		  	width: 100%;
+		  	margin: auto;
+		  	height: 5rem;
+		  }
 		}		
-*/
+
 	</style>
 	<style id="screen" title="screen">
 		:root {
@@ -962,9 +1004,9 @@ Let each remind you that You are the gift.
 
 For each day on which a birthday falls
 
-Fits a book to which that day belongs:
+Fit 7 books to which that day belongs:
 
-Find that book via DarylBrowne.com.
+Find all of yours at DarylBrowne.com.
 
 
 
@@ -976,19 +1018,17 @@ You'll take a journey of 1,000 breaths.
 
 
 
-Foreword --
+Copyright --
 
-<span id="title"></span>
+Copyright &copy; by Daryl Browne
 
----
+https://darylbrowne.com
 
-Epigraph --
-
-<span id="subtitle"></span>
+Rights reserved.
 
 ---
 
-Prologue --
+Dedication --
 
 I dedicate this whole book to You -
 
@@ -81746,6 +81786,14 @@ Keep your focus right here, on this.
 
 
 
+While a watched pot takes longer to boil,
+
+If you let yourself get distracted by toil,
+
+It bubbles over, so to readiness be loyal.
+
+
+
 This choice is the essence of enough -
 
 This is the one that sums them all up:
@@ -81762,9 +81810,10 @@ You're exactly where you're supposed to be.
 </pre>
 </body> 
 <script type="text/javascript">
-  const TITLE = ["You're Exactly Where You're Supposed to Be","The Month of Nowuary and Beyond","For the 0th and Well Beyond","Volume"];
+  const TITLE = ["You're Exactly Where You're Supposed to Be","The Month of Nowuary and Beyond","For the 0th and Well Beyond","\'s Volume"];
   const URI = ['http://daryl.be?'];
   const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const DAY = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   const DAYS = [31,31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   const CODEC = ["a","b","c","d","e","f","g","h","i","j","k","n","p","q","r","s","t","u","v","w","x","y","z"];
   let initialDate;
@@ -81801,48 +81850,53 @@ function convertBase(value, from_base, to_base) {
 
   function qr() {
 		let s = [];
-		let qstr = "";
+		let qstr1,qstr2 = "";
 		function encode(d) {
 			const f = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335];
 			let h,k = [];
-			let a,b,j,m,n = 0;
+			let a,b,j,m,n,o = 0;
 			if (isNaN(d) && d.indexOf("\/") > -1) {
 				k = d.split('/');
 				h = k.map(Number);
-				h[2] = h[2] < 1 ? 1 : h[2];
+				h[2] = (h[2] < 1 || h[2] > 7) ? 1 : h[2];
 
 				if(h[0] !== 0 && h[1] !== 0) {
 					j = ((f[h[0]-1] + h[1]) + (732*(h[2]-1)));
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
-					subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
-					title = 'The ' + (h[1]+nth(h[1])) + ' of ' + MONTHS[(h[0]-1)] + ' and Beyond';					
+					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
+					title = 'The ' + (h[1]+nth(h[1])) + ' of ' + MONTHS[(h[0]-1)] + ' and Beyond';
+					volnum = Number(h[2])-1;			
 				} else if (h[0] !== 0 && h[1] === 0) {
 					j = ((f[h[0]-1] + 1) + (732*(h[2]-1)));
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
-					subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
+					//subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
+					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
 					title = 'The Month of ' + MONTHS[(h[0]-1)] + ' and Beyond';
 				} else if (h[0] === 0 && h[1] !== 0) {
 					j = ((f[h[0]-1] + 1) + (732*(h[2]-1)));
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
-					subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
+					//subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
+					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
 					title = 'For the ' + (h[1]+nth(h[1])) + ' and Well Beyond';
 				} else {
 					j = 0;
 					a = 0;
 					b = 0;
 					title = TITLE[0];
-					subtitle = TITLE[3] + ' ' + h[2];
+					subtitle = DAY[Number(h[2])-1] + TITLE[3];
 				}
 				//s = ['https://daryl.be','https://daryl.be'];
 				n = (h[1]+1 > DAYS[h[0]] || (h[0] == 0 && h[1] == 0)) ?  1 : h[1]+1;
 				m = (h[1]+1 > DAYS[h[0]] || (h[0] > 0 && h[1] == 0)) ? (h[0]%12)+1 : h[0];
 				m = h[0] < 1 ? 0 : m;
 				n = h[1] < 1 ? 0 : n;
+				o = h[2]+1 > 7 ? h[2] = 1 : h[2]+1;
 				s = [d,URI[0] + a,URI[0] + b,j,title,subtitle];
-				qstr = m + "/" + n + "/" +  h[2];
+				qstr1 = m + "/" + n + "/" +  h[2];
+				qstr2 = h[0] + "/" + h[1] + "/" + o;
 			} else {
 				h = [0,0,volnum];
 				k = d.split(',');
@@ -81850,7 +81904,8 @@ function convertBase(value, from_base, to_base) {
 				title = TITLE[0];
 				subtitle = 'Inspired by INSPIREDBY, Volume VOLNUM';
 				s = ["",URI[0] + a,URI[0] + b,0,title,subtitle];
-				qstr = k[0] + "," +  h[2];
+				qstr1 = k[0] + "," +  h[2];
+				qstr2 = k[0] + "," +  h[2];
 			}
 
 			console.log(s[0] + '\n' + s[3] + '\n' + s[4] + '\n' + s[5] + '\npaper:' + s[1] + '\nhard: ' + s[2] +  '\nvol: ' + h[2]);
@@ -81858,10 +81913,13 @@ function convertBase(value, from_base, to_base) {
 	        let hardcover = new QRious({element: document.getElementById('hardcover_qr'),value: s[2]});
 
 			if(document.getElementById("title")){
-				document.getElementById("title").innerHTML = "<a href='index.html?" + qstr + "#book1'>" + s[4] + "</a>";	
+				document.getElementById("title").innerHTML = "<a href='index.html?" + qstr1 + "#volume'>" + s[4] + "</a>";
+				const cells = document.getElementsByTagName("textarea");
+				  cells[0].innerHTML = s[4] + ", " + DAY[h[2]-1] + "'s Volume, " + cells[0].innerHTML;
+				  cells[1].innerHTML = s[4] + cells[1].innerHTML;
 			}
 
-			if(inspiredby){final_subtitle = "<a>" + subtitle + "</a>";} else {final_subtitle = "<a href='index.html?" + qstr + "#book1'>" + s[5] + "</a>";}
+			if(inspiredby){final_subtitle = "<a>" + subtitle + "</a>";} else {final_subtitle = "<a href='index.html?" + qstr2 + "#series'>" + s[5] + "</a>";}
 			
 			if(document.getElementById("subtitle")){
 				document.getElementById("subtitle").innerHTML = final_subtitle;
@@ -81906,7 +81964,7 @@ function convertBase(value, from_base, to_base) {
 				qr_h.setAttribute("id", "hardcover_qr");
 				qr_qa.append(qr_p,qr_h);
 				
-				document.body.prepend(qr_qa);
+				//document.body.prepend(qr_qa);
 				encode(xx);
 
 			} else if (parseInt(xx,23)){
@@ -81916,7 +81974,7 @@ function convertBase(value, from_base, to_base) {
 				let r = document.querySelector(':root');
 				r.style.setProperty('--background', 'black');
 				r.style.setProperty('--shade', 'tan');
-				scrolls = "<section class='scrolls qr'><a href='#'><article><div><p>Your " + s[5] + "<br><br>Asks for your patience's permission:<br><br>We're on that audiobook mission...<sup>1</sup></p></div></article></a></section>";
+				scrolls = "<section class='scrolls qr'><a href='#'><article><div><p>Your " + s[5] + "<br><br>Asks for your patience's permission:<br><br>We're on that bibliography mission...<sup>1</sup></p></div></article></a></section>";
 				document.body.innerHTML = scrolls;
 			}
 		} else {
@@ -81991,7 +82049,7 @@ function convertBase(value, from_base, to_base) {
 			"hex"	: "#522613"
 		}
 	];
-	const modes = ['~', 'promo', 'edit', 'full', 'wall', 'audiobook', 'book1', 'book2', 'latest', 'longest', 'flag', 'frame', 'labels', 'policy', 'sign', 'script', 'scrolls', 'uniques','widest'];
+	const modes = ['~', 'promo', 'edit', 'full', 'wall', 'series', 'volume', 'latest', 'longest', 'flag', 'frame', 'labels', 'policy', 'sign', 'script', 'scrolls', 'uniques','widest'];
 	const startAt = 5;
 
 	var local = false;
@@ -82413,16 +82471,18 @@ function convertBase(value, from_base, to_base) {
 								pages = pages.slice(startAt);
 								scrolls = "<section class='scrolls " + isType + "'>" + pages.join("") + "</section>";
 								break;
-							case 'audiobook' :
-
-								break;
-							case 'book1' :
+							case 'series' :
+							case 'volume' :
 								totalscrolls = 1440;
 								var perchapter = 60;
-								let lastscroll = totalscrolls+(startAt-1);
+								//let firstscroll = (Number(volnum)-1)*1440;
+								let firstscroll = (Number(qstr.split('/')[2])-1)*totalscrolls;
+								let lastscroll =  firstscroll + totalscrolls;
+								console.log('[[[[[[[[[[[[[[[[[[[[[[[[[[[[' + firstscroll + ' to ' + lastscroll + ']]]]]]]]]]]]]]]]]');
 								var totalChapters = Math.ceil(totalscrolls / perchapter);
-								custom = my.shuffle(book.slice(startAt, book.length-1));
-								custom = custom.slice(startAt, lastscroll);
+								//custom = my.shuffle(book.slice(startAt, book.length-1));
+								custom = book.slice(startAt, book.length-1);
+								custom = custom.slice(firstscroll, lastscroll-1);
 
 								for(var u = 0; u < 24; u++){custom[((u*60)+(Math.ceil(Math.random() * 57)))] = uniques[u];}
 
@@ -82481,46 +82541,25 @@ function convertBase(value, from_base, to_base) {
 									//final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">...') + '</p><br /><br />');
 								}
 
-								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
+								let titles = '<h1 id="title"></h1><h2 id="subtitle"></h2>';
+
+								var preface = titles + (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 									preface = preface.replace(/---/gi, '<br /><br />');
 									preface = preface.replace(/--/gi, '<br />');
-								var audiobook = "";
+									var kdp_buttons = `<menu><li><button id='cb-title'>Title</button></li><li><button id='cb-subtitle'>Subtitle</button></li><li><button id='cb-desc'>Description</button></li><li><button id='cb-series'>Series</button></li></menu>`;
+								var kdp_description = `<label for='kdp-desc'>Description</label><textarea id='kdp-desc'> holds 1,440 messages, each offering another way to think or feel about whatever may be on your mind at that moment. The writings take the voice of a trusted advisor, of your most positive yet purposeful self-talk. This volume is part of a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. The overarching series contains 366 smaller series - one for every birthdate, made up of 7 books - for the days of the week, dedicated to that special date. Each book holds its own unique collection of messages - one for every minute of the day. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
+								var kdp_series = `<label for='kdp-series'>Series</label><textarea id='kdp-series'> is a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. Each of the 7 books in this series holds a unique collection of messages - one for every minute of the day. The overarching series includes all the other dates of the year and more. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
+								var bibliography = kdp_buttons + "<section class='biblio'><hr />" + kdp_description + "<hr />" + kdp_series  + "<hr /></section>";
 								for (i = 1; i < totalChapters; i++) {
 									var thisChapter = custom.slice((perchapter*(i-1))+(i-1),(perchapter*i)+(i-1));
-									audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + i + ".mp3|Downloads/" + thisChapter.join(".mp3|Downloads/") + ".mp3\" -acodec copy Downloads/chapter-" + i + ".mp3;</section>";
+									bibliography += "<section class='biblio'>Chapter " + i + ": " + thisChapter.join(",") + "</section>";
 									chapterTitle = '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 									final.splice((perchapter*i)+(i-1),0,chapterTitle);
 								}
 								final.push('<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><p class="book">Afterword<br />' + book[1] + '</p>');
 								final.push('<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><p class="book">Also by Daryl Browne<br />' + book[2] + '</p>');
 								scrolls = "<section class='scrolls " + isType + "'>" + preface + final.join("") + "</section>";
-								scrolls += audiobook;
-								break;
-							case 'book2' :
-								totalscrolls = 1440;
-								var perchapter = 60;
-								var totalChapters = Math.ceil(totalscrolls / perchapter);
-								custom = my.shuffle(book.slice(startAt,(totalscrolls+startAt)));
-								custom.push(book[book.length-1]);
-
-								for (scroll = 0; scroll < custom.length; scroll++) {
-									//final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">' + minute[scroll]) + '</p><br /><br />');
-									final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">...') + '</p><br /><br />');
-								}
-
-								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
-									preface = preface.replace(/---/gi, '<br /><br />');
-									preface = preface.replace(/--/gi, '<br />');
-								var audiobook = "";
-								for (i = 1; i < totalChapters; i++) {
-									var thisChapter = custom.slice((perchapter*(i-1))+(i-1),(perchapter*i)+(i-1));
-									audiobook += "<section class='array " + isType + "'>Downloads/ffmpeg -i \"concat:Downloads/ch" + i + ".mp3|Downloads/" + thisChapter.join(".mp3|Downloads/") + ".mp3\" -acodec copy Downloads/chapter-" + i + ".mp3;</section>";
-									chapterTitle = '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
-									final.splice((perchapter*i)+(i-1),0,chapterTitle);
-								}
-								final.push('<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><p class="book">Afterword<br />' + book[1] + '</p>');
-								scrolls = "<section class='scrolls " + isType + "'>" + preface + final.join("") + "</section>";
-								scrolls += audiobook;
+								scrolls += bibliography;
 								break;
 							case 'longest' :
 								totalscrolls = (book.length-1)-startAt;
@@ -82707,9 +82746,80 @@ function convertBase(value, from_base, to_base) {
 	});
 
 	window.addEventListener("click", function (e) {
-		document.getElementById('signature').style.display = 'none';
-		document.getElementById('form').style.display = 'block';
-
+		if (document.getElementById('signature')) {
+			document.getElementById('signature').style.display = 'none';			
+		}
+		if (document.getElementById('form')) {
+			document.getElementById('form').style.display = 'block';			
+		}
 	});
+
+const copyTitle = document.getElementById('cb-title');
+const copySubtitle = document.getElementById('cb-subtitle');
+const copyDesc = document.getElementById('cb-desc');
+const copySeries = document.getElementById('cb-series');
+
+copyTitle.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('title').textContent;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Title copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Title: ', err);
+  }
+});	
+
+copySubtitle.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('subtitle').textContent;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Subtitle copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Subtitle: ', err);
+  }
+});	
+
+copyDesc.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('kdp-desc').textContent;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Description copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Description: ', err);
+  }
+});	
+
+copySeries.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('kdp-series').textContent;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Series Description copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Series Description: ', err);
+  }
+});	
+
+copyTitle.addEventListener('contextmenu', async (event) => {
+    event.preventDefault();
+	  const textToCopy = document.getElementById('title').textContent;
+	  try {
+	    await navigator.clipboard.writeText(textToCopy);
+	    console.log('Right Click Title copied to clipboard');
+	  } catch (err) {
+	    console.error('Right Click Failed to copy Title: ', err);
+	  }
+});
+
+copySubtitle.addEventListener('contextmenu', async (event) => {
+    event.preventDefault();
+	  const textToCopy = document.getElementById('subtitle').textContent;
+	  try {
+	    await navigator.clipboard.writeText(textToCopy);
+	    console.log('Right Click Subtitle copied to clipboard');
+	  } catch (err) {
+	    console.error('Right Click Failed to copy Subtitle: ', err);
+	  }
+});
+
 </script>
 </html>

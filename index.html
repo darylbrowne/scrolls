@@ -700,7 +700,7 @@
 				position: fixed;
 				bottom: 0;
 				left: 0;
-				background-color: #FD3DB5;
+				background-color: #9F4576;
 				padding: 0em;
 				margin: 0;
 				width: 100%;
@@ -82543,10 +82543,10 @@ function convertBase(value, from_base, to_base) {
 
 								let titles = '<h1 id="title"></h1><h2 id="subtitle"></h2>';
 
-								var preface = titles + (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
+								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 									preface = preface.replace(/---/gi, '<br /><br />');
 									preface = preface.replace(/--/gi, '<br />');
-									var kdp_buttons = `<menu><li><button id='cb-title'>Title</button></li><li><button id='cb-subtitle'>Subtitle</button></li><li><button id='cb-desc'>Description</button></li><li><button id='cb-series'>Series</button></li></menu>`;
+									var kdp_buttons = `<menu><li><button id='cb-body'>Book</button></li><li><button id='cb-title'>Title</button></li><li><button id='cb-subtitle'>Subtitle</button></li><li><button id='cb-desc'>Description</button></li><li><button id='cb-series'>Series</button></li></menu>`;
 								var kdp_description = `<label for='kdp-desc'>Description</label><textarea id='kdp-desc'> holds 1,440 messages, each offering another way to think or feel about whatever may be on your mind at that moment. The writings take the voice of a trusted advisor, of your most positive yet purposeful self-talk. This volume is part of a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. The overarching series contains 366 smaller series - one for every birthdate, made up of 7 books - for the days of the week, dedicated to that special date. Each book holds its own unique collection of messages - one for every minute of the day. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
 								var kdp_series = `<label for='kdp-series'>Series</label><textarea id='kdp-series'> is a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. Each of the 7 books in this series holds a unique collection of messages - one for every minute of the day. The overarching series includes all the other dates of the year and more. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
 								var bibliography = kdp_buttons + "<section class='biblio'><hr />" + kdp_description + "<hr />" + kdp_series  + "<hr /></section>";
@@ -82558,7 +82558,7 @@ function convertBase(value, from_base, to_base) {
 								}
 								final.push('<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><p class="book">Afterword<br />' + book[1] + '</p>');
 								final.push('<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><p class="book">Also by Daryl Browne<br />' + book[2] + '</p>');
-								scrolls = "<section class='scrolls " + isType + "'>" + preface + final.join("") + "</section>";
+								scrolls = titles + "<section id='contents' class='scrolls " + isType + "'>" + preface + final.join("") + "</section>";
 								scrolls += bibliography;
 								break;
 							case 'longest' :
@@ -82754,10 +82754,21 @@ function convertBase(value, from_base, to_base) {
 		}
 	});
 
+const copyBody = document.getElementById('cb-body');
 const copyTitle = document.getElementById('cb-title');
 const copySubtitle = document.getElementById('cb-subtitle');
 const copyDesc = document.getElementById('cb-desc');
 const copySeries = document.getElementById('cb-series');
+
+copyBody.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('contents').innerText;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Body copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Body: ', err);
+  }
+});	
 
 copyTitle.addEventListener('click', async () => {
   const textToCopy = document.getElementById('title').textContent;
@@ -82798,28 +82809,6 @@ copySeries.addEventListener('click', async () => {
     console.error('Failed to copy Series Description: ', err);
   }
 });	
-
-copyTitle.addEventListener('contextmenu', async (event) => {
-    event.preventDefault();
-	  const textToCopy = document.getElementById('title').textContent;
-	  try {
-	    await navigator.clipboard.writeText(textToCopy);
-	    console.log('Right Click Title copied to clipboard');
-	  } catch (err) {
-	    console.error('Right Click Failed to copy Title: ', err);
-	  }
-});
-
-copySubtitle.addEventListener('contextmenu', async (event) => {
-    event.preventDefault();
-	  const textToCopy = document.getElementById('subtitle').textContent;
-	  try {
-	    await navigator.clipboard.writeText(textToCopy);
-	    console.log('Right Click Subtitle copied to clipboard');
-	  } catch (err) {
-	    console.error('Right Click Failed to copy Subtitle: ', err);
-	  }
-});
 
 </script>
 </html>

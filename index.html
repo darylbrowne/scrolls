@@ -631,6 +631,9 @@
 				line-height: 2em;
 				text-align: center;
 			}
+			h3 {
+				visibility: hidden;
+			}
 			img {
 				width: 10vw;
 				height: auto;
@@ -1639,14 +1642,6 @@ Things work out, you already know that.
 It doesn't mean you should just sit back.
 
 But it does mean you can certainly relax.
-
-
-
-More than ever, you need organization
-
-To tuck away any and all complication
-
-As you devote time to deep relaxation.
 
 
 
@@ -59234,14 +59229,6 @@ Either way, use time as your bait.
 
 
 
-True, that may be too meticulous.
-
-You may think, &ldquo;How ridiculous!&rdquo;
-
-But aren't you a little bit curious?
-
-
-
 Hopefully, their way works for them.
 
 Hopefully, they won't ask you again.
@@ -67911,14 +67898,6 @@ Can you invest in something you need?
 Better to grow nourishment that feeds
 
 Yourself well enough to do great deeds.
-
-
-
-Though their response seems ridiculous,
-
-To them, it matched unexpected stimulus.
-
-Give this attention that feels meticulous.
 
 
 
@@ -81666,19 +81645,43 @@ It bubbles over, so to readiness be loyal.
 
 
 
-Compare how you prefer to feel,
+Compare how you prefer to feel
 
-Up against their latest appeal:
+Up alongside their latest appeal:
 
-Your attention makes one real.
+The one you face becomes real.
 
 
 
-Spoil, indulge, and treat yourself -
+Spoil, indulge, and treat yourself.
 
-Splurge as if you were someone else.
+Splurge as if you're someone else.
 
-Why not feel extravagantly well?
+Soak in a shimmering sea of well.
+
+
+
+Ill will falls flat
+
+Unless you react
+
+(Don't do that).
+
+
+
+When you purge things from your past,
+
+Wondrous new gifts will fill those gaps;
+
+What should you rid yourself of at last?
+
+
+
+Whatever you did "for" love, do cease.
+
+All that you do "from" love, increase
+
+(Love loves to see you enjoying peace).
 
 
 
@@ -81775,6 +81778,7 @@ function convertBase(value, from_base, to_base) {
 					b = 0;
 					title = TITLE[0];
 					subtitle = DAY[Number(h[2])-1] + TITLE[3];
+
 				}
 				//s = ['https://daryl.be','https://daryl.be'];
 				n = (h[1]+1 > DAYS[h[0]] || (h[0] == 0 && h[1] == 0)) ?  1 : h[1]+1;
@@ -81811,6 +81815,7 @@ function convertBase(value, from_base, to_base) {
 			
 			if(document.getElementById("subtitle")){
 				document.getElementById("subtitle").innerHTML = final_subtitle;
+				document.getElementById("volume").innerHTML = DAY[Number(h[2])-1];;
 			}
 			//document.getElementById("edition").innerHTML = s[6];
 			document.title = s[4];
@@ -82429,12 +82434,12 @@ function convertBase(value, from_base, to_base) {
 									//final.push(custom[scroll].replace(/\<p class=\"book\"\>/gi, '<p class="book">...') + '</p><br /><br />');
 								}
 
-								let titles = '<h1 id="title"></h1><h2 id="subtitle"></h2>';
+								let titles = '<h1 id="title"></h1><h2 id="subtitle"></h2><h3 id="volume"></h3>';
 
 								var preface = (book.slice((startAt-1),startAt)).join("") + '<br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" /><br class="chapter" />';
 									preface = preface.replace(/---/gi, '<br /><br />');
 									preface = preface.replace(/--/gi, '<br />');
-									var kdp_buttons = `<menu><li><button id='cb-body'>Book</button></li><li><button id='cb-title'>Title</button></li><li><button id='cb-subtitle'>Subtitle</button></li><li><button id='cb-desc'>Description</button></li><li><button id='cb-series'>Series</button></li></menu>`;
+									var kdp_buttons = `<menu><li><button id='cb-body'>Book</button></li><li><button id='cb-title'>Title</button></li><li><button id='cb-subtitle'>Subtitle</button></li><li><button id='cb-volume'>Volume</button></li><li><button id='cb-desc'>Description</button></li><li><button id='cb-series'>Series</button></li></menu>`;
 								var kdp_description = `<label for='kdp-desc'>Description</label><textarea id='kdp-desc'> holds 1,440 messages, each offering another way to think or feel about whatever may be on your mind at that moment. The writings take the voice of a trusted advisor, of your most positive yet purposeful self-talk. This volume is part of a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. The overarching series contains 366 smaller series - one for every birthdate, made up of 7 books - for the days of the week, dedicated to that special date. Each book holds its own unique collection of messages - one for every minute of the day. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
 								var kdp_series = `<label for='kdp-series'>Series</label><textarea id='kdp-series'> is a series within a series by Daryl Browne, an author who has committed over 30 years to writing messages that speak from and for the journey of daily living. Each of the 7 books in this series holds a unique collection of messages - one for every minute of the day. The overarching series includes all the other dates of the year and more. What Daryl continues to discover and share through this work is that sometimes you have to go everywhere else before you stop and realize you're exactly where you're supposed to be.</textarea>`;
 								var bibliography = kdp_buttons + "<section class='biblio'><hr />" + kdp_description + "<hr />" + kdp_series  + "<hr /></section>";
@@ -82647,6 +82652,7 @@ const copyTitle = document.getElementById('cb-title');
 const copySubtitle = document.getElementById('cb-subtitle');
 const copyDesc = document.getElementById('cb-desc');
 const copySeries = document.getElementById('cb-series');
+const copyVolume = document.getElementById('cb-volume');
 
 copyBody.addEventListener('click', async () => {
   const textToCopy = document.getElementById('contents').innerText;
@@ -82695,6 +82701,16 @@ copySeries.addEventListener('click', async () => {
     console.log('Series Description copied to clipboard');
   } catch (err) {
     console.error('Failed to copy Series Description: ', err);
+  }
+});	
+
+copyVolume.addEventListener('click', async () => {
+  const textToCopy = document.getElementById('kdp-volume').textContent;
+  try {
+    await navigator.clipboard.writeText(textToCopy);
+    console.log('Volume Name copied to clipboard');
+  } catch (err) {
+    console.error('Failed to copy Volume Name: ', err);
   }
 });	
 

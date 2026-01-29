@@ -82596,7 +82596,8 @@ function convertBase(value, from_base, to_base) {
 						const vo = "https://02b7cf4.netsolhost.com/audio/q" + (Math.floor(Math.random() * 520) + 1) + ".mp3";
 						const wk = `<form id='form' onsubmit='return openBook();'><select id='theMonth'>${selMonths}</select><select id='theDay'>${
 						selDays}</select><select id='theVolume'><option value=''>Vol.</option>${selVols}</select>${button1}</form>`;
-						const nav = !(window.location.hostname).includes(app) ?  wk : ad;
+						//const nav = !(window.location.hostname).includes(app) ?  wk : ad;//
+						const nav = wk;
 						//scrolls = "<section class='scrolls cover'>" + pages[0] + nav + "</section>";
 						//const dab = `<img id="signature" src="${signature}" />`;
 						const dab = `<span class='signature' id='signature'>darylbrowne@darylbrowne.com</span>`;

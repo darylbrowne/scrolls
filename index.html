@@ -81760,13 +81760,13 @@ function convertBase(value, from_base, to_base) {
 			if (isNaN(d) && d.indexOf("\/") > -1) {
 				k = d.split('/');
 				h = k.map(Number);
-				h[2] = (h[2] < 1 || h[2] > 7) ? 1 : h[2];
+				h[2] = (h[2] < 1 || h[2] > 8) ? 1 : h[2];
 
 				if(h[0] !== 0 && h[1] !== 0) {
 					j = ((f[h[0]-1] + h[1]) + (732*(h[2]-1)));
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
-					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
+					subtitle = [TITLE[0],DAY[Number(h[2])-1]].join(', ');
 					title = 'The ' + (h[1]+nth(h[1])) + ' of ' + MONTHS[(h[0]-1)] + ' and Beyond';
 					volnum = Number(h[2])-1;			
 				} else if (h[0] !== 0 && h[1] === 0) {
@@ -81774,29 +81774,33 @@ function convertBase(value, from_base, to_base) {
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
 					//subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
-					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
+					subtitle = [TITLE[0],DAY[Number(h[2])-1]].join(', ');
 					title = 'The Month of ' + MONTHS[(h[0]-1)] + ' and Beyond';
 				} else if (h[0] === 0 && h[1] !== 0) {
 					j = ((f[h[0]-1] + 1) + (732*(h[2]-1)));
 					a = Math.abs(j).toString(36);
 					b = Math.abs(j + 366).toString(36);
 					//subtitle = TITLE[0] + ', ' + TITLE[3] + ' ' + h[2];
-					subtitle = TITLE[0] + ', ' + DAY[Number(h[2])-1];
+					subtitle = [TITLE[0],DAY[Number(h[2])-1]].join(', ');
 					title = 'For the ' + (h[1]+nth(h[1])) + ' and Well Beyond';
 				} else {
 					j = 0;
 					a = 0;
 					b = 0;
 					title = TITLE[0];
-					subtitle = DAY[Number(h[2])-1] + TITLE[3];
-
+					if(Number(h[2]) > 7) {
+						subtitle = 'Volume 1';
+					} else {
+						subtitle = DAY[Number(h[2])-1] + TITLE[3];
+					}
 				}
 				//s = ['https://daryl.be','https://daryl.be'];
 				n = (h[1]+1 > DAYS[h[0]] || (h[0] == 0 && h[1] == 0)) ?  1 : h[1]+1;
 				m = (h[1]+1 > DAYS[h[0]] || (h[0] > 0 && h[1] == 0)) ? (h[0]%12)+1 : h[0];
 				m = h[0] < 1 ? 0 : m;
 				n = h[1] < 1 ? 0 : n;
-				o = h[2]+1 > 7 ? h[2] = 1 : h[2]+1;
+				o = h[2]+1 > 8 ? h[2] = 1 : h[2]+1;
+				subtitle = (subtitle.endsWith(', ')) ? subtitle.slice(0, -2) : subtitle;
 				s = [d,URI[0] + a,URI[0] + b,j,title,subtitle];
 				qstr1 = m + "/" + n + "/" +  h[2];
 				qstr2 = h[0] + "/" + h[1] + "/" + o;
@@ -82605,12 +82609,22 @@ function convertBase(value, from_base, to_base) {
 								console.log('----------------');
 
 								} else {
-									let firstscroll = (Number(qstr.split('/')[2])-1)*totalscrolls;
-									let lastscroll =  firstscroll + totalscrolls;
-									console.log('[[[[[[[[[[[[[[[[[[[[[[[[[[[[' + firstscroll + ' to ' + lastscroll + ']]]]]]]]]]]]]]]]]');
+									let dayAnchor = (Number(qstr.split('/')[2])-1);
+								console.log('--------dayAnchor--------');
+								console.log(dayAnchor);
 									let shuffled = my.shuffle(book.slice(startAt, book.length-1));
 									let unshuffled = book.slice(startAt, book.length-1);
-									custom = (Number(qstr.split('/')[0]) < 1) ? unshuffled.slice(firstscroll, lastscroll-1) : my.shuffle(unshuffled.slice(firstscroll, lastscroll-1));
+
+									if (dayAnchor < 7) {
+										let firstscroll = (Number(qstr.split('/')[2])-1)*totalscrolls;
+										let lastscroll =  firstscroll + totalscrolls;
+										console.log('[[[[[[[[[[[[[[[[[[[[[[[[[[[[' + firstscroll + ' to ' + lastscroll + ']]]]]]]]]]]]]]]]]');
+										custom = (Number(qstr.split('/')[0]) < 1) ? my.shuffle(unshuffled.slice(firstscroll, lastscroll-1)) : my.shuffle(unshuffled.slice(firstscroll, lastscroll-1));
+									} else {
+										let startingPoint = (Math.ceil(Math.random() * book.length-(totalscrolls+1)));
+
+										custom = shuffled.slice(startingPoint,(startingPoint+totalscrolls));
+									}
 
 									if (Number(qstr.split('/')[0]) > 0) {
 										for(var u = 0; u < 24; u++){custom[((u*60)+(Math.ceil(Math.random() * 57)))] = bookables[u];}			
